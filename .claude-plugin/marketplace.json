@@ -1,0 +1,29 @@
+{
+  "name": "tensorpm-marketplace",
+  "owner": {
+    "name": "TensorPM Team"
+  },
+  "metadata": {
+    "description": "Official TensorPM Claude Code plugin marketplace.",
+    "version": "0.7.2-beta.5",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "tensorpm",
+      "source": "tensorpm",
+      "description": "AI-powered, context-driven project management with TensorPM via MCP tools and A2A endpoints.",
+      "version": "0.7.2-beta.5",
+      "homepage": "https://tensorpm.com/SKILL.md",
+      "repository": "https://github.com/Neo552/TensorPM-Releases",
+      "category": "project-management",
+      "tags": [
+        "tensorpm",
+        "project-management",
+        "mcp",
+        "a2a",
+        "context-driven"
+      ]
+    }
+  ]
+}

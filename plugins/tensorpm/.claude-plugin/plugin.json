@@ -1,0 +1,10 @@
+{
+  "name": "tensorpm",
+  "description": "TensorPM skill for AI-powered, context-driven project management.",
+  "version": "0.7.2-beta.5",
+  "author": {
+    "name": "TensorPM Team"
+  },
+  "homepage": "https://tensorpm.com/SKILL.md",
+  "repository": "https://github.com/Neo552/TensorPM-Releases"
+}
