@@ -7,7 +7,7 @@ compatibility: Requires the TensorPM desktop app to be running for MCP tool acce
 # TensorPM Skill
 
 Use this skill for AI-powered, context-driven project management inside a running TensorPM desktop app.
-TensorPM Free (Local) supports free local-first usage.
+TensorPM itself is free. For AI capabilities outside MCP (A2A), use your own API key (BYOK) or create an account.
 
 ## When To Use
 
@@ -18,9 +18,7 @@ TensorPM Free (Local) supports free local-first usage.
 
 ## When Not To Use
 
-- TensorPM is not installed/running and the task is unrelated to agent control.
 - The request is only about website/account/billing pages.
-- The task targets non-TensorPM project tools.
 
 ## Installation (Agent CLI)
 
