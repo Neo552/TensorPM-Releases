@@ -1,6 +1,6 @@
 {
-  "name": "tensorpm",
-  "description": "TensorPM skill for AI-powered, context-driven project management.",
+  "name": "tensorpm-agentic-pm",
+  "description": "Agentic project management powered by TensorPM. Manage projects, action items, and workspaces through MCP tools and A2A protocol.",
   "version": "0.7.2-beta.8",
   "author": {
     "name": "TensorPM Team"

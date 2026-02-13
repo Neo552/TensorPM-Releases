@@ -10,9 +10,9 @@
   },
   "plugins": [
     {
-      "name": "tensorpm",
+      "name": "tensorpm-agentic-pm",
       "source": "tensorpm",
-      "description": "AI-powered, context-driven project management with TensorPM via MCP tools and A2A endpoints.",
+      "description": "Agentic project management powered by TensorPM. Manage projects, action items, and workspaces through MCP tools and A2A protocol.",
       "version": "0.7.2-beta.8",
       "homepage": "https://tensorpm.com/SKILL.md",
       "repository": "https://github.com/Neo552/TensorPM-Releases",

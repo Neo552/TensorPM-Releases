@@ -1,6 +1,6 @@
 ---
-name: tensorpm
-description: 'Experience the next level of AI-powered, context-driven project management with TensorPM via MCP tools and A2A endpoints. Future-ready support for agents managing projects, action items, workspaces, and live project state in a running local TensorPM app.'
+name: tensorpm-agentic-pm
+description: 'Agentic project management powered by TensorPM. Manage projects, action items, and workspaces through MCP tools and A2A protocol. Context-driven AI project management for agents.'
 compatibility: Requires the TensorPM desktop app to be running for MCP tool access and A2A communication. Available on macOS, Windows, and Linux.
 ---
 
