@@ -5,15 +5,15 @@
   },
   "metadata": {
     "description": "Official TensorPM Claude Code plugin marketplace.",
-    "version": "0.7.2-beta.8",
+    "version": "0.7.3-beta.2",
     "pluginRoot": "./plugins"
   },
   "plugins": [
     {
-      "name": "tensorpm-agentic-pm",
+      "name": "tensorpm",
       "source": "tensorpm",
-      "description": "Agentic project management powered by TensorPM. Manage projects, action items, and workspaces through MCP tools and A2A protocol.",
-      "version": "0.7.2-beta.8",
+      "description": "AI-powered, context-driven project management with TensorPM via MCP tools and A2A endpoints.",
+      "version": "0.7.3-beta.2",
       "homepage": "https://tensorpm.com/SKILL.md",
       "repository": "https://github.com/Neo552/TensorPM-Releases",
       "category": "project-management",
