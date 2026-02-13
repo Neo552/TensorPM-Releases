@@ -77,9 +77,9 @@ Rule of thumb:
 
 ## References
 
-- [MCP Tools](references/mcp-tools.md): tool catalog and usage boundaries.
-- [A2A API](references/a2a-api.md): discovery, JSON-RPC methods, REST endpoints, examples.
-- [Action Items & Dependencies](references/action-items.md): fields, dependency types, payload examples.
+- [MCP Tools](MCP-TOOLS.md): tool catalog and usage boundaries.
+- [A2A API](A2A-API.md): discovery, JSON-RPC methods, REST endpoints, examples.
+- [Action Items & Dependencies](ACTION-ITEMS.md): fields, dependency types, payload examples.
 
 ## Notes
 
