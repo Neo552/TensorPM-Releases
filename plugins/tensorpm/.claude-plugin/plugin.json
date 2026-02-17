@@ -1,7 +1,7 @@
 {
   "name": "tensorpm",
   "description": "TensorPM skill for AI-powered, context-driven project management.",
-  "version": "0.7.5-beta.2",
+  "version": "0.7.5-beta.4",
   "author": {
     "name": "TensorPM Team"
   },

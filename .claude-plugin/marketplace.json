@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Official TensorPM Claude Code plugin marketplace.",
-    "version": "0.7.5-beta.2",
+    "version": "0.7.5-beta.4",
     "pluginRoot": "./plugins"
   },
   "plugins": [
@@ -13,7 +13,7 @@
       "name": "tensorpm",
       "source": "tensorpm",
       "description": "AI-powered, context-driven project management with TensorPM via MCP tools and A2A endpoints.",
-      "version": "0.7.5-beta.2",
+      "version": "0.7.5-beta.4",
       "homepage": "https://tensorpm.com/SKILL.md",
       "repository": "https://github.com/Neo552/TensorPM-Releases",
       "category": "project-management",
