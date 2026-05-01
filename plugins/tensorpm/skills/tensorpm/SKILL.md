@@ -1,12 +1,18 @@
 ---
 name: tensorpm-agentic-pm
-description: 'Agentic project management powered by TensorPM. Manage projects, action items, workspaces, TensorPM MCP access, and external MCP client configuration for TensorPM through MCP tools, A2A protocol, and local config files. Context-driven AI project management for agents.'
-compatibility: Requires the TensorPM desktop app to be running for MCP tool access and A2A communication. Available on macOS, Windows, and Linux.
+description: 'Agentic Project Memory | AI Project Management Software. The dedicated project management subagent for Claude Code, Codex, OpenClaw and any MCP/A2A agent — manages shared project context (goals, action items, decisions, history) via MCP tools and the A2A protocol. Local-first, free.'
+compatibility: Requires the TensorPM desktop app v0.8.0+ to be running for MCP tool access and A2A communication. Available on macOS, Windows, and Linux.
 ---
 
 # TensorPM Skill
 
-Use this skill for AI-powered, context-driven project management inside a running TensorPM desktop app.
+Use this skill to operate TensorPM as the dedicated project management subagent — via MCP for structured CRUD and A2A for high-level, context-aware operations on a running TensorPM desktop app.
+
+TensorPM has two interfaces over the same project graph:
+
+- **Desktop app for humans**: classical project management UI plus a built-in "TensorPM" agent that takes PM busywork off the user (extracting action items from documents, proposing context updates, suggesting next steps).
+- **MCP/A2A for external agents**: this skill. Claude Code, Codex, OpenClaw and any MCP/A2A client read and write the same project graph (goals, action items, decisions, history) — so they don't have to re-explain or hallucinate project context.
+
 TensorPM itself is free. For AI capabilities outside MCP (A2A), use your own API key (BYOK) or create an account.
 
 ## When To Use
@@ -23,7 +29,7 @@ TensorPM itself is free. For AI capabilities outside MCP (A2A), use your own API
 
 ## Installation (Agent CLI)
 
-Use one of these agent-friendly CLI install methods:
+Preferred package-manager install:
 
 ```bash
 # macOS
@@ -35,15 +41,31 @@ brew install --cask neo552/tensorpm/tensorpm
 winget install --id Neo552.TensorPM --exact --accept-package-agreements --accept-source-agreements
 ```
 
+Direct-download fallback (works on every platform, no installer script required):
+
 ```bash
-# macOS / Linux fallback installer script
-curl -fsSL https://raw.githubusercontent.com/Neo552/TensorPM/main/scripts/install.sh | bash
+# macOS DMG
+curl -fL -o /tmp/TensorPM-macOS.dmg \
+  https://github.com/Neo552/TensorPM-Releases/releases/latest/download/TensorPM-macOS.dmg
+hdiutil attach /tmp/TensorPM-macOS.dmg -nobrowse -quiet
+cp -R "/Volumes/$(ls /Volumes | grep -i TensorPM)/TensorPM.app" /Applications/
+hdiutil detach "/Volumes/$(ls /Volumes | grep -i TensorPM)" -quiet
+```
+
+```bash
+# Linux AppImage
+curl -fL -o ~/TensorPM.AppImage \
+  https://github.com/Neo552/TensorPM-Releases/releases/latest/download/TensorPM-Linux.AppImage
+chmod +x ~/TensorPM.AppImage
 ```
 
 ```powershell
-# Windows fallback installer script
-irm https://raw.githubusercontent.com/Neo552/TensorPM/main/scripts/install.ps1 | iex
+# Windows installer
+Invoke-WebRequest -Uri https://github.com/Neo552/TensorPM-Releases/releases/latest/download/TensorPM-Setup.exe -OutFile $env:TEMP\TensorPM-Setup.exe
+Start-Process $env:TEMP\TensorPM-Setup.exe
 ```
+
+If the agent needs to verify or pin a version, list releases via `gh release list -R Neo552/TensorPM-Releases` (the GitHub `/releases/latest` endpoint excludes pre-releases, so prefer `gh release list` when only beta tags exist).
 
 ## Runtime Prerequisites
 
@@ -62,7 +84,7 @@ Preferred paths:
 3. Local override: `.tensorpm/agent-mcps.local.json`
 4. Explicit override: set `TENSORPM_AGENT_MCP_CONFIG_FILE` to one or more paths separated by the OS path delimiter.
 
-TensorPM accepts standard `mcpServers` config blocks and TensorPM-native `agentMcpServers`. Use `references/agent-mcp-clients.md` for schema, examples, and safety notes.
+TensorPM accepts standard `mcpServers` config blocks and TensorPM-native `agentMcpServers`. See [Agent MCP Clients](AGENT-MCP-CLIENTS.md) for schema, examples, and safety notes.
 The UI exports its own generated snapshot to `~/.tensorpm/agent-mcps.generated.json`; agents should write user-managed config to `~/.tensorpm/agent-mcps.json`.
 
 ## MCP vs A2A Routing
@@ -91,7 +113,7 @@ Rule of thumb:
 ## References
 
 - [MCP Tools](MCP-TOOLS.md): tool catalog and usage boundaries.
-- [Agent MCP Clients](references/agent-mcp-clients.md): configure external MCP servers for TensorPM's AI chat.
+- [Agent MCP Clients](AGENT-MCP-CLIENTS.md): configure external MCP servers for TensorPM's AI chat.
 - [A2A API](A2A-API.md): discovery, JSON-RPC methods, REST endpoints, examples.
 - [Action Items & Dependencies](ACTION-ITEMS.md): fields, dependency types, payload examples.
 

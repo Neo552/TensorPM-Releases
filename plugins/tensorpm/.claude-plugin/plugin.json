@@ -1,10 +1,19 @@
 {
   "name": "tensorpm",
-  "description": "TensorPM skill for AI-powered, context-driven project management.",
-  "version": "0.8.1-beta.6",
+  "description": "Agentic Project Memory | AI Project Management Software. The dedicated project management subagent for Claude Code, Codex, OpenClaw and any MCP/A2A agent — manages shared project context (goals, action items, decisions, history) via MCP tools and the A2A protocol. Local-first, free.",
+  "version": "0.8.1-beta.7",
   "author": {
-    "name": "TensorPM Team"
+    "name": "TensorPM Team",
+    "url": "https://tensorpm.com"
   },
   "homepage": "https://tensorpm.com/SKILL.md",
-  "repository": "https://github.com/Neo552/TensorPM-Releases"
+  "repository": "https://github.com/Neo552/TensorPM-Skill",
+  "compatibility": {
+    "minTensorPMVersion": "0.8.0",
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ]
+  }
 }

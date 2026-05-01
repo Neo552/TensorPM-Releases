@@ -1,25 +1,28 @@
 {
   "name": "tensorpm-marketplace",
   "owner": {
-    "name": "TensorPM Team"
+    "name": "TensorPM Team",
+    "url": "https://tensorpm.com"
   },
   "metadata": {
     "description": "Official TensorPM Claude Code plugin marketplace.",
-    "version": "0.8.1-beta.6",
+    "version": "0.8.1-beta.7",
     "pluginRoot": "./plugins"
   },
   "plugins": [
     {
       "name": "tensorpm",
       "source": "tensorpm",
-      "description": "AI-powered, context-driven project management with TensorPM via MCP tools and A2A endpoints.",
-      "version": "0.8.1-beta.6",
+      "description": "Agentic Project Memory | AI Project Management Software. The dedicated project management subagent for Claude Code, Codex, OpenClaw and any MCP/A2A agent — manages shared project context (goals, action items, decisions, history) via MCP tools and the A2A protocol. Local-first, free.",
+      "version": "0.8.1-beta.7",
       "homepage": "https://tensorpm.com/SKILL.md",
-      "repository": "https://github.com/Neo552/TensorPM-Releases",
+      "repository": "https://github.com/Neo552/TensorPM-Skill",
       "category": "project-management",
       "tags": [
         "tensorpm",
-        "project-management",
+        "agentic-project-memory",
+        "ai-project-management",
+        "project-memory",
         "mcp",
         "a2a",
         "context-driven"
