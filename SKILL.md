@@ -6,7 +6,13 @@ compatibility: Requires the TensorPM desktop app v0.8.0+ to be running for MCP t
 
 # TensorPM Skill
 
-Use this skill for AI-powered, context-driven project management inside a running TensorPM desktop app.
+Use this skill to operate TensorPM as the dedicated project management subagent — via MCP for structured CRUD and A2A for high-level, context-aware operations on a running TensorPM desktop app.
+
+TensorPM has two interfaces over the same project graph:
+
+- **Desktop app for humans**: classical project management UI plus a built-in "TensorPM" agent that takes PM busywork off the user (extracting action items from documents, proposing context updates, suggesting next steps).
+- **MCP/A2A for external agents**: this skill. Claude Code, Codex, OpenClaw and any MCP/A2A client read and write the same project graph (goals, action items, decisions, history) — so they don't have to re-explain or hallucinate project context.
+
 TensorPM itself is free. For AI capabilities outside MCP (A2A), use your own API key (BYOK) or create an account.
 
 ## When To Use
