@@ -10,11 +10,15 @@
 
 Public distribution repository for TensorPM desktop binaries, marketplace metadata, and agent docs.
 
+> **Marketplace mirror notice**: the Claude Code marketplace files (`SKILL.md`, `.claude-plugin/`, `plugins/`) are mirrored here for backward compatibility with bots and agents that already discover TensorPM via this repo.
+> The **canonical marketplace home** is [`Neo552/TensorPM-Skill`](https://github.com/Neo552/TensorPM-Skill) — new integrations should use that URL.
+
 TensorPM itself is free for local-first use.  
 For AI capabilities outside MCP (A2A), use BYOK (your own API key) or an account.
 
 - Website: [tensorpm.com](https://tensorpm.com)
 - Canonical app repository: [Neo552/TensorPM](https://github.com/Neo552/TensorPM) (private)
+- Canonical marketplace: [Neo552/TensorPM-Skill](https://github.com/Neo552/TensorPM-Skill)
 - Latest releases: [GitHub Releases](https://github.com/Neo552/TensorPM-Releases/releases)
 
 ## Why TensorPM
