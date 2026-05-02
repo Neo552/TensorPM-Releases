@@ -23,6 +23,7 @@
 | `open_billing_portal` | Open or return the billing portal URL for existing subscribers |
 | `create_support_donation_checkout` | Create a PayPal support donation URL; MCP never confirms or executes payment |
 | `submit_bug_report` | Submit a TensorPM bug report, defaulting to a support bundle without AI logs |
+| `submit_feedback` | Submit non-bug feedback (suggestion, praise, question, partnership, licensing, collaboration, other) via the website contact form |
 | `message_tensorpm_agent` | Send a blocking project-level message to the TensorPM agent via the local A2A bridge |
 
 ## Usage Boundary
@@ -33,6 +34,7 @@
 - Billing tools only create or open browser URLs. Agents must not claim payment completion from MCP responses.
 - `create_credit_topup_checkout` is available only for logged-in Pro accounts. `get_credit_balance` is available only when logged in.
 - `submit_bug_report` includes telemetry and app logs by default, excludes AI logs by default, and skips oversized support bundles before JSON submission.
+- `submit_feedback` is for non-bug input only — bugs must use `submit_bug_report` so diagnostic logs are attached. Feedback is one-way unless the caller passes an email, in which case the user receives an auto-reply confirming receipt.
 - Use `list_projects` first if project IDs are unknown.
 - Use `get_project` when you need category/person identifiers for valid action-item assignments or filters.
 
