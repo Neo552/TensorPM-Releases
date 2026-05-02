@@ -1,6 +1,6 @@
 ---
 name: tensorpm-agentic-pm
-description: 'Agentic Project Memory | AI Project Management Software. The dedicated project management subagent for Claude Code, Codex, OpenClaw and any MCP/A2A agent — manages shared project context (goals, action items, decisions, history) via MCP tools and the A2A protocol. Local-first, free.'
+description: 'Context-Driven Project Management for humans and AI agents. The dedicated project management subagent for Claude Code, Codex, OpenClaw and any MCP/A2A agent — manages shared project context (goals, action items, decisions, history) via MCP tools and the A2A protocol. Local-first, MCP-native, BYOK, free.'
 compatibility: Requires the TensorPM desktop app v0.8.0+ to be running for MCP tool access and A2A communication. Available on macOS, Windows, and Linux.
 ---
 
