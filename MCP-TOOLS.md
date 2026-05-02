@@ -14,11 +14,25 @@
 | `set_api_key` | Store AI provider API key (`openai`, `anthropic`, `google`, `mistral`) |
 | `list_workspaces` | List workspaces and active workspace ID |
 | `set_active_workspace` | Switch active workspace |
+| `get_billing_status` | Read account login state, billing capabilities, free-credit offer, and current credits when logged in |
+| `get_available_billing_plans` | List subscription plans, top-up packages, donation providers, donation amounts, and free-credit offer |
+| `open_tensorpm_account` | Return or open the browser-based TensorPM login/register/account URL; never accepts passwords |
+| `get_credit_balance` | Read current credit balance for logged-in accounts |
+| `create_subscription_checkout` | Create a Stripe subscription checkout URL for a logged-in account |
+| `create_credit_topup_checkout` | Create a credit top-up checkout URL for logged-in Pro accounts only |
+| `open_billing_portal` | Open or return the billing portal URL for existing subscribers |
+| `create_support_donation_checkout` | Create a PayPal support donation URL; MCP never confirms or executes payment |
+| `submit_bug_report` | Submit a TensorPM bug report, defaulting to a support bundle without AI logs |
+| `message_tensorpm_agent` | Send a blocking project-level message to the TensorPM agent via the local A2A bridge |
 
 ## Usage Boundary
 
 - MCP is best for direct, structured CRUD workflows.
 - Core project-context edits beyond explicit action-item fields should go through A2A `message/send`.
+- Use `message_tensorpm_agent` only as the MCP adapter for blocking A2A `message/send`; use native A2A for streaming, task cancellation, or advanced session control.
+- Billing tools only create or open browser URLs. Agents must not claim payment completion from MCP responses.
+- `create_credit_topup_checkout` is available only for logged-in Pro accounts. `get_credit_balance` is available only when logged in.
+- `submit_bug_report` includes telemetry and app logs by default, excludes AI logs by default, and skips oversized support bundles before JSON submission.
 - Use `list_projects` first if project IDs are unknown.
 - Use `get_project` when you need category/person identifiers for valid action-item assignments or filters.
 

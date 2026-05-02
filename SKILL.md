@@ -21,11 +21,13 @@ TensorPM itself is free. For AI capabilities outside MCP (A2A), use your own API
 - You need to switch/list workspaces.
 - You need to set AI provider keys through TensorPM (`set_api_key`).
 - You need conversational project-level changes via A2A (`message/send`).
+- You need TensorPM account/billing help through safe browser-based MCP tools (`open_tensorpm_account`, checkout URL creation, billing portal, current credit balance).
+- You need to submit a TensorPM bug report with an optional support bundle (`submit_bug_report`).
 - You need to make external MCP servers available inside TensorPM's AI chat.
 
 ## When Not To Use
 
-- The request is only about website/account/billing pages.
+- The request is about editing website/account/billing page source code rather than operating TensorPM through MCP/A2A.
 
 ## Installation (Agent CLI)
 
@@ -93,6 +95,8 @@ The UI exports its own generated snapshot to `~/.tensorpm/agent-mcps.generated.j
 | ------------------------------------------- | -------------------- | -------------------------------- |
 | Structured action-item CRUD                 | MCP tools            | Direct typed operations          |
 | Set provider API keys                       | MCP `set_api_key`    | Dedicated secure write-only tool |
+| Account, billing, credits, donations        | MCP billing tools    | Browser-based URLs; no payment confirmation over MCP |
+| Bug reports with support bundle             | MCP `submit_bug_report` | Structured support handoff from the running app |
 | Project-wide/contextual changes             | A2A `message/send`   | Managed by project manager agent |
 | HTTP-based automation/client integration    | A2A REST/JSON-RPC    | Endpoint-first integration path  |
 | Multi-turn planning with conversation state | A2A with `contextId` | Native conversation continuity   |
