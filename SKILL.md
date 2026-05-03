@@ -56,16 +56,16 @@ mcpServers:
 
 ## MCP vs A2A — Routing
 
-| Task                                   | Use                       |
-| -------------------------------------- | ------------------------- |
-| List/create/update action items        | MCP tools                 |
-| Switch or list workspaces              | MCP tools                 |
-| Set provider API keys                  | MCP `set_api_key`         |
-| Bug report with diagnostic bundle      | MCP `submit_bug_report`   |
-| Non-bug feedback (suggestion, partnership, licensing, collaboration) | MCP `submit_feedback`     |
-| Account, billing, credits, donations   | MCP billing tools (return browser URLs only — never confirm payment) |
-| Project-wide / contextual changes      | A2A `message/send` to the project agent |
-| Multi-turn planning with conversation state | A2A with `contextId` |
+| Task                                                                 | Use                                                                  |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| List/create/update action items                                      | MCP tools                                                            |
+| Switch or list workspaces                                            | MCP tools                                                            |
+| Set provider API keys                                                | MCP `set_api_key`                                                    |
+| Bug report with diagnostic bundle                                    | MCP `submit_bug_report`                                              |
+| Non-bug feedback (suggestion, partnership, licensing, collaboration) | MCP `submit_feedback`                                                |
+| Account, billing, credits, donations                                 | MCP billing tools (return browser URLs only — never confirm payment) |
+| Project-wide / contextual changes                                    | A2A `message/send` to the project agent                              |
+| Multi-turn planning with conversation state                          | A2A with `contextId`                                                 |
 
 Default: MCP for typed CRUD, A2A for intent and context-aware planning. Core project context (profile, budget, people, categories) can only be changed by the project agent — propose changes with `propose_updates` (human review required) or message the agent via A2A.
 

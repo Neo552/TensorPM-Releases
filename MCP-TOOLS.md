@@ -2,29 +2,29 @@
 
 ## Tool Catalog
 
-| Tool | Purpose |
-|------|---------|
-| `list_projects` | List project IDs and names |
-| `create_project` | Create project (`basic`, `fromPrompt`, `fromFile`) |
-| `get_project` | Read complete project data |
-| `list_action_items` | Query/filter action items |
-| `submit_action_items` | Create action items |
-| `update_action_items` | Update existing action items |
-| `propose_updates` | Propose project updates for human review |
-| `set_api_key` | Store AI provider API key (`openai`, `anthropic`, `google`, `mistral`) |
-| `list_workspaces` | List workspaces and active workspace ID |
-| `set_active_workspace` | Switch active workspace |
-| `get_billing_status` | Read account login state, billing capabilities, free-credit offer, and current credits when logged in |
-| `get_available_billing_plans` | List subscription plans, top-up packages, donation providers, donation amounts, and free-credit offer |
-| `open_tensorpm_account` | Return or open the browser-based TensorPM login/register/account URL; never accepts passwords |
-| `get_credit_balance` | Read current credit balance for logged-in accounts |
-| `create_subscription_checkout` | Create a Stripe subscription checkout URL for a logged-in account |
-| `create_credit_topup_checkout` | Create a credit top-up checkout URL for logged-in Pro accounts only |
-| `open_billing_portal` | Open or return the billing portal URL for existing subscribers |
-| `create_support_donation_checkout` | Create a PayPal support donation URL; MCP never confirms or executes payment |
-| `submit_bug_report` | Submit a TensorPM bug report, defaulting to a support bundle without AI logs |
-| `submit_feedback` | Submit non-bug feedback (suggestion, praise, question, partnership, licensing, collaboration, other) via the website contact form |
-| `message_tensorpm_agent` | Send a blocking project-level message to the TensorPM agent via the local A2A bridge |
+| Tool                               | Purpose                                                                                                                           |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `list_projects`                    | List project IDs and names                                                                                                        |
+| `create_project`                   | Create project (`basic`, `fromPrompt`, `fromFile`)                                                                                |
+| `get_project`                      | Read complete project data                                                                                                        |
+| `list_action_items`                | Query/filter action items                                                                                                         |
+| `submit_action_items`              | Create action items                                                                                                               |
+| `update_action_items`              | Update existing action items                                                                                                      |
+| `propose_updates`                  | Propose project updates for human review                                                                                          |
+| `set_api_key`                      | Store AI provider API key (`openai`, `anthropic`, `google`, `mistral`)                                                            |
+| `list_workspaces`                  | List workspaces and active workspace ID                                                                                           |
+| `set_active_workspace`             | Switch active workspace                                                                                                           |
+| `get_billing_status`               | Read account login state, billing capabilities, free-credit offer, and current credits when logged in                             |
+| `get_available_billing_plans`      | List subscription plans, top-up packages, donation providers, donation amounts, and free-credit offer                             |
+| `open_tensorpm_account`            | Return or open the browser-based TensorPM login/register/account URL; never accepts passwords                                     |
+| `get_credit_balance`               | Read current credit balance for logged-in accounts                                                                                |
+| `create_subscription_checkout`     | Create a Stripe subscription checkout URL for a logged-in account                                                                 |
+| `create_credit_topup_checkout`     | Create a credit top-up checkout URL for logged-in Pro accounts only                                                               |
+| `open_billing_portal`              | Open or return the billing portal URL for existing subscribers                                                                    |
+| `create_support_donation_checkout` | Create a PayPal support donation URL; MCP never confirms or executes payment                                                      |
+| `submit_bug_report`                | Submit a TensorPM bug report, defaulting to a support bundle without AI logs                                                      |
+| `submit_feedback`                  | Submit non-bug feedback (suggestion, praise, question, partnership, licensing, collaboration, other) via the website contact form |
+| `message_tensorpm_agent`           | Send a blocking project-level message to the TensorPM agent via the local A2A bridge                                              |
 
 ## Usage Boundary
 
@@ -47,5 +47,6 @@ set_api_key
 ```
 
 Behavior:
+
 - Secure storage in TensorPM.
 - Write-only; keys are not readable back.
