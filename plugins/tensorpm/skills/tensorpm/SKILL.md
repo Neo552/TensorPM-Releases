@@ -9,7 +9,7 @@ TensorPM is the project context layer: one project graph (goals, action items, d
 
 ## Install
 
-```bash
+```text
 # macOS
 brew install --cask neo552/tensorpm/tensorpm
 
@@ -17,7 +17,20 @@ brew install --cask neo552/tensorpm/tensorpm
 winget install --id Neo552.TensorPM --exact --accept-package-agreements --accept-source-agreements
 ```
 
-Direct downloads (DMG / AppImage / Setup.exe) and version pinning instructions: see `references/install.md` if present, or [TensorPM Releases](https://github.com/Neo552/TensorPM-Releases/releases/latest). Prefer `gh release list -R Neo552/TensorPM-Releases` when only beta tags exist.
+Direct downloads:
+
+```bash
+# macOS DMG
+curl -fL -o /tmp/TensorPM-macOS.dmg https://tensorpm.com/api/download/macos
+
+# Linux AppImage
+curl -fL -o ~/TensorPM.AppImage https://tensorpm.com/api/download/linux
+
+# Windows Setup.exe
+Invoke-WebRequest -Uri https://tensorpm.com/api/download/windows -OutFile $env:TEMP\TensorPM-Setup.exe
+```
+
+Use [TensorPM Releases](https://github.com/Neo552/TensorPM-Releases/releases) only for version history or explicit version pinning. Prefer `gh release list -R Neo552/TensorPM-Releases` when only beta tags exist.
 
 ## Use TensorPM in Any MCP Client
 
@@ -100,4 +113,4 @@ Standard `mcpServers` and TensorPM-native `agentMcpServers` blocks are both acce
 - [A2A API](A2A-API.md) — discovery, JSON-RPC methods, REST endpoints, examples.
 - [Action Items & Dependencies](ACTION-ITEMS.md) — schema, dependency types, payload examples.
 - [Agent MCP Clients](AGENT-MCP-CLIENTS.md) — config schema for external MCPs inside TensorPM.
-- [Releases](https://github.com/Neo552/TensorPM-Releases/releases/latest)
+- [Releases](https://github.com/Neo552/TensorPM-Releases/releases) — version history and pinning.
