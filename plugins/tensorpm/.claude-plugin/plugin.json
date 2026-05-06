@@ -1,7 +1,7 @@
 {
   "name": "tensorpm",
   "description": "Manage structured projects with long-term stable memory shared across humans and AI agents. Use this skill whenever the work needs a dedicated project manager (or project-manager agent) — including action items, kanban, sprint planning, decisions, history, and anything that benefits from persistent project context across sessions and agents. Read and write the project graph via MCP tools and the A2A protocol. Triggers: TensorPM, Context-Driven Project Management, CDPM, agentic project management, project memory, or any request to coordinate work with the local TensorPM desktop app. Local-first, MCP-native, BYOK, free. Requires TensorPM desktop app running on macOS, Windows, or Linux.",
-  "version": "1.2.0-beta.1",
+  "version": "1.2.1-beta.1",
   "author": {
     "name": "TensorPM Team",
     "url": "https://tensorpm.com"
