@@ -11,6 +11,12 @@
 | `submit_action_items`              | Create action items                                                                                                               |
 | `update_action_items`              | Update existing action items                                                                                                      |
 | `propose_updates`                  | Propose project updates for human review                                                                                          |
+| `record_decision`                  | Capture a project decision/commitment as an append-only record (source: `stakeholder_commit`, `top_down`, `agent_recommendation`, `user_directive`, `derived`) |
+| `supersede_decision`               | Atomically replace an active decision with a new one; previous record is marked `superseded` and chained via `supersedesId`       |
+| `withdraw_decision`                | Mark an active decision as withdrawn (no longer applies, but stays in the audit chain). Prefer `supersede_decision` if replacing  |
+| `list_decisions`                   | List decisions for a project, filterable by status (active/superseded/withdrawn), source, or linked entity                        |
+| `link_decision`                    | Link a decision to an action item, risk, or milestone (idempotent)                                                                |
+| `unlink_decision`                  | Remove a previously created decision link                                                                                         |
 | `set_api_key`                      | Store AI provider API key (`openai`, `anthropic`, `google`, `mistral`)                                                            |
 | `list_workspaces`                  | List workspaces and active workspace ID                                                                                           |
 | `set_active_workspace`             | Switch active workspace                                                                                                           |
@@ -37,6 +43,8 @@
 - `submit_feedback` is for non-bug input only — bugs must use `submit_bug_report` so diagnostic logs are attached. Feedback is one-way unless the caller passes an email, in which case the user receives an auto-reply confirming receipt.
 - Use `list_projects` first if project IDs are unknown.
 - Use `get_project` when you need category/person identifiers for valid action-item assignments or filters.
+- Decisions are append-only. To change a previously recorded decision, call `supersede_decision` (creates a new record + chains the old one as `superseded`); never mutate or delete a decision in place. Use `withdraw_decision` only when no replacement applies.
+- Call `list_decisions` before reasoning about a contentious or previously-debated topic so the audit trail informs your response.
 
 ## API-Key Setup Example
 

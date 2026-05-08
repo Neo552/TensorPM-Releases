@@ -34,6 +34,29 @@ Conversation continuity:
 
 - Pass `contextId` in subsequent `message/send` requests.
 
+## Agent self-scheduling
+
+The TensorPM project agent can schedule its own future runs (reminders, follow-ups, time-bound checks). External agents trigger this via `message/send` describing the future intent — there is no dedicated method, the project agent decides whether the request warrants a scheduled invocation. Scheduled runs are persisted on the project (`scheduled_invocations`) and fire at the requested time with the original prompt + full project context.
+
+```bash
+# Ask the project agent to schedule a future check-in
+curl -X POST http://localhost:37850/projects/{projectId}/a2a \
+  -H "Content-Type: application/json" \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "message/send",
+    "id": "1",
+    "params": {
+      "message": {
+        "role": "user",
+        "parts": [{"kind": "text", "text": "Remind me next Tuesday to review the Q3 budget burn-down."}]
+      }
+    }
+  }'
+```
+
+There is no MCP tool for self-scheduling — scheduling lives with the agent so it has full context when it fires.
+
 ## REST Endpoints
 
 | Method  | Endpoint                                 | Purpose                                            |

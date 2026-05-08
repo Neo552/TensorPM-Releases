@@ -72,6 +72,7 @@ mcpServers:
 | Task                                                                 | Use                                                                  |
 | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | List/create/update action items                                      | MCP tools                                                            |
+| Record / supersede / link decisions                                  | MCP decision tools (`record_decision`, `supersede_decision`, `list_decisions`, `link_decision`) |
 | Switch or list workspaces                                            | MCP tools                                                            |
 | Set provider API keys                                                | MCP `set_api_key`                                                    |
 | Bug report with diagnostic bundle                                    | MCP `submit_bug_report`                                              |
@@ -79,8 +80,11 @@ mcpServers:
 | Account, billing, credits, donations                                 | MCP billing tools (return browser URLs only — never confirm payment) |
 | Project-wide / contextual changes                                    | A2A `message/send` to the project agent                              |
 | Multi-turn planning with conversation state                          | A2A with `contextId`                                                 |
+| Schedule a future TensorPM-agent run / reminder                      | A2A `message/send` — ask the project agent to schedule itself        |
 
 Default: MCP for typed CRUD, A2A for intent and context-aware planning. Core project context (profile, budget, people, categories) can only be changed by the project agent — propose changes with `propose_updates` (human review required) or message the agent via A2A.
+
+The TensorPM project agent can also schedule its own future runs (e.g. "remind me to review the budget next Tuesday"). External agents trigger this by sending an A2A `message/send` describing the future intent — there is no direct MCP tool for self-scheduling.
 
 ## Workflow
 
