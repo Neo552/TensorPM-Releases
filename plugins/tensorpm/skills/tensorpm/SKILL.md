@@ -69,18 +69,19 @@ mcpServers:
 
 ## MCP vs A2A — Routing
 
-| Task                                                                 | Use                                                                  |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| List/create/update action items                                      | MCP tools                                                            |
-| Record / supersede / link decisions                                  | MCP decision tools (`record_decision`, `supersede_decision`, `list_decisions`, `link_decision`) |
-| Switch or list workspaces                                            | MCP tools                                                            |
-| Set provider API keys                                                | MCP `set_api_key`                                                    |
-| Bug report with diagnostic bundle                                    | MCP `submit_bug_report`                                              |
-| Non-bug feedback (suggestion, partnership, licensing, collaboration) | MCP `submit_feedback`                                                |
-| Account, billing, credits, donations                                 | MCP billing tools (return browser URLs only — never confirm payment) |
-| Project-wide / contextual changes                                    | A2A `message/send` to the project agent                              |
-| Multi-turn planning with conversation state                          | A2A with `contextId`                                                 |
-| Schedule a future TensorPM-agent run / reminder                      | A2A `message/send` — ask the project agent to schedule itself        |
+| Task                                                                 | Use                                                                                                                         |
+| -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| List/create/update action items                                      | MCP tools                                                                                                                   |
+| Read existing decisions                                              | MCP `get_project`                                                                                                           |
+| Record / supersede / withdraw / link / unlink decisions              | MCP decision write tools (`record_decision`, `supersede_decision`, `withdraw_decision`, `link_decision`, `unlink_decision`) |
+| Switch or list workspaces                                            | MCP tools                                                                                                                   |
+| Set provider API keys                                                | MCP `set_api_key`                                                                                                           |
+| Bug report with diagnostic bundle                                    | MCP `submit_bug_report`                                                                                                     |
+| Non-bug feedback (suggestion, partnership, licensing, collaboration) | MCP `submit_feedback`                                                                                                       |
+| Account, billing, credits, donations                                 | MCP billing tools (return browser URLs only — never confirm payment)                                                        |
+| Project-wide / contextual changes                                    | A2A `message/send` to the project agent                                                                                     |
+| Multi-turn planning with conversation state                          | A2A with `contextId`                                                                                                        |
+| Schedule a future TensorPM-agent run / reminder                      | A2A `message/send` — ask the project agent to schedule itself                                                               |
 
 Default: MCP for typed CRUD, A2A for intent and context-aware planning. Core project context (profile, budget, people, categories) can only be changed by the project agent — propose changes with `propose_updates` (human review required) or message the agent via A2A.
 
@@ -90,7 +91,7 @@ The TensorPM project agent can also schedule its own future runs (e.g. "remind m
 
 1. Confirm the TensorPM desktop app is running.
 2. Pick MCP or A2A from the routing table.
-3. Execute. Read back via `list_*` / `get_project` / A2A read endpoint to confirm state.
+3. Execute. Read back via `list_action_items` / `get_project` / A2A read endpoint to confirm state.
 4. Summarize what changed.
 
 ## External MCPs Inside TensorPM
