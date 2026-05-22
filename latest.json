@@ -1,0 +1,28 @@
+{
+  "tag_name": "v1.6.0-beta.1",
+  "name": "TensorPM v1.6.0-beta.1 (Beta)",
+  "published_at": "2026-05-22T15:20:08Z",
+  "prerelease": true,
+  "draft": false,
+  "body": "",
+  "assets": [
+    {
+      "name": "TensorPM-Setup.exe",
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.6.0-beta.1/TensorPM-Setup.exe",
+      "size": 257552152,
+      "download_count": 0
+    },
+    {
+      "name": "TensorPM-macOS.dmg",
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.6.0-beta.1/TensorPM-macOS.dmg",
+      "size": 322289074,
+      "download_count": 0
+    },
+    {
+      "name": "TensorPM-Linux.AppImage",
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.6.0-beta.1/TensorPM-Linux.AppImage",
+      "size": 301887078,
+      "download_count": 0
+    }
+  ]
+}
