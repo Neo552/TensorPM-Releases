@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.7.0-beta.1",
-  "name": "TensorPM v1.7.0-beta.1 (Beta)",
-  "published_at": "2026-05-25T21:40:08Z",
+  "tag_name": "v1.8.0-beta.1",
+  "name": "TensorPM v1.8.0-beta.1 (Beta)",
+  "published_at": "2026-05-29T19:12:59Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.7.0-beta.1\n\nThis beta improves the project dashboard experience, adds faster access to the\nDistiller, and refines several agent and release reliability paths.\n\n## New Features\n\n### Dashboard Chat and Distiller\n\n- The project dashboard now supports switching from the welcome view into the\n  project chat without leaving the dashboard.\n- A round Distiller shortcut is available in the dashboard controls and can also\n  be reached from chat.\n- Clicking the active Distiller shortcut returns the dashboard to the welcome\n  view.\n\n### Project Welcome Context\n\n- The dashboard welcome content now follows the app language setting more\n  consistently.\n- Stale welcome content from another language is ignored so German and English\n  project views stay aligned.\n\n## Improvements\n\n### Dashboard Experience\n\n- The welcome box no longer fades in with the previous top-to-bottom loading\n  animation.\n- Loading the dashboard welcome context no longer briefly shows cancellation or\n  generation controls when cached content is being checked.\n- The dashboard chat layout has tighter spacing, rounded controls, and clearer\n  Distiller active-state styling.\n\n### Agent Approval Flow\n\n- MCP tool approval requests now use a shared renderer store, reducing duplicate\n  subscriptions and making pending approvals more stable across UI mounts.\n- Resolved approval requests are kept out of the list even if an initial\n  hydration response arrives late.\n\n### Release and Dependency Reliability\n\n- Development and production dependencies were refreshed.\n- Windows release signing and bundled Deno release metadata received additional\n  reliability updates.\n- File copy handling and tool progress tracking were improved.\n\n## Fixes\n\n- German dashboard welcome content now stays German when TensorPM is set to\n  German.\n- The Distiller shortcut only uses the purple active color while the Distiller\n  is actually active.\n- Canceling welcome context generation now cancels the in-flight backend work\n  instead of only hiding the frontend state.\n\n## Notes\n\n- No database migration is required.\n- This is a beta release and will use the beta update channel.\n\n---\n\n## Release Info\n\n- Version: 1.7.0-beta.1\n- Release Date: May 25, 2026\n- Previous Version: 1.6.0-beta.1\n- Type: Minor Beta\n",
+  "body": "# Changelog - v1.8.0-beta.1\n\nThis beta makes the project chat and Distiller noticeably smoother to work with,\nadds pop-out guidance cards with live synchronization, and lands a large internal\nreliability pass across the app's backend communication layer.\n\n## New Features\n\n### Distiller Messages in Chat\n\n- The Distiller now speaks directly inside the project chat: its proposals and\n  status appear as dedicated chat messages instead of only living in a separate\n  panel.\n- Distillate proposals are easier to review, with a refreshed carousel and clearer\n  tool-call display showing exactly what the agent wants to change before you\n  confirm.\n- As always, nothing is applied automatically: you see the proposed updates and\n  confirm them yourself.\n\n### Pop-Out Guidance Cards\n\n- Guidance cards can now be opened in their own window, so you can keep a\n  recommendation visible while you work elsewhere in the project.\n- Card windows stay in sync with the main app in real time, so dismissing or\n  acting on a card is reflected everywhere immediately.\n\n### Smarter Intake Indicator\n\n- The intake indicator now shows clearer progress while documents and raw updates\n  are being processed, including paginated results when there is a lot to review.\n\n## Improvements\n\n### Chat Experience\n\n- Long conversations now restore your scroll position reliably when you switch\n  between chats or come back to a project, so you no longer lose your place.\n- Streaming agent responses render more smoothly and handle interruptions\n  (canceling mid-answer) more gracefully.\n- Stale messages left over from a previous chat session are now cleaned up, so the\n  conversation you see always matches the project you are in.\n- Guidance card styling and the in-chat Distiller styling were polished for better\n  readability and a more consistent look.\n\n### Agent Approval Flow\n\n- The MCP tool-approval flow continues to use a shared renderer store, making\n  pending approvals more stable when parts of the UI mount and unmount.\n\n### Demo & Onboarding Safety\n\n- The construction demo seeding script now confirms before running and validates\n  the workspace folder name, preventing accidental overwrites when setting up demo\n  projects.\n\n### Reliability (Under the Hood)\n\n- A large internal pass standardized how the app's backend handlers report errors\n  and name their communication channels. This reduces inconsistencies that could\n  cause hard-to-trace failures and makes future fixes faster and safer to ship.\n- JSON returned by AI tools is parsed more robustly, reducing rare cases where a\n  malformed response could disrupt a chat or distillation.\n- Priority handling for action items was made more consistent across the app.\n- The bundled `tmp` dependency was updated to pick up upstream fixes.\n\n## Fixes\n\n- Switching projects or chats no longer leaves behind messages from the previous\n  conversation.\n- Canceling a streaming response now stops the in-flight work cleanly instead of\n  only hiding it in the UI.\n\n## Notes\n\n- No database migration is required.\n- This is a beta release and will use the beta update channel.\n\n---\n\n## Release Info\n\n- Version: 1.8.0-beta.1\n- Release Date: May 29, 2026\n- Previous Version: 1.7.0-beta.1\n- Type: Minor Beta\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.7.0-beta.1/TensorPM-Setup.exe",
-      "size": 257607232,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.0-beta.1/TensorPM-Setup.exe",
+      "size": 257638760,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.7.0-beta.1/TensorPM-macOS.dmg",
-      "size": 322452114,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.0-beta.1/TensorPM-macOS.dmg",
+      "size": 322452049,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.7.0-beta.1/TensorPM-Linux.AppImage",
-      "size": 301776062,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.0-beta.1/TensorPM-Linux.AppImage",
+      "size": 301866744,
       "download_count": 0
     }
   ]
