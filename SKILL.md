@@ -87,6 +87,26 @@ Default: MCP for typed CRUD, A2A for intent and context-aware planning. Core pro
 
 The TensorPM project agent can also schedule its own future runs (e.g. "remind me to review the budget next Tuesday"). External agents trigger this by sending an A2A `message/send` describing the future intent — there is no direct MCP tool for self-scheduling.
 
+## Interoperability & Delegation
+
+TensorPM is bidirectional MCP (both server and client) plus A2A. As a server it exposes the project graph to any MCP/A2A agent; as a client it can connect external MCP servers into the project (see [Agent MCP Clients](AGENT-MCP-CLIENTS.md)).
+
+TensorPM can also delegate work to coding agents:
+
+- **GitHub Copilot** — invoked as a live sub-agent call from the project agent.
+- **Codex** and **Claude Code** — driven via agent assignment of action items, with roles `developer`, `architect`, or `reviewer`.
+
+## Connectors & Messengers
+
+Project participants can interact with the TensorPM agent outside the desktop app through native connectors:
+
+- **Email** — mail ingest plus a mail agent.
+- **Telegram** — a messenger connector where participants chat with the project agent.
+
+Both connectors are governed by a **per-role / per-participant permission model**: each person's project role decides what they may do — post status, complete action items, propose decisions, or read-only.
+
+Incoming messages and mails are not applied directly. They are distilled into **Action Items, Decisions, or Risks** and only mutate the project graph after **human confirmation** (the Distiller is always human-in-the-loop — there is no auto-apply path).
+
 ## Workflow
 
 1. Confirm the TensorPM desktop app is running.
