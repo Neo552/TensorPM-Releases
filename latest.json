@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.8.2-beta.1",
-  "name": "TensorPM v1.8.2-beta.1 (Beta)",
-  "published_at": "2026-06-01T13:11:09Z",
+  "tag_name": "v1.8.3-beta.1",
+  "name": "TensorPM v1.8.3-beta.1 (Beta)",
+  "published_at": "2026-06-03T17:02:15Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.8.2-beta.1\n\n## 🐛 Bug Fixes\n\n### AI replies no longer hide their answer inside a \"thinking\" block\n\nSome AI responses could be replayed in a way that conditioned the model to wrap its\noutput in an internal `<thinking>` block — occasionally leaving the visible answer\nempty or truncated. Reasoning is now reliably stripped from replayed history across\n**all** AI backends (OpenAI, Anthropic, Gemini, and the built-in proxy), so you always\nsee the actual answer.\n\n**What Changed:**\n\n- ✅ Internal `<thinking>` reasoning is removed from replayed chat history before it is sent back to the model\n- ✅ Messages that contained only reasoning no longer produce an empty AI turn\n- ✅ Gemini streaming now repairs unbalanced reasoning tags and only shows an \"interrupted\" note when the response was actually interrupted\n\n**User Benefit:**\nCleaner, more reliable AI answers — no more replies that appear blank or collapse into a hidden reasoning block.\n\n## 🏗️ Improvements\n\n### Reworked onboarding tutorial\n\nThe guided tutorial now matches the current layout: the bug-report and theme controls\nmoved into the sidebar footer, and the tour gained dedicated \"restart tutorial\" and\nsettings steps so you can find these actions where they actually live.\n\n### Sidebar remembers its compact state\n\nThe sidebar's compact/expanded preference is now persisted, so the app reopens the way\nyou left it.\n\n### Smarter dashboard chat start\n\nOpening a project dashboard now decides more intelligently between showing the daily\nwelcome context and restoring your in-session chat, so you land where you expect.\n\n### UI polish\n\n- ✅ Cleaner project summary cards (removed the accent border on the AI reasoning boxes)\n- ✅ The chat stop button now correctly labels whether it stops a response or a context refresh\n- ✅ Removed an unused header time element\n\n## 📝 Notes\n\n- This is a **beta** release and is delivered only to users on the beta update channel.\n- Includes routine dependency updates (development and production-minor groups).\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.8.2-beta.1\n- **Release Date**: 2026-06-01\n- **Previous Version**: 1.8.1-beta.1\n- **Type**: Patch (Beta) Release\n",
+  "body": "# Changelog - v1.8.3-beta.1\n\n## 🏗️ Improvements\n\n### See which context an AI answer used\n\nChat replies now show a small routing indicator that tells you whether the assistant\nloaded your **full project** or just a handful of **specific fields** for that answer.\nHover it for the details: which fields were loaded, or — when the whole project was\nused — a short reason why (open-ended question, compact project, first message in the\nchat, selective context turned off, or a fallback when picking fields wasn't possible).\n\n**User Benefit:**\nMore transparency about what the AI \"saw\" before answering, which makes it easier to\nunderstand and trust each reply.\n\n### Credit badge explains how credits are calculated\n\nThe usage badge gained an info tooltip that spells out the credit formula directly in\nthe app:\n\n- ✅ Input tokens count 1×, cached input 0.2×, output tokens 4×\n- ✅ A worked example (1,000 input + 500 output = 3,000 credits)\n- ✅ A clearer \"{used} of {total} used\" label and a tidied-up progress bar\n\n**User Benefit:**\nNo more guessing why a request cost what it did — the math is right where you see your\nbalance.\n\n## 📝 Notes\n\n- This is a **beta** release and is delivered only to users on the beta update channel.\n- Internal test infrastructure was hardened (Vitest split into separate node/jsdom\n  projects); no user-facing effect.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.8.3-beta.1\n- **Release Date**: 2026-06-03\n- **Previous Version**: 1.8.2-beta.1\n- **Type**: Patch (Beta) Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.2-beta.1/TensorPM-Setup.exe",
-      "size": 257674264,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.3-beta.1/TensorPM-Setup.exe",
+      "size": 257680776,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.2-beta.1/TensorPM-macOS.dmg",
-      "size": 322304495,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.3-beta.1/TensorPM-macOS.dmg",
+      "size": 322290650,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.2-beta.1/TensorPM-Linux.AppImage",
-      "size": 302042576,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.3-beta.1/TensorPM-Linux.AppImage",
+      "size": 302018109,
       "download_count": 0
     }
   ]
