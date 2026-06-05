@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.8.4-beta.1",
-  "name": "TensorPM v1.8.4-beta.1 (Beta)",
-  "published_at": "2026-06-05T16:33:05Z",
+  "tag_name": "v1.8.4-beta.2",
+  "name": "TensorPM v1.8.4-beta.2 (Beta)",
+  "published_at": "2026-06-05T18:06:09Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.8.4-beta.1\n\n## 🐛 Bug Fixes\n\n### Wizard feedback now reviews the latest edits\n\nWizard AI feedback now uses the content currently visible in the Wizard, even when\nthe field editor still has pending local changes.\n\n**What Changed:**\n\n- ✅ Rich-text Wizard fields flush pending edits before AI feedback starts\n- ✅ Table fields commit pending cell edits before review, step navigation, or finish\n- ✅ Empty edited values are respected instead of falling back to older saved content\n- ✅ Existing feedback is cleared when a field changes, so stale reviews are not shown\n\n**User Benefit:**\nWhen you edit a Wizard field and immediately run feedback, the review now reflects\nthe new content instead of commenting on an older project state.\n\n## 📝 Notes\n\n- This is a **beta** release and is delivered only to users on the beta update channel.\n- Full Playwright E2E was skipped for this patch release; type checking, linting,\n  unit tests, and the release AI smoke test remain part of the release gate.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.8.4-beta.1\n- **Release Date**: 2026-06-05\n- **Previous Version**: 1.8.3-beta.1\n- **Type**: Patch (Beta) Release\n",
+  "body": "# Changelog - v1.8.4-beta.2\n\n## 🏗️ Improvements\n\n### Clearer Wizard feedback layout\n\nWizard AI feedback is now shown in a cleaner card layout that keeps questions,\nsuggestions, and issues easier to scan.\n\n**What Changed:**\n\n- ✅ Feedback sections now use a consistent responsive grid\n- ✅ Multi-item feedback no longer changes section width unexpectedly\n- ✅ Reviewed Wizard steps keep their feedback when the field value did not actually change\n\n**User Benefit:**\nWizard review results stay easier to read and are less likely to disappear after\na no-op save or duplicate field flush.\n\n### Better chat tool-call summaries\n\nChat history and streaming messages now show richer, localized descriptions for\nagent tool calls.\n\n**What Changed:**\n\n- ✅ Tool-call display labels were expanded for clearer user-facing summaries\n- ✅ English and German translations were updated\n- ✅ Unit coverage was extended for the tool display formatting\n\n**User Benefit:**\nAgent activity in chat is easier to understand without opening technical details.\n\n## 📝 Notes\n\n- This is a **beta** release and is delivered only to users on the beta update channel.\n- Full Playwright E2E is intentionally skipped for this release per release instruction;\n  type checking, linting, unit tests, and the release AI smoke test remain part of the\n  release gate.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.8.4-beta.2\n- **Release Date**: 2026-06-05\n- **Previous Version**: 1.8.4-beta.1\n- **Type**: Patch (Beta) Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.4-beta.1/TensorPM-Setup.exe",
-      "size": 257665456,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.4-beta.2/TensorPM-Setup.exe",
+      "size": 257690784,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.4-beta.1/TensorPM-macOS.dmg",
-      "size": 322246486,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.4-beta.2/TensorPM-macOS.dmg",
+      "size": 322209506,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.4-beta.1/TensorPM-Linux.AppImage",
-      "size": 302018049,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.4-beta.2/TensorPM-Linux.AppImage",
+      "size": 302005777,
       "download_count": 0
     }
   ]
