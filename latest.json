@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.8.4-beta.2",
-  "name": "TensorPM v1.8.4-beta.2 (Beta)",
-  "published_at": "2026-06-05T18:06:09Z",
+  "tag_name": "v1.8.5-beta.1",
+  "name": "TensorPM v1.8.5-beta.1 (Beta)",
+  "published_at": "2026-06-06T00:04:15Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.8.4-beta.2\n\n## 🏗️ Improvements\n\n### Clearer Wizard feedback layout\n\nWizard AI feedback is now shown in a cleaner card layout that keeps questions,\nsuggestions, and issues easier to scan.\n\n**What Changed:**\n\n- ✅ Feedback sections now use a consistent responsive grid\n- ✅ Multi-item feedback no longer changes section width unexpectedly\n- ✅ Reviewed Wizard steps keep their feedback when the field value did not actually change\n\n**User Benefit:**\nWizard review results stay easier to read and are less likely to disappear after\na no-op save or duplicate field flush.\n\n### Better chat tool-call summaries\n\nChat history and streaming messages now show richer, localized descriptions for\nagent tool calls.\n\n**What Changed:**\n\n- ✅ Tool-call display labels were expanded for clearer user-facing summaries\n- ✅ English and German translations were updated\n- ✅ Unit coverage was extended for the tool display formatting\n\n**User Benefit:**\nAgent activity in chat is easier to understand without opening technical details.\n\n## 📝 Notes\n\n- This is a **beta** release and is delivered only to users on the beta update channel.\n- Full Playwright E2E is intentionally skipped for this release per release instruction;\n  type checking, linting, unit tests, and the release AI smoke test remain part of the\n  release gate.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.8.4-beta.2\n- **Release Date**: 2026-06-05\n- **Previous Version**: 1.8.4-beta.1\n- **Type**: Patch (Beta) Release\n",
+  "body": "# Changelog - v1.8.5-beta.1\n\n## 🐛 Bug Fixes\n\n### Safer project chat switching\n\nProject chat content is now kept scoped to the active project, including during\nfast project switches and background browser-agent sessions.\n\n**What Changed:**\n\n- ✅ Chat messages, streaming state, and browser-agent panels are hidden when they\n  belong to a different project than the active one\n- ✅ Recent chat lists in the dashboard now only show chats from the active project\n- ✅ Returning from browser-agent chats no longer falls back to a stale chat from\n  another project\n\n**User Benefit:**\nSwitching projects no longer risks showing chat content or active stream state\nfrom the previously selected project.\n\n### More reliable empty-project kickoff chat\n\nThe first AI kickoff message for a newly completed empty project is now persisted\nbefore the typing animation starts.\n\n**What Changed:**\n\n- ✅ Kickoff messages survive project switches during the typing animation\n- ✅ The kickoff animation no longer creates a duplicate visible message\n- ✅ Failed kickoff persistence cleans up the empty chat so TensorPM can retry later\n\n**User Benefit:**\nThe first project chat is less likely to get stuck as an empty conversation if\nyou switch away while the greeting is still appearing.\n\n## 📝 Notes\n\n- This is a **beta** release and is delivered only to users on the beta update channel.\n- Full Playwright E2E is intentionally skipped for this release per release instruction;\n  type checking, linting, unit tests, and the release AI smoke test remain part of the\n  release gate.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.8.5-beta.1\n- **Release Date**: 2026-06-06\n- **Previous Version**: 1.8.4-beta.2\n- **Type**: Patch (Beta) Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.4-beta.2/TensorPM-Setup.exe",
-      "size": 257690784,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.5-beta.1/TensorPM-Setup.exe",
+      "size": 257671128,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.4-beta.2/TensorPM-macOS.dmg",
-      "size": 322209506,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.5-beta.1/TensorPM-macOS.dmg",
+      "size": 322213245,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.4-beta.2/TensorPM-Linux.AppImage",
-      "size": 302005777,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.5-beta.1/TensorPM-Linux.AppImage",
+      "size": 302005577,
       "download_count": 0
     }
   ]
