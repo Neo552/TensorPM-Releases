@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.8.9-beta.1",
-  "name": "TensorPM v1.8.9-beta.1 (Beta)",
-  "published_at": "2026-06-07T22:42:02Z",
+  "tag_name": "v1.8.9-beta.2",
+  "name": "TensorPM v1.8.9-beta.2 (Beta)",
+  "published_at": "2026-06-07T23:08:28Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.8.9-beta.1\n\n## New Features\n\n### Automatic intake relevance check\n\nTensorPM can now pre-check incoming connector emails for spam or project\nrelevance before the Distiller starts processing them.\n\n**What Changed:**\n\n- Added an opt-in setting for automatic intake relevance checks\n- Incoming connector emails can be checked in the background with the existing\n  Distiller pre-check\n- Irrelevant or spam-like emails move to the Ignored list instead of being\n  permanently rejected\n- Ignored auto-filtered emails show the model-provided reason and can be\n  restored anytime\n- Restored emails get a durable override so they are not auto-filtered again\n\n**User Benefit:**\nThe Distiller queue stays cleaner without hiding what happened. Auto-filtered\nemails remain visible, explainable, and reversible.\n\n### Optional AI-created item tagging\n\nAI-created tasks and categories can now be tagged with `[AI]` only when the user\nexplicitly enables it.\n\n**What Changed:**\n\n- Added a setting for tagging newly AI-created tasks and categories\n- Action item generation, splitting, MCP-created tasks, A2A-created tasks, and\n  category generation now respect the setting\n- Existing titles and existing tags are not changed\n\n**User Benefit:**\nUsers who want explicit AI provenance can keep it, while users who prefer clean\ntask titles can turn the tagging off.\n\n## Bug Fixes\n\n### Safer Distiller pre-check handling\n\nPre-check verdicts no longer hard-reject intake signals.\n\n**What Changed:**\n\n- Pre-check spam and not-current-project verdicts now move signals to the\n  Ignored list\n- The full Phase 1 Distiller check can still reject when it compares the whole\n  message content\n- Signals currently claimed by the Distiller are excluded from background\n  relevance checks\n- A second claim-state check runs before storing a background verdict\n- The per-project background-check cap now leaves remaining work queued instead\n  of immediately draining the same project again\n\n**User Benefit:**\nCheap pre-checks are now reversible, while the stricter main Distiller decision\npath remains available for real rejections.\n\n## Improvements\n\n### Better intake visibility\n\nThe Ignored intake view now identifies automatically filtered emails and shows\nthe reason when available.\n\n**User Benefit:**\nUsers can quickly understand why an email was filtered and restore it if needed.\n\n## Notes\n\n- This is a beta release for users on the beta update channel.\n- The full Playwright E2E suite is intentionally skipped for this release;\n  type checks, lint, unit tests, and the release AI smoke test remain enabled.\n\n---\n\n## Release Info\n\n- **Version**: 1.8.9-beta.1\n- **Release Date**: 2026-06-07\n- **Previous Version**: 1.8.8-beta.1\n- **Type**: Patch (Beta) Release\n",
+  "body": "# Changelog - v1.8.9-beta.2\n\n## Bug Fixes\n\n### GitHub Copilot sub-agent now works in production builds\n\nThe `github_copilot` tool failed in installed builds with \"CLI server exited\nunexpectedly with code 0\".\n\n**What Changed:**\n\n- The Copilot SDK was spawning its CLI launcher via the app executable itself,\n  which started a second TensorPM instance that immediately quit on the\n  single-instance lock\n- TensorPM now resolves the Copilot CLI explicitly and passes its path to the\n  SDK, so the real CLI is spawned\n\n**User Benefit:**\nAsking the TensorPM agent about GitHub issues, PRs, commits, or code works\nagain in the installed app.\n\n## Improvements\n\n### Significantly smaller app — Copilot CLI no longer bundled\n\n**What Changed:**\n\n- The GitHub Copilot CLI (~250 MB) is no longer shipped inside the app; only\n  the lightweight SDK (<1 MB) remains\n- TensorPM now uses the Copilot CLI installed on your system (npm global\n  install or the VS Code Copilot Chat CLI) and detects it automatically\n- CLI detection now verifies the exact binary that will be used and reports a\n  clear install hint (`npm install -g @github/copilot`) when none is found\n\n**User Benefit:**\nDownloads and updates are roughly 30% smaller. If you use GitHub Copilot, keep\nyour Copilot CLI installed and signed in — TensorPM picks it up automatically.\n\n## Notes\n\n- The GitHub Copilot integration requires the standalone Copilot CLI and an\n  active GitHub Copilot subscription. Without it, the tool is simply hidden.\n\n---\n\n## Release Info\n\n- **Version**: 1.8.9-beta.2\n- **Release Date**: 2026-06-08\n- **Previous Version**: 1.8.9-beta.1\n- **Type**: Patch (Beta) Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.9-beta.1/TensorPM-Setup.exe",
-      "size": 257877696,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.9-beta.2/TensorPM-Setup.exe",
+      "size": 175609544,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.9-beta.1/TensorPM-macOS.dmg",
-      "size": 322209592,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.9-beta.2/TensorPM-macOS.dmg",
+      "size": 223964667,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.9-beta.1/TensorPM-Linux.AppImage",
-      "size": 301944853,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.9-beta.2/TensorPM-Linux.AppImage",
+      "size": 214287755,
       "download_count": 0
     }
   ]
