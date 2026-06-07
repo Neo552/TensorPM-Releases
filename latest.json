@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.8.5-beta.1",
-  "name": "TensorPM v1.8.5-beta.1 (Beta)",
-  "published_at": "2026-06-06T00:04:15Z",
+  "tag_name": "v1.8.6-beta.1",
+  "name": "TensorPM v1.8.6-beta.1 (Beta)",
+  "published_at": "2026-06-07T12:07:26Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.8.5-beta.1\n\n## 🐛 Bug Fixes\n\n### Safer project chat switching\n\nProject chat content is now kept scoped to the active project, including during\nfast project switches and background browser-agent sessions.\n\n**What Changed:**\n\n- ✅ Chat messages, streaming state, and browser-agent panels are hidden when they\n  belong to a different project than the active one\n- ✅ Recent chat lists in the dashboard now only show chats from the active project\n- ✅ Returning from browser-agent chats no longer falls back to a stale chat from\n  another project\n\n**User Benefit:**\nSwitching projects no longer risks showing chat content or active stream state\nfrom the previously selected project.\n\n### More reliable empty-project kickoff chat\n\nThe first AI kickoff message for a newly completed empty project is now persisted\nbefore the typing animation starts.\n\n**What Changed:**\n\n- ✅ Kickoff messages survive project switches during the typing animation\n- ✅ The kickoff animation no longer creates a duplicate visible message\n- ✅ Failed kickoff persistence cleans up the empty chat so TensorPM can retry later\n\n**User Benefit:**\nThe first project chat is less likely to get stuck as an empty conversation if\nyou switch away while the greeting is still appearing.\n\n## 📝 Notes\n\n- This is a **beta** release and is delivered only to users on the beta update channel.\n- Full Playwright E2E is intentionally skipped for this release per release instruction;\n  type checking, linting, unit tests, and the release AI smoke test remain part of the\n  release gate.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.8.5-beta.1\n- **Release Date**: 2026-06-06\n- **Previous Version**: 1.8.4-beta.2\n- **Type**: Patch (Beta) Release\n",
+  "body": "# Changelog - v1.8.6-beta.1\n\n## 🐛 Bug Fixes\n\n### More accurate API key validation states\n\nTensorPM now distinguishes between invalid API keys and keys that cannot be\nchecked right now because the provider is unavailable or rate-limited.\n\n**What Changed:**\n\n- ✅ Brave Search rate limits are shown as a temporary validation state instead\n  of marking the key invalid\n- ✅ Unknown validation results are stored safely so old valid or invalid states\n  do not leak into backend availability checks\n- ✅ Replacing an API key clears stale validation timestamps before the new key\n  is checked\n\n**User Benefit:**\nValid keys are less likely to be rejected just because a provider quota or\nnetwork check failed at the wrong moment.\n\n### Smoother streaming chat updates\n\nStreaming markdown output now keeps its rendered tail stable while TensorPM\nmoves between answer, tool-call, and final-response phases.\n\n**What Changed:**\n\n- ✅ The streaming response no longer remounts during tool phase transitions\n- ✅ Tail reveal behavior is covered by focused regression tests\n- ✅ Tool-call progress can update without disrupting visible response text\n\n**User Benefit:**\nAI answers feel steadier while TensorPM is using tools or preparing the final\nresponse.\n\n## 🏗️ Improvements\n\n### Clearer update restart flow\n\nThe in-app update UI now gives better feedback while TensorPM prepares a restart\nafter an update is installed.\n\n**What Changed:**\n\n- ✅ Restart actions are locked while an update restart is already in progress\n- ✅ Update notifications show clearer progress and disabled states\n- ✅ Browser-agent shutdown handling is more robust during app lifecycle changes\n\n**User Benefit:**\nUpdating TensorPM is less confusing and less likely to trigger duplicate restart\nactions.\n\n## 📝 Notes\n\n- This is a **beta** release and is delivered only to users on the beta update\n  channel.\n- This release includes full quality gates, including the full Playwright E2E\n  release suite.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.8.6-beta.1\n- **Release Date**: 2026-06-07\n- **Previous Version**: 1.8.5-beta.1\n- **Type**: Patch (Beta) Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.5-beta.1/TensorPM-Setup.exe",
-      "size": 257671128,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.6-beta.1/TensorPM-Setup.exe",
+      "size": 257690488,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.5-beta.1/TensorPM-macOS.dmg",
-      "size": 322213245,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.6-beta.1/TensorPM-macOS.dmg",
+      "size": 322209747,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.5-beta.1/TensorPM-Linux.AppImage",
-      "size": 302005577,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.6-beta.1/TensorPM-Linux.AppImage",
+      "size": 302005710,
       "download_count": 0
     }
   ]
