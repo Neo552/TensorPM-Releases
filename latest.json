@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.8.8-beta.1",
-  "name": "TensorPM v1.8.8-beta.1 (Beta)",
-  "published_at": "2026-06-07T20:03:34Z",
+  "tag_name": "v1.8.9-beta.1",
+  "name": "TensorPM v1.8.9-beta.1 (Beta)",
+  "published_at": "2026-06-07T22:42:02Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.8.8-beta.1\n\n## New Features\n\n### Sent email search for the mail agent\n\nTensorPM can now import and search sent emails from connected IMAP mailboxes,\nnot just received inbox messages.\n\n**What Changed:**\n\n- Added local mailbox and direction metadata for email messages\n- Sync now imports INBOX and the detected Sent mailbox when available\n- The mail agent can search sent, received, or all messages with an explicit\n  direction filter\n- Sent messages are excluded from pending intake so outgoing mail does not show\n  up as work to process\n\n**User Benefit:**\nYou can ask TensorPM about messages you sent, not only messages you received.\nThat makes mail-based project context more complete and avoids confusing sent\nmail with incoming tasks.\n\n### Browser agent steering from the main chat\n\nThe main agent can now steer an active browser-agent session while it is running\nin its own parallel chat.\n\n**What Changed:**\n\n- Added the `steer_browser_agent_session` tool for follow-up instructions\n- Browser-agent session availability now respects the active chat context\n- Tool names and user-facing labels were updated for the new steering flow\n\n**User Benefit:**\nYou can keep one main conversation active while the browser agent researches in\nparallel, then redirect it when new constraints or follow-up questions come up.\n\n## Improvements\n\n### Richer browser-agent handoff output\n\nBrowser-agent runs now save structured extraction output and artifacts under a\nTensorPM-managed project folder.\n\n**What Changed:**\n\n- Browser runs write structured extraction data such as summaries, key points,\n  links, tables, forms, and artifacts\n- Completion reports include extracted content directly instead of only\n  pointing at screenshots or saved files\n- Local browser-agent run artifacts are stored under `.tensorpm` and filtered\n  out of normal project intake\n- Browser-agent artifact path generation now uses a shared helper across manual\n  and agent-spawned sessions\n\n**User Benefit:**\nBrowser-agent results are easier to review and reuse because the important\ncontent is returned in the chat, while supporting files stay organized in the\nproject folder.\n\n## Notes\n\n- This is a beta release for users on the beta update channel.\n- The full Playwright E2E suite is intentionally skipped for this release;\n  type checks, lint, unit tests, and the release AI smoke test remain enabled.\n\n---\n\n## Release Info\n\n- **Version**: 1.8.8-beta.1\n- **Release Date**: 2026-06-07\n- **Previous Version**: 1.8.7-beta.1\n- **Type**: Patch (Beta) Release\n",
+  "body": "# Changelog - v1.8.9-beta.1\n\n## New Features\n\n### Automatic intake relevance check\n\nTensorPM can now pre-check incoming connector emails for spam or project\nrelevance before the Distiller starts processing them.\n\n**What Changed:**\n\n- Added an opt-in setting for automatic intake relevance checks\n- Incoming connector emails can be checked in the background with the existing\n  Distiller pre-check\n- Irrelevant or spam-like emails move to the Ignored list instead of being\n  permanently rejected\n- Ignored auto-filtered emails show the model-provided reason and can be\n  restored anytime\n- Restored emails get a durable override so they are not auto-filtered again\n\n**User Benefit:**\nThe Distiller queue stays cleaner without hiding what happened. Auto-filtered\nemails remain visible, explainable, and reversible.\n\n### Optional AI-created item tagging\n\nAI-created tasks and categories can now be tagged with `[AI]` only when the user\nexplicitly enables it.\n\n**What Changed:**\n\n- Added a setting for tagging newly AI-created tasks and categories\n- Action item generation, splitting, MCP-created tasks, A2A-created tasks, and\n  category generation now respect the setting\n- Existing titles and existing tags are not changed\n\n**User Benefit:**\nUsers who want explicit AI provenance can keep it, while users who prefer clean\ntask titles can turn the tagging off.\n\n## Bug Fixes\n\n### Safer Distiller pre-check handling\n\nPre-check verdicts no longer hard-reject intake signals.\n\n**What Changed:**\n\n- Pre-check spam and not-current-project verdicts now move signals to the\n  Ignored list\n- The full Phase 1 Distiller check can still reject when it compares the whole\n  message content\n- Signals currently claimed by the Distiller are excluded from background\n  relevance checks\n- A second claim-state check runs before storing a background verdict\n- The per-project background-check cap now leaves remaining work queued instead\n  of immediately draining the same project again\n\n**User Benefit:**\nCheap pre-checks are now reversible, while the stricter main Distiller decision\npath remains available for real rejections.\n\n## Improvements\n\n### Better intake visibility\n\nThe Ignored intake view now identifies automatically filtered emails and shows\nthe reason when available.\n\n**User Benefit:**\nUsers can quickly understand why an email was filtered and restore it if needed.\n\n## Notes\n\n- This is a beta release for users on the beta update channel.\n- The full Playwright E2E suite is intentionally skipped for this release;\n  type checks, lint, unit tests, and the release AI smoke test remain enabled.\n\n---\n\n## Release Info\n\n- **Version**: 1.8.9-beta.1\n- **Release Date**: 2026-06-07\n- **Previous Version**: 1.8.8-beta.1\n- **Type**: Patch (Beta) Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.8-beta.1/TensorPM-Setup.exe",
-      "size": 257855016,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.9-beta.1/TensorPM-Setup.exe",
+      "size": 257877696,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.8-beta.1/TensorPM-macOS.dmg",
-      "size": 322219224,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.9-beta.1/TensorPM-macOS.dmg",
+      "size": 322209592,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.8-beta.1/TensorPM-Linux.AppImage",
-      "size": 301964221,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.9-beta.1/TensorPM-Linux.AppImage",
+      "size": 301944853,
       "download_count": 0
     }
   ]
