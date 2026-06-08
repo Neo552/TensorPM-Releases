@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.8.9-beta.2",
-  "name": "TensorPM v1.8.9-beta.2 (Beta)",
-  "published_at": "2026-06-07T23:08:28Z",
+  "tag_name": "v1.8.9-beta.3",
+  "name": "TensorPM v1.8.9-beta.3 (Beta)",
+  "published_at": "2026-06-08T00:08:54Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.8.9-beta.2\n\n## Bug Fixes\n\n### GitHub Copilot sub-agent now works in production builds\n\nThe `github_copilot` tool failed in installed builds with \"CLI server exited\nunexpectedly with code 0\".\n\n**What Changed:**\n\n- The Copilot SDK was spawning its CLI launcher via the app executable itself,\n  which started a second TensorPM instance that immediately quit on the\n  single-instance lock\n- TensorPM now resolves the Copilot CLI explicitly and passes its path to the\n  SDK, so the real CLI is spawned\n\n**User Benefit:**\nAsking the TensorPM agent about GitHub issues, PRs, commits, or code works\nagain in the installed app.\n\n## Improvements\n\n### Significantly smaller app — Copilot CLI no longer bundled\n\n**What Changed:**\n\n- The GitHub Copilot CLI (~250 MB) is no longer shipped inside the app; only\n  the lightweight SDK (<1 MB) remains\n- TensorPM now uses the Copilot CLI installed on your system (npm global\n  install or the VS Code Copilot Chat CLI) and detects it automatically\n- CLI detection now verifies the exact binary that will be used and reports a\n  clear install hint (`npm install -g @github/copilot`) when none is found\n\n**User Benefit:**\nDownloads and updates are roughly 30% smaller. If you use GitHub Copilot, keep\nyour Copilot CLI installed and signed in — TensorPM picks it up automatically.\n\n## Notes\n\n- The GitHub Copilot integration requires the standalone Copilot CLI and an\n  active GitHub Copilot subscription. Without it, the tool is simply hidden.\n\n---\n\n## Release Info\n\n- **Version**: 1.8.9-beta.2\n- **Release Date**: 2026-06-08\n- **Previous Version**: 1.8.9-beta.1\n- **Type**: Patch (Beta) Release\n",
+  "body": "# Changelog - v1.8.9-beta.3\n\n## Bug Fixes\n\n### App failed to start in v1.8.9-beta.2\n\nv1.8.9-beta.2 crashed on launch with an \"Uncaught Exception\" module error and\nhas been pulled from distribution.\n\n**What Changed:**\n\n- Fixed a missing file extension in an internal import that made the packaged\n  app fail to load (`ERR_MODULE_NOT_FOUND`)\n- Fixed the build verification step so it reliably catches this class of error\n  before a release ships\n\n**User Benefit:**\nThe app starts again. All changes from v1.8.9-beta.2 (GitHub Copilot fix and\n~30% smaller download) are included in this release.\n\n## Notes\n\n- If you installed v1.8.9-beta.2 and the app does not start, install this\n  version over it — no data is affected.\n\n---\n\n## Release Info\n\n- **Version**: 1.8.9-beta.3\n- **Release Date**: 2026-06-08\n- **Previous Version**: 1.8.9-beta.2 (pulled)\n- **Type**: Patch (Beta) Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.9-beta.2/TensorPM-Setup.exe",
-      "size": 175609544,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.9-beta.3/TensorPM-Setup.exe",
+      "size": 175615296,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.9-beta.2/TensorPM-macOS.dmg",
-      "size": 223964667,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.9-beta.3/TensorPM-macOS.dmg",
+      "size": 223964259,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.9-beta.2/TensorPM-Linux.AppImage",
-      "size": 214287755,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.9-beta.3/TensorPM-Linux.AppImage",
+      "size": 214287707,
       "download_count": 0
     }
   ]
