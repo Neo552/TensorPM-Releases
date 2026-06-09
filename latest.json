@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.8.12-beta.1",
-  "name": "TensorPM v1.8.12-beta.1 (Beta)",
-  "published_at": "2026-06-09T13:12:23Z",
+  "tag_name": "v1.8.13-beta.1",
+  "name": "TensorPM v1.8.13-beta.1 (Beta)",
+  "published_at": "2026-06-09T16:16:51Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.8.12-beta.1\n\n## New Features\n\n### Create a project from a prompt and documents together\n\nThe new-project wizard can now seed a project from a written prompt **and**\nattached documents in one combined pass, instead of choosing one or the other.\n\n**What Changed:**\n\n- Added a creation-mode selector in the wizard so you can combine a prompt with\n  uploaded documents as a single generation input\n- Generation parameters now carry both the prompt text and the document set\n  through to the project builder\n- Tightened the relevance pre-check so combined inputs are scoped correctly\n\n**User Benefit:**\nKick off a new project with everything you already have, your own description\nplus the source documents, and let TensorPM distill them into a project graph\nin one step.\n\n## Improvements\n\n### Clearer Trail change history\n\nThe Trail now shows status indicators and renders action-item changes as a\nstructured text diff instead of a flat dump.\n\n**What Changed:**\n\n- Added status indicators to Trail entries\n- New structured renderer for action-item field changes with readable\n  before/after text-diff formatting\n\n**User Benefit:**\nIt is easier to see at a glance what changed in your project and how, especially\nfor action-item edits.\n\n### Faster, cheaper proxy AI in longer conversations\n\nWhen you use TensorPM's hosted AI (Pro/Cloud proxy path), the stable project\ncontext is now reused across turns of the same chat via provider-side prompt\ncaching.\n\n**What Changed:**\n\n- The desktop app forwards a stable per-session cache key to the proxy so the\n  large system + project-graph prefix can be reused across turns\n- Cached input is billed at a fraction of fresh input, so multi-turn chats cost\n  fewer AI credits and respond faster\n\n**User Benefit:**\nBack-and-forth conversations on the hosted AI feel snappier and consume fewer\ncredits, because the project context no longer has to be re-read from scratch\nevery turn.\n\n## Notes\n\n- No database migration is included.\n- This release command intentionally skips full Playwright E2E via `--skip-e2e`,\n  consistent with prior beta releases. TypeScript, ESLint, unit tests, and the\n  real-AI release smoke test still run.\n- Internal: added real SQLite integration tests for the intake\n  relevance-check service.\n\n---\n\n## Release Info\n\n- **Version**: 1.8.12-beta.1\n- **Previous Version**: 1.8.11-beta.1\n- **Type**: Patch (Beta) Release\n",
+  "body": "# Changelog - v1.8.13-beta.1\n\n## Bug Fixes\n\n### Project kickoff greeting no longer appears twice\n\nWhen you opened a freshly created project, the assistant's welcome message could\nbriefly show up a second time while it was still being typed out, and then\ndisappear.\n\n**What Changed:**\n\n- The chat now shows a single, smoothly streamed greeting — the saved copy is\n  never rendered in the list while the same message is still being typed\n- The greeting opens with a short \"thinking\" indicator before it types, just\n  like a normal AI reply\n\n**User Benefit:**\nThe first thing you see in a new project is clean: one greeting, typed out once,\nwith no flicker or duplicate line.\n\n## Improvements\n\n### Clearer Mistral model options\n\nUpdated the Mistral model limits and descriptions so the available models read\nmore clearly when you pick a provider.\n\n---\n\n## Release Info\n\n- **Version**: 1.8.13-beta.1\n- **Release Date**: 2026-06-09\n- **Previous Version**: 1.8.12-beta.1\n- **Type**: Patch (Beta) Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.12-beta.1/TensorPM-Setup.exe",
-      "size": 173308584,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.13-beta.1/TensorPM-Setup.exe",
+      "size": 173307040,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.12-beta.1/TensorPM-macOS.dmg",
-      "size": 223794056,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.13-beta.1/TensorPM-macOS.dmg",
+      "size": 223799559,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.12-beta.1/TensorPM-Linux.AppImage",
-      "size": 214075385,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.13-beta.1/TensorPM-Linux.AppImage",
+      "size": 214075416,
       "download_count": 0
     }
   ]
