@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.8.13-beta.1",
-  "name": "TensorPM v1.8.13-beta.1 (Beta)",
-  "published_at": "2026-06-09T16:16:51Z",
+  "tag_name": "v1.8.14-beta.1",
+  "name": "TensorPM v1.8.14-beta.1 (Beta)",
+  "published_at": "2026-06-10T00:28:07Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.8.13-beta.1\n\n## Bug Fixes\n\n### Project kickoff greeting no longer appears twice\n\nWhen you opened a freshly created project, the assistant's welcome message could\nbriefly show up a second time while it was still being typed out, and then\ndisappear.\n\n**What Changed:**\n\n- The chat now shows a single, smoothly streamed greeting — the saved copy is\n  never rendered in the list while the same message is still being typed\n- The greeting opens with a short \"thinking\" indicator before it types, just\n  like a normal AI reply\n\n**User Benefit:**\nThe first thing you see in a new project is clean: one greeting, typed out once,\nwith no flicker or duplicate line.\n\n## Improvements\n\n### Clearer Mistral model options\n\nUpdated the Mistral model limits and descriptions so the available models read\nmore clearly when you pick a provider.\n\n---\n\n## Release Info\n\n- **Version**: 1.8.13-beta.1\n- **Release Date**: 2026-06-09\n- **Previous Version**: 1.8.12-beta.1\n- **Type**: Patch (Beta) Release\n",
+  "body": "# Changelog - v1.8.14-beta.1\n\n## Bug Fixes\n\n### Rejected file uploads no longer clog cloud sync\n\nWhen the sync server turned down a file upload (for example because of a\npermission or validation problem), the app kept retrying the same upload in\nthe background, which could hold up everything else waiting in the queue.\n\n**What Changed:**\n\n- The app now understands the server's answer and treats \"this upload was\n  rejected\" differently from \"the connection hiccuped\"\n- Rejected files are set aside instead of retried forever, so the rest of\n  your changes keep syncing\n- Together with a server-side fix, two collaborators can now attach an\n  identical document without their uploads colliding\n\n**User Benefit:**\nCloud sync keeps flowing even when a single file can't be accepted — no more\nsilently stuck upload queues.\n\n## Improvements\n\n### Cleaner filenames for generated documents\n\nFiles produced by the assistant's code execution (presentations, exports and\nother artifacts) now get short, human-readable names that match what you see\non disk — no more timestamp tails.\n\n### Sturdier tool calls from connected agents\n\nThe MCP tool schemas were hardened and action item statuses sent by external\nagents (Claude Code, Codex and friends) are now normalized automatically.\nSlightly off-spec requests get coerced into the right shape instead of being\nrejected.\n\n### Smoother chat rendering\n\nStreamed AI replies render their final lines more smoothly, and rapid project\nupdates from agents are bundled so the project view refreshes once instead of\nflickering through every intermediate step.\n\n### Dependency updates\n\nUpdated third-party dependencies (including security bumps for shell-quote\nand concurrently).\n\n---\n\n## Release Info\n\n- **Version**: 1.8.14-beta.1\n- **Release Date**: 2026-06-10\n- **Previous Version**: 1.8.13-beta.1\n- **Type**: Patch (Beta) Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.13-beta.1/TensorPM-Setup.exe",
-      "size": 173307040,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.14-beta.1/TensorPM-Setup.exe",
+      "size": 173306816,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.13-beta.1/TensorPM-macOS.dmg",
-      "size": 223799559,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.14-beta.1/TensorPM-macOS.dmg",
+      "size": 223852423,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.13-beta.1/TensorPM-Linux.AppImage",
-      "size": 214075416,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.8.14-beta.1/TensorPM-Linux.AppImage",
+      "size": 214083032,
       "download_count": 0
     }
   ]
