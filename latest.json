@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.9.0-beta.1",
-  "name": "TensorPM v1.9.0-beta.1 (Beta)",
-  "published_at": "2026-06-10T21:41:00Z",
+  "tag_name": "v1.9.1-beta.1",
+  "name": "TensorPM v1.9.1-beta.1 (Beta)",
+  "published_at": "2026-06-12T07:34:54Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.9.0-beta.1\n\n## New Features\n\n### Archive completed projects\n\nProjects can now be archived from the project browser. An archived project\nstays fully readable — every action item, decision and document remains in\nplace — but nothing can change it anymore.\n\n**What Changed:**\n\n- Archived projects become read-only end to end: the editor surfaces are\n  dimmed, write attempts are blocked at the database level, and the AI\n  assistant switches to a read-only chat mode instead of promising edits it\n  cannot make\n- Connected agents (Claude Code, Codex and friends) see archived projects\n  marked as such; write tools are withheld and MCP write calls answer with a\n  clear \"project archived\" response\n- Email intake skips archived projects, so old projects no longer collect\n  new inbox items\n- Search includes the archive: the project browser auto-expands archived\n  matches and global search labels archived results\n- Unarchiving instantly restores full editing — the assistant picks up the\n  active state right away\n\n**User Benefit:**\nFinished work gets out of the way without losing anything: the full project\nhistory stays readable and searchable, protected from accidental edits.\n\n### Business tier support\n\nThis release teaches the desktop app the new Business plan — pricing per\nactive project with unlimited members and AI credits pooled across the whole\norganization (contact sales to get set up).\n\n**What Changed:**\n\n- Business workspaces show a BUSINESS badge, and members draw from the\n  organization's shared credit pool — a \"Team Pool\" chip on the usage badge\n  shows when pooled billing is active\n- The project browser shows a proactive \"7 of 10 active projects\" badge for\n  Business accounts, so the plan limit is visible before it is reached\n- If the active-project limit is hit, the server declines the new activation\n  and the app handles it gracefully: the project is kept safe in a local\n  workspace with all its content — nothing is ever deleted — and a toast\n  explains what happened\n- A new 10M credit top-up pack (Business only) is available alongside the\n  existing packs\n- Plan-aware polish throughout: upgrade notifications name the actual plan,\n  the People view labels Business members correctly, and trial Business\n  accounts show their badge\n\n**User Benefit:**\nTeams can run TensorPM org-wide with one pooled credit budget and clear,\nnon-destructive limit handling — your data is never at risk when a plan\nlimit is reached.\n\n## Improvements\n\n### Quicker category creation in lists\n\nPressing Enter in the new-item input now confirms the highlighted category\ndirectly — no extra click needed.\n\n### Internal test coverage\n\nAdded unit tests for the propose-updates, reorder and timer executors that\nback the assistant's project edits.\n\n---\n\n## Release Info\n\n- **Version**: 1.9.0-beta.1\n- **Release Date**: 2026-06-10\n- **Previous Version**: 1.8.14-beta.1\n- **Type**: Minor (Beta) Release\n",
+  "body": "# Changelog - v1.9.1-beta.1\n\n## New Features\n\n### Images go straight to the AI\n\nPictures you attach in chat are now sent to the AI as actual images — not\njust a text description. Vision-capable models can read screenshots, photos\nof plans, whiteboards and documents directly.\n\n**What Changed:**\n\n- Images attached or pasted into the project chat are delivered natively to\n  every vision-capable provider, including the built-in TensorPM AI\n- Images attached to your messages are shown right in the conversation\n- Email attachments and Telegram photos arriving through intake are stored\n  with the message and reach the AI as real images too\n- Models without vision keep working exactly as before — they receive the\n  familiar text description as a fallback\n\n**User Benefit:**\nShow the AI what you see: a marked-up site plan, an error screenshot or a\nphotographed protocol — no retyping, no detail lost in translation.\n\n### Description column in task lists\n\nThe list view can now show each task's description as its own column.\n\n**What Changed:**\n\n- New optional \"Description\" column in the action list (enable it via the\n  column settings)\n- Descriptions are editable directly in the row — click to edit, with full\n  rich-text support\n- Filtering and sorting by description text is supported, so long lists can\n  be narrowed by what tasks actually say\n\n**User Benefit:**\nScan and groom large task lists without opening every item — the context\nyou need is right there in the list.\n\n### Select multiple projects at once\n\nThe project browser now supports multi-selection.\n\n**What Changed:**\n\n- Ctrl/Cmd-click adds or removes projects from the selection\n- Archive, unarchive and delete now apply to the whole selection, with\n  clear bulk wording in tooltips and confirmation dialogs\n\n**User Benefit:**\nCleaning up after a busy quarter takes seconds: select the finished\nprojects and archive them in one go.\n\n## Improvements\n\n### More reliable project insights\n\n- Daily project metrics now use your local calendar day consistently, so\n  charts no longer shift entries across midnight in some timezones\n- Metric history updates in place, keeping synced workspaces stable instead\n  of rewriting rows on every recalculation\n- Status-over-time lookups got a dedicated database index, making the\n  insights view snappier on large projects\n\n### Visual polish\n\n- Rich-text content (descriptions, notes, chat) renders with consistent\n  styling across the app\n- Chart tooltips in Project Insights are easier to read\n\n### Internal test coverage\n\n- New integration tests for the demo intake seed against the real database\n  schema\n- New wire-format tests covering image delivery for every AI provider SDK\n- End-to-end tests for the new description column and CSS scoping probes\n\n---\n\n## Release Info\n\n- **Version**: 1.9.1-beta.1\n- **Release Date**: 2026-06-12\n- **Previous Version**: 1.9.0-beta.1\n- **Type**: Patch (Beta) Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.9.0-beta.1/TensorPM-Setup.exe",
-      "size": 173325256,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.9.1-beta.1/TensorPM-Setup.exe",
+      "size": 173351296,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.9.0-beta.1/TensorPM-macOS.dmg",
-      "size": 223756701,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.9.1-beta.1/TensorPM-macOS.dmg",
+      "size": 223839449,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.9.0-beta.1/TensorPM-Linux.AppImage",
-      "size": 214091692,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.9.1-beta.1/TensorPM-Linux.AppImage",
+      "size": 214050033,
       "download_count": 0
     }
   ]
