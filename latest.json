@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.11.0-beta.1",
-  "name": "TensorPM v1.11.0-beta.1 (Beta)",
-  "published_at": "2026-06-17T09:42:59Z",
+  "tag_name": "v1.11.0-beta.5",
+  "name": "TensorPM v1.11.0-beta.5 (Beta)",
+  "published_at": "2026-06-17T15:29:20Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.11.0-beta.1\n\n## New Features\n\n### Smarter action-item generation\n\nAction-item generation now treats what you give it as intent and constraints,\nand works out the concrete plan itself.\n\n**What Changed:**\n\n- Your instructions are interpreted as goals, focus, and limits — not as a\n  finished list to copy\n- The generator derives the actual items, owners, start and due dates, and\n  priorities from the project context\n- The generator no longer needs you to restate people, categories, milestones,\n  or timeframe that the project already contains\n- The TensorPM agent can now include decisions in structured review proposals\n\n**User Benefit:**\nAsk for a plan in a sentence or two and get a well-formed set of action items\nwith sensible owners, dates, and priorities, instead of having to spell out\nevery item yourself.\n\n## Improvements\n\n### More resilient AI runs\n\n- A safer default limit for AI tool loops reduces the chance of runs getting\n  stuck or going in circles\n- A global minimum timeout floor prevents AI operations from being cut off too\n  early\n- Stream timeouts were extended so slower models have time to respond\n- The agent gives clearer feedback when it generates fewer action items than\n  requested\n- People are assigned consistently by name across the different agent paths\n\n**User Benefit:**\nLonger and more complex AI tasks complete more reliably, especially with slower\nmodels, and the agent is clearer about what it did.\n\n### More robust project creation from prompts and documents\n\n- Generated project fields (success criteria, technologies and methods,\n  milestones, risks) are validated and normalized before they are applied\n- Model-generated HTML is handled more leniently: unclosed tags are logged as a\n  warning instead of failing the whole generation\n\n**User Benefit:**\nCreating a project from a prompt or documents succeeds more often, even when the\nmodel returns slightly malformed content.\n\n## Bug Fixes\n\n- Fixed the distiller review flow so a failed proposal card is no longer shown as\n  an actionable review item after the agent repairs and re-presents it\n- Fixed background distiller chats being marked as needing review when only a\n  failed proposal existed and no successful card was produced\n- Fixed action-item prompts so existing action items are no longer duplicated in\n  newly generated items\n\n## Security and Dependencies\n\n- Security-relevant dependency updates: ws, tar, form-data, hono, ip-address,\n  express-rate-limit, and yaml\n- Runtime and tooling updates: Electron 40.10.3, TipTap 3.26.1, DOMPurify\n  3.4.10, sharp 0.35.1, esbuild, Prettier, and typescript-eslint\n- GitHub Actions workflow dependencies updated\n\n## Internal Quality\n\n- Added tests for the new project field validation and normalization logic\n- Added tests for action-item prompt generation and de-duplication behavior\n- Added coverage for action-item shortfall reporting and person-reference\n  resolution\n- Added tests confirming failed distiller proposals are excluded from review\n  cards and from the unread/needs-attention signal\n- Added integration tests for local AI provider error handling and retries\n\n## Notes\n\n- This is a minor beta release that builds on v1.10.0-beta.2.\n- This release does not include a database migration.\n- Tokens, project data, and project context continue to be stored locally on the\n  device.\n\n---\n\n## Release Info\n\n- **Version**: 1.11.0-beta.1\n- **Release Date**: 2026-06-17\n- **Previous Version**: 1.10.0-beta.2\n- **Type**: Minor (Beta) Release\n",
+  "body": "# Changelog - v1.11.0-beta.5\n\n## 🐛 Bug Fixes\n\n### Windows install and startup fully fixed\n\nThis release resolves the Windows-only installation and startup problems end to end.\n\n**What was broken:**\n\n- The Windows installer (`TensorPM-Setup.exe`) could close partway through installation, leaving an empty folder and an app that would not start.\n- After installing, the app could crash on startup on English (and other non-German) Windows — the window never appeared.\n- The Microsoft Store-style package (`.appx` / App Installer) failed to install due to a version mismatch.\n\n**What's fixed:**\n\n- ✅ The Setup.exe installer unpacks reliably and the app starts after installation (the Windows package no longer bundles unused binaries for other platforms, which broke extraction).\n- ✅ The app starts correctly on English and other non-German Windows — the bundled language resources were incomplete and are now included.\n- ✅ The App Installer (`.appinstaller`) matches the package exactly, so installs and updates go through.\n- ✅ Hardware (GPU) acceleration stays enabled on Windows.\n\n**User Benefit:**\nWindows users can install and launch TensorPM dependably, regardless of system language, across direct download and the Microsoft Store-style package — with a smaller installer than before.\n\n## 📝 Notes\n\n- macOS and Linux builds are unaffected by these changes.\n- Every Windows release build now runs an automated installer smoke test (install + launch across NSIS and MSIX) so packaging and startup regressions are caught before publishing.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.11.0-beta.5\n- **Release Date**: 2026-06-17\n- **Previous Version**: 1.11.0-beta.1\n- **Type**: Patch (Beta)\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.0-beta.1/TensorPM-Setup.exe",
-      "size": 183145512,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.0-beta.5/TensorPM-Setup.exe",
+      "size": 181289744,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.0-beta.1/TensorPM-macOS.dmg",
-      "size": 240727771,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.0-beta.5/TensorPM-macOS.dmg",
+      "size": 240730945,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.0-beta.1/TensorPM-Linux.AppImage",
-      "size": 238867983,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.0-beta.5/TensorPM-Linux.AppImage",
+      "size": 239007416,
       "download_count": 0
     }
   ]
