@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.11.0-beta.5",
-  "name": "TensorPM v1.11.0-beta.5 (Beta)",
-  "published_at": "2026-06-17T15:29:20Z",
+  "tag_name": "v1.11.1-beta.1",
+  "name": "TensorPM v1.11.1-beta.1 (Beta)",
+  "published_at": "2026-06-18T08:59:28Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.11.0-beta.5\n\n## 🐛 Bug Fixes\n\n### Windows install and startup fully fixed\n\nThis release resolves the Windows-only installation and startup problems end to end.\n\n**What was broken:**\n\n- The Windows installer (`TensorPM-Setup.exe`) could close partway through installation, leaving an empty folder and an app that would not start.\n- After installing, the app could crash on startup on English (and other non-German) Windows — the window never appeared.\n- The Microsoft Store-style package (`.appx` / App Installer) failed to install due to a version mismatch.\n\n**What's fixed:**\n\n- ✅ The Setup.exe installer unpacks reliably and the app starts after installation (the Windows package no longer bundles unused binaries for other platforms, which broke extraction).\n- ✅ The app starts correctly on English and other non-German Windows — the bundled language resources were incomplete and are now included.\n- ✅ The App Installer (`.appinstaller`) matches the package exactly, so installs and updates go through.\n- ✅ Hardware (GPU) acceleration stays enabled on Windows.\n\n**User Benefit:**\nWindows users can install and launch TensorPM dependably, regardless of system language, across direct download and the Microsoft Store-style package — with a smaller installer than before.\n\n## 📝 Notes\n\n- macOS and Linux builds are unaffected by these changes.\n- Every Windows release build now runs an automated installer smoke test (install + launch across NSIS and MSIX) so packaging and startup regressions are caught before publishing.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.11.0-beta.5\n- **Release Date**: 2026-06-17\n- **Previous Version**: 1.11.0-beta.1\n- **Type**: Patch (Beta)\n",
+  "body": "# Changelog - v1.11.1-beta.1\n\n## 🐛 Bug Fixes\n\n### First project creation no longer fails during onboarding\n\nWhen the AI suggested a project name that contained special characters (for\nexample a colon, slash, or other punctuation), creating your very first project\ncould fail with \"Project creation failed. Try again?\".\n\n**What changed:**\n\n- ✅ Your project name is now kept exactly as chosen and shown as-is\n- ✅ The behind-the-scenes folder name is handled safely on its own\n- ✅ Creating the first project works regardless of the characters in its name\n\n**User Benefit:**\nOnboarding reliably creates your first project, even for names like\n\"Garden build: 120 m²\".\n\n## 🏗️ Improvements\n\n### Clearer onboarding error placement\n\nIf something does go wrong while creating a project, the message now appears\ndirectly in the onboarding chat flow instead of off to the side.\n\n## 📝 Notes\n\n- Internal: added a real-AI onboarding end-to-end test that drives a deliberately\n  messy (\"wild\") prompt to guard against this regression.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.11.1-beta.1\n- **Release Date**: 2026-06-18\n- **Previous Version**: 1.11.0-beta.5\n- **Type**: Patch Release (Beta)\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.0-beta.5/TensorPM-Setup.exe",
-      "size": 181289744,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.1-beta.1/TensorPM-Setup.exe",
+      "size": 181273072,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.0-beta.5/TensorPM-macOS.dmg",
-      "size": 240730945,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.1-beta.1/TensorPM-macOS.dmg",
+      "size": 240728605,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.0-beta.5/TensorPM-Linux.AppImage",
-      "size": 239007416,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.1-beta.1/TensorPM-Linux.AppImage",
+      "size": 238999051,
       "download_count": 0
     }
   ]
