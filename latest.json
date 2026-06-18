@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.11.1-beta.1",
-  "name": "TensorPM v1.11.1-beta.1 (Beta)",
-  "published_at": "2026-06-18T08:59:28Z",
+  "tag_name": "v1.11.1-beta.2",
+  "name": "TensorPM v1.11.1-beta.2 (Beta)",
+  "published_at": "2026-06-18T17:28:24Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.11.1-beta.1\n\n## 🐛 Bug Fixes\n\n### First project creation no longer fails during onboarding\n\nWhen the AI suggested a project name that contained special characters (for\nexample a colon, slash, or other punctuation), creating your very first project\ncould fail with \"Project creation failed. Try again?\".\n\n**What changed:**\n\n- ✅ Your project name is now kept exactly as chosen and shown as-is\n- ✅ The behind-the-scenes folder name is handled safely on its own\n- ✅ Creating the first project works regardless of the characters in its name\n\n**User Benefit:**\nOnboarding reliably creates your first project, even for names like\n\"Garden build: 120 m²\".\n\n## 🏗️ Improvements\n\n### Clearer onboarding error placement\n\nIf something does go wrong while creating a project, the message now appears\ndirectly in the onboarding chat flow instead of off to the side.\n\n## 📝 Notes\n\n- Internal: added a real-AI onboarding end-to-end test that drives a deliberately\n  messy (\"wild\") prompt to guard against this regression.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.11.1-beta.1\n- **Release Date**: 2026-06-18\n- **Previous Version**: 1.11.0-beta.5\n- **Type**: Patch Release (Beta)\n",
+  "body": "# Changelog - v1.11.1-beta.2\n\n## 🏗️ Improvements\n\n### Smoother onboarding project generation\n\nThe final step of onboarding — turning your answers into your first project —\nnow transitions more reliably.\n\n**What changed:**\n\n- ✅ Fixed a timing race that could leave the project-generation loader on\n  screen after the project was already created\n- ✅ The \"your project is ready\" hand-off now waits for both the generation and\n  your dreaming-level choice, whichever finishes last\n- ✅ Cleaner layout while the project is being generated\n\n**User Benefit:**\nOnboarding reaches your finished project without getting visually stuck on the\nloading screen.\n\n## 📝 Notes\n\n- Internal: added end-to-end coverage for the proxy-backed onboarding AI flow\n  (onboarding without your own AI key) and a test-only proxy URL override so the\n  flow can be exercised against a locally seeded proxy.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.11.1-beta.2\n- **Release Date**: 2026-06-18\n- **Previous Version**: 1.11.1-beta.1\n- **Type**: Patch Release (Beta)\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.1-beta.1/TensorPM-Setup.exe",
-      "size": 181273072,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.1-beta.2/TensorPM-Setup.exe",
+      "size": 181291624,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.1-beta.1/TensorPM-macOS.dmg",
-      "size": 240728605,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.1-beta.2/TensorPM-macOS.dmg",
+      "size": 240733428,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.1-beta.1/TensorPM-Linux.AppImage",
-      "size": 238999051,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.1-beta.2/TensorPM-Linux.AppImage",
+      "size": 239007455,
       "download_count": 0
     }
   ]
