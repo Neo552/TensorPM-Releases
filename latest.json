@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.11.1-beta.2",
-  "name": "TensorPM v1.11.1-beta.2 (Beta)",
-  "published_at": "2026-06-18T17:28:24Z",
+  "tag_name": "v1.12.0-beta.2",
+  "name": "TensorPM v1.12.0-beta.2 (Beta)",
+  "published_at": "2026-06-18T23:06:39Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.11.1-beta.2\n\n## 🏗️ Improvements\n\n### Smoother onboarding project generation\n\nThe final step of onboarding — turning your answers into your first project —\nnow transitions more reliably.\n\n**What changed:**\n\n- ✅ Fixed a timing race that could leave the project-generation loader on\n  screen after the project was already created\n- ✅ The \"your project is ready\" hand-off now waits for both the generation and\n  your dreaming-level choice, whichever finishes last\n- ✅ Cleaner layout while the project is being generated\n\n**User Benefit:**\nOnboarding reaches your finished project without getting visually stuck on the\nloading screen.\n\n## 📝 Notes\n\n- Internal: added end-to-end coverage for the proxy-backed onboarding AI flow\n  (onboarding without your own AI key) and a test-only proxy URL override so the\n  flow can be exercised against a locally seeded proxy.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.11.1-beta.2\n- **Release Date**: 2026-06-18\n- **Previous Version**: 1.11.1-beta.1\n- **Type**: Patch Release (Beta)\n",
+  "body": "# Changelog - v1.12.0-beta.2\n\n## 🎉 New Features\n\n### Choose what to keep when you uninstall (Windows)\n\nUninstalling TensorPM no longer wipes your data by default. The uninstaller now\nasks first, with two independent options you can leave unchecked to keep\neverything on your device:\n\n**What's new:**\n\n- ✅ \"Delete local database and sync state\" — removes the app database, sync\n  data, and local encryption keys\n- ✅ \"Delete local project files and attachments\" — removes your project files,\n  email attachments, and chat images\n- ✅ A clear confirmation before anything is permanently deleted\n- ✅ Leaving both unchecked keeps all of your data, so a reinstall picks up right\n  where you left off\n\n**User Benefit:**\nRemoving the app is now a safe, deliberate choice. Your projects survive an\nuninstall unless you explicitly ask for them to be deleted.\n\n### Custom project storage folder\n\nYou can now point TensorPM's project files at a folder of your choice.\n\n**What's new:**\n\n- ✅ Pick any folder for project storage — including a folder that already\n  contains files\n- ✅ Empty folders become app-managed: if you later opt to delete project files\n  on uninstall, the whole folder is cleaned up\n- ✅ Folders that already hold other files are used as a shared location, and an\n  uninstall only ever removes the project subfolders TensorPM created — never\n  your other files\n- ✅ When an app-managed custom folder would be deleted, the uninstaller names\n  the exact folder in the confirmation first\n\n**User Benefit:**\nKeep your projects where you want them (an external drive, a synced folder),\nwith confidence that uninstalling will never touch files TensorPM didn't create.\n\n## 🏗️ Improvements\n\n### Calmer onboarding\n\nThe onboarding assistant now reveals its messages with the same gentle fade-in\nused throughout the in-app chat, and shows a \"thinking\" animation while it works\ninstead of a blinking cursor.\n\n**What changed:**\n\n- ✅ Smooth fade-in for each onboarding message, matching the rest of the app\n- ✅ A subtle \"TensorPM is thinking…\" animation while waiting for a response\n- ✅ Warmer, shorter opening so you can describe your project in a few rough\n  sentences and let TensorPM structure the rest\n\n**User Benefit:**\nA more polished, consistent first-run experience.\n\n## 🐛 Bug Fixes\n\n### Windows installer build\n\nFixed a Windows installer packaging error so the new uninstall options reliably\nreach the Windows build. (The 1.12.0-beta.1 tag did not produce installers; this\nis the first published 1.12.0 beta.)\n\n## 📝 Notes\n\n- This release also includes routine dependency security updates.\n- Internal: extensive new test coverage for the uninstall data-removal paths\n  (app-owned vs. shared roots, relocated project folders, and the NSIS\n  confirmation), the custom-folder selection flow, the onboarding reveal, and a\n  real `makensis` compile check for the Windows installer script.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.12.0-beta.2\n- **Release Date**: 2026-06-19\n- **Previous Version**: 1.11.1-beta.2\n- **Type**: Minor Release (Beta)\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.1-beta.2/TensorPM-Setup.exe",
-      "size": 181291624,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.0-beta.2/TensorPM-Setup.exe",
+      "size": 181298560,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.1-beta.2/TensorPM-macOS.dmg",
-      "size": 240733428,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.0-beta.2/TensorPM-macOS.dmg",
+      "size": 240708612,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.11.1-beta.2/TensorPM-Linux.AppImage",
-      "size": 239007455,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.0-beta.2/TensorPM-Linux.AppImage",
+      "size": 239011386,
       "download_count": 0
     }
   ]
