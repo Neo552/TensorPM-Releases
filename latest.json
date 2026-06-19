@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.12.0-beta.3",
-  "name": "TensorPM v1.12.0-beta.3 (Beta)",
-  "published_at": "2026-06-19T10:05:19Z",
+  "tag_name": "v1.12.1-beta.1",
+  "name": "TensorPM v1.12.1-beta.1 (Beta)",
+  "published_at": "2026-06-19T18:10:31Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.12.0-beta.3\n\n## 🏗️ Improvements\n\n### A calmer, more conversational first-run onboarding\n\nThe first-time setup now feels less like waiting and more like a conversation:\n\n- ✅ **Questions while your project is being built** — After you describe your first project, TensorPM begins setting it up in the background and uses that moment to ask your name and how actively you'd like the AI to work for you (\"dreaming\"). The \"Your project is ready\" step then appears once everything is in place — no more staring at a blank loading screen.\n- ✅ **Text that streams in like the chat** — Onboarding messages now appear character-by-character with a soft fade, exactly like the in-app assistant, with a short pause after each sentence so it reads naturally. The pacing is uniform across every step.\n- ✅ **Cleaner project-ready step** — The **Open project** and **Configure AI** actions are now neatly aligned.\n\n**User Benefit:** Setup feels faster and friendlier — the wait for your first project is filled with quick, personal questions instead of a loading spinner.\n\n## 📝 Notes\n\nThis is a prerelease (beta) update focused on onboarding polish. There are no data, sync, or account changes.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.12.0-beta.3\n- **Release Date**: 2026-06-19\n- **Previous Version**: 1.12.0-beta.2\n- **Type**: Prerelease (Beta) — Onboarding improvements\n",
+  "body": "# Changelog - v1.12.1-beta.1\n\n## 🏗️ Improvements\n\n### A warmer, calmer first-run onboarding\n\nThe first-time setup now reads more like a relaxed conversation with a project expert:\n\n- ✅ **TensorPM introduces itself as your project expert** — The opening makes it clear who you're talking to and what it will do for you, before asking anything.\n- ✅ **A gentler way of asking about your project** — Instead of a list of demands, TensorPM simply asks \"So, what are you working on?\" and reassures you that a few rough sentences are enough — it shapes the rest into a clear project.\n- ✅ **Text streams at a natural reading pace** — Onboarding messages now appear at a calm, even speed tuned to comfortable reading, with a short breath after each sentence, so nothing feels rushed.\n- ✅ **The input box matches the message** — The project field no longer asks more than the conversation does; rough notes are explicitly welcome.\n\n### Switch language right from the welcome screen\n\n- ✅ **New EN/DE language switcher** — A small switcher in the top-left corner of the onboarding welcome screen lets you choose English or German before you begin. Your choice is remembered across the app.\n\n## 📝 Notes\n\nThis is a prerelease (beta) focused on onboarding polish. There are no data, sync, or account changes.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.12.1-beta.1\n- **Release Date**: 2026-06-19\n- **Previous Version**: 1.12.0-beta.3\n- **Type**: Prerelease (Beta) — Onboarding improvements\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.0-beta.3/TensorPM-Setup.exe",
-      "size": 181307440,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.1-beta.1/TensorPM-Setup.exe",
+      "size": 181291432,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.0-beta.3/TensorPM-macOS.dmg",
-      "size": 240701840,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.1-beta.1/TensorPM-macOS.dmg",
+      "size": 240694457,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.0-beta.3/TensorPM-Linux.AppImage",
-      "size": 239011728,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.1-beta.1/TensorPM-Linux.AppImage",
+      "size": 239007295,
       "download_count": 0
     }
   ]
