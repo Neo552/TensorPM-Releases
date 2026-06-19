@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.12.0-beta.2",
-  "name": "TensorPM v1.12.0-beta.2 (Beta)",
-  "published_at": "2026-06-18T23:06:39Z",
+  "tag_name": "v1.12.0-beta.3",
+  "name": "TensorPM v1.12.0-beta.3 (Beta)",
+  "published_at": "2026-06-19T10:05:19Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.12.0-beta.2\n\n## 🎉 New Features\n\n### Choose what to keep when you uninstall (Windows)\n\nUninstalling TensorPM no longer wipes your data by default. The uninstaller now\nasks first, with two independent options you can leave unchecked to keep\neverything on your device:\n\n**What's new:**\n\n- ✅ \"Delete local database and sync state\" — removes the app database, sync\n  data, and local encryption keys\n- ✅ \"Delete local project files and attachments\" — removes your project files,\n  email attachments, and chat images\n- ✅ A clear confirmation before anything is permanently deleted\n- ✅ Leaving both unchecked keeps all of your data, so a reinstall picks up right\n  where you left off\n\n**User Benefit:**\nRemoving the app is now a safe, deliberate choice. Your projects survive an\nuninstall unless you explicitly ask for them to be deleted.\n\n### Custom project storage folder\n\nYou can now point TensorPM's project files at a folder of your choice.\n\n**What's new:**\n\n- ✅ Pick any folder for project storage — including a folder that already\n  contains files\n- ✅ Empty folders become app-managed: if you later opt to delete project files\n  on uninstall, the whole folder is cleaned up\n- ✅ Folders that already hold other files are used as a shared location, and an\n  uninstall only ever removes the project subfolders TensorPM created — never\n  your other files\n- ✅ When an app-managed custom folder would be deleted, the uninstaller names\n  the exact folder in the confirmation first\n\n**User Benefit:**\nKeep your projects where you want them (an external drive, a synced folder),\nwith confidence that uninstalling will never touch files TensorPM didn't create.\n\n## 🏗️ Improvements\n\n### Calmer onboarding\n\nThe onboarding assistant now reveals its messages with the same gentle fade-in\nused throughout the in-app chat, and shows a \"thinking\" animation while it works\ninstead of a blinking cursor.\n\n**What changed:**\n\n- ✅ Smooth fade-in for each onboarding message, matching the rest of the app\n- ✅ A subtle \"TensorPM is thinking…\" animation while waiting for a response\n- ✅ Warmer, shorter opening so you can describe your project in a few rough\n  sentences and let TensorPM structure the rest\n\n**User Benefit:**\nA more polished, consistent first-run experience.\n\n## 🐛 Bug Fixes\n\n### Windows installer build\n\nFixed a Windows installer packaging error so the new uninstall options reliably\nreach the Windows build. (The 1.12.0-beta.1 tag did not produce installers; this\nis the first published 1.12.0 beta.)\n\n## 📝 Notes\n\n- This release also includes routine dependency security updates.\n- Internal: extensive new test coverage for the uninstall data-removal paths\n  (app-owned vs. shared roots, relocated project folders, and the NSIS\n  confirmation), the custom-folder selection flow, the onboarding reveal, and a\n  real `makensis` compile check for the Windows installer script.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.12.0-beta.2\n- **Release Date**: 2026-06-19\n- **Previous Version**: 1.11.1-beta.2\n- **Type**: Minor Release (Beta)\n",
+  "body": "# Changelog - v1.12.0-beta.3\n\n## 🏗️ Improvements\n\n### A calmer, more conversational first-run onboarding\n\nThe first-time setup now feels less like waiting and more like a conversation:\n\n- ✅ **Questions while your project is being built** — After you describe your first project, TensorPM begins setting it up in the background and uses that moment to ask your name and how actively you'd like the AI to work for you (\"dreaming\"). The \"Your project is ready\" step then appears once everything is in place — no more staring at a blank loading screen.\n- ✅ **Text that streams in like the chat** — Onboarding messages now appear character-by-character with a soft fade, exactly like the in-app assistant, with a short pause after each sentence so it reads naturally. The pacing is uniform across every step.\n- ✅ **Cleaner project-ready step** — The **Open project** and **Configure AI** actions are now neatly aligned.\n\n**User Benefit:** Setup feels faster and friendlier — the wait for your first project is filled with quick, personal questions instead of a loading spinner.\n\n## 📝 Notes\n\nThis is a prerelease (beta) update focused on onboarding polish. There are no data, sync, or account changes.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.12.0-beta.3\n- **Release Date**: 2026-06-19\n- **Previous Version**: 1.12.0-beta.2\n- **Type**: Prerelease (Beta) — Onboarding improvements\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.0-beta.2/TensorPM-Setup.exe",
-      "size": 181298560,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.0-beta.3/TensorPM-Setup.exe",
+      "size": 181307440,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.0-beta.2/TensorPM-macOS.dmg",
-      "size": 240708612,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.0-beta.3/TensorPM-macOS.dmg",
+      "size": 240701840,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.0-beta.2/TensorPM-Linux.AppImage",
-      "size": 239011386,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.0-beta.3/TensorPM-Linux.AppImage",
+      "size": 239011728,
       "download_count": 0
     }
   ]
