@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.12.1-beta.1",
-  "name": "TensorPM v1.12.1-beta.1 (Beta)",
-  "published_at": "2026-06-19T18:10:31Z",
+  "tag_name": "v1.12.2-beta.1",
+  "name": "TensorPM v1.12.2-beta.1 (Beta)",
+  "published_at": "2026-06-20T18:58:29Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.12.1-beta.1\n\n## 🏗️ Improvements\n\n### A warmer, calmer first-run onboarding\n\nThe first-time setup now reads more like a relaxed conversation with a project expert:\n\n- ✅ **TensorPM introduces itself as your project expert** — The opening makes it clear who you're talking to and what it will do for you, before asking anything.\n- ✅ **A gentler way of asking about your project** — Instead of a list of demands, TensorPM simply asks \"So, what are you working on?\" and reassures you that a few rough sentences are enough — it shapes the rest into a clear project.\n- ✅ **Text streams at a natural reading pace** — Onboarding messages now appear at a calm, even speed tuned to comfortable reading, with a short breath after each sentence, so nothing feels rushed.\n- ✅ **The input box matches the message** — The project field no longer asks more than the conversation does; rough notes are explicitly welcome.\n\n### Switch language right from the welcome screen\n\n- ✅ **New EN/DE language switcher** — A small switcher in the top-left corner of the onboarding welcome screen lets you choose English or German before you begin. Your choice is remembered across the app.\n\n## 📝 Notes\n\nThis is a prerelease (beta) focused on onboarding polish. There are no data, sync, or account changes.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.12.1-beta.1\n- **Release Date**: 2026-06-19\n- **Previous Version**: 1.12.0-beta.3\n- **Type**: Prerelease (Beta) — Onboarding improvements\n",
+  "body": "# Changelog - v1.12.2-beta.1\n\n## 🎉 New Features\n\n### Smoother first-run onboarding\n\nTensorPM's first-run setup now feels more conversational and less abrupt while it prepares your first project.\n\n**What Changed:**\n\n- ✅ **Name collection happens naturally** — TensorPM can ask how it should address you, then continues without blocking the project setup flow.\n- ✅ **Project generation can keep running in the background** — After you describe your first project, TensorPM can continue preparing it while you answer the remaining onboarding questions.\n- ✅ **A clear escape while the first project is being created** — If you do not want to wait, you can set up the project later and continue to the tour instead.\n- ✅ **A softer handoff into the project** — Opening the prepared project now uses a short fade instead of a hard visual cut.\n\n## 🐛 Bug Fixes\n\n### More reliable onboarding cancellation\n\n- ✅ **Cancelled onboarding projects are cleaned up** — If project creation finishes after you cancel, TensorPM removes the generated project instead of leaving it behind.\n- ✅ **Aborted generation no longer shows stale errors** — Cancelling project setup clears the generation state without showing a failure message.\n- ✅ **Proxy onboarding calls now time out cleanly** — Slow onboarding chat and project-generation requests now return a helpful timeout message instead of leaving the flow waiting indefinitely.\n\n## 🏗️ Improvements\n\n### Welcome screen polish\n\n- ✅ **Updated welcome copy** — The welcome screen now positions TensorPM more clearly as an AI-assisted way to deliver your project.\n- ✅ **Borderless welcome toggles** — The video toggle and EN/DE language switcher now share the same cleaner, borderless style.\n- ✅ **Better action alignment** — Tour and project-ready buttons align more consistently with the onboarding text.\n\n## 📝 Notes\n\nThis beta focuses on onboarding polish and reliability. There are no database, sync, account, or billing changes.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.12.2-beta.1\n- **Release Date**: 2026-06-20\n- **Previous Version**: 1.12.1-beta.1\n- **Type**: Patch Beta Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.1-beta.1/TensorPM-Setup.exe",
-      "size": 181291432,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.2-beta.1/TensorPM-Setup.exe",
+      "size": 181303072,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.1-beta.1/TensorPM-macOS.dmg",
-      "size": 240694457,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.2-beta.1/TensorPM-macOS.dmg",
+      "size": 240693178,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.1-beta.1/TensorPM-Linux.AppImage",
-      "size": 239007295,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.2-beta.1/TensorPM-Linux.AppImage",
+      "size": 239011462,
       "download_count": 0
     }
   ]
