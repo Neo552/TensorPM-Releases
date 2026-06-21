@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.12.2-beta.1",
-  "name": "TensorPM v1.12.2-beta.1 (Beta)",
-  "published_at": "2026-06-20T18:58:29Z",
+  "tag_name": "v1.12.3-beta.1",
+  "name": "TensorPM v1.12.3-beta.1 (Beta)",
+  "published_at": "2026-06-21T21:12:26Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.12.2-beta.1\n\n## 🎉 New Features\n\n### Smoother first-run onboarding\n\nTensorPM's first-run setup now feels more conversational and less abrupt while it prepares your first project.\n\n**What Changed:**\n\n- ✅ **Name collection happens naturally** — TensorPM can ask how it should address you, then continues without blocking the project setup flow.\n- ✅ **Project generation can keep running in the background** — After you describe your first project, TensorPM can continue preparing it while you answer the remaining onboarding questions.\n- ✅ **A clear escape while the first project is being created** — If you do not want to wait, you can set up the project later and continue to the tour instead.\n- ✅ **A softer handoff into the project** — Opening the prepared project now uses a short fade instead of a hard visual cut.\n\n## 🐛 Bug Fixes\n\n### More reliable onboarding cancellation\n\n- ✅ **Cancelled onboarding projects are cleaned up** — If project creation finishes after you cancel, TensorPM removes the generated project instead of leaving it behind.\n- ✅ **Aborted generation no longer shows stale errors** — Cancelling project setup clears the generation state without showing a failure message.\n- ✅ **Proxy onboarding calls now time out cleanly** — Slow onboarding chat and project-generation requests now return a helpful timeout message instead of leaving the flow waiting indefinitely.\n\n## 🏗️ Improvements\n\n### Welcome screen polish\n\n- ✅ **Updated welcome copy** — The welcome screen now positions TensorPM more clearly as an AI-assisted way to deliver your project.\n- ✅ **Borderless welcome toggles** — The video toggle and EN/DE language switcher now share the same cleaner, borderless style.\n- ✅ **Better action alignment** — Tour and project-ready buttons align more consistently with the onboarding text.\n\n## 📝 Notes\n\nThis beta focuses on onboarding polish and reliability. There are no database, sync, account, or billing changes.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.12.2-beta.1\n- **Release Date**: 2026-06-20\n- **Previous Version**: 1.12.1-beta.1\n- **Type**: Patch Beta Release\n",
+  "body": "# Changelog - v1.12.3-beta.1\n\n## 🎉 New Features\n\n### Connector setup feels clearer and more visual\n\nTensorPM now makes connector selection easier to scan during setup and inside the app.\n\n**What Changed:**\n\n- ✅ **New connector logos** — Popular AI clients, email providers, MCP clients, and MCP servers now use dedicated brand or category icons.\n- ✅ **Cleaner connector overview** — The setup overview has a tighter visual layout, clearer grouping, and more consistent empty states.\n- ✅ **Improved Gmail setup guidance** — Email setup now explains the app-password path more clearly so users can connect Gmail with fewer dead ends.\n\n### Chat attachments are easier to trust\n\nAttachment handling in AI chat now behaves more predictably across sending, editing, and dashboard handoffs.\n\n- ✅ **Attachment snapshots stay with sent messages** — Files attached to a message are preserved on the message itself instead of depending on the current composer state.\n- ✅ **Edit and resend preserves attached files** — Resending an edited message keeps its original non-image attachments as well as image inputs.\n- ✅ **Pinned attachments stay available** — Users can keep selected attachments available across messages when they intentionally pin them.\n\n## 🐛 Bug Fixes\n\n### More accurate AI request limits\n\n- ✅ **Large image payloads no longer inflate local token estimates** — Image data is sent as vision input without counting the base64 payload as text.\n- ✅ **Oversized requests are rejected before streaming** — Requests that exceed the model context window now fail early instead of continuing after a swallowed limiter error.\n- ✅ **Queued AI requests remain usable after a rejection** — A failed request no longer poisons later valid requests waiting on the limiter.\n\n## 🏗️ Improvements\n\n### Better project and trail polish\n\n- ✅ **Empty projects can start from a dashboard chat prompt** — After setup, users can begin shaping a project directly from the dashboard.\n- ✅ **Decision trail entries render more clearly** — Persisted decision content now appears in a more structured, readable card layout.\n- ✅ **Sandbox document libraries were refreshed** — Bundled document-processing libraries were regenerated for the current release candidate.\n\n## 🧪 Testing\n\n- ✅ Full non-E2E Vitest suite passed.\n- ✅ TypeScript type checking passed.\n- ✅ ESLint passed with existing warnings and no errors.\n- ✅ Focused regression coverage was added for attachment resend behavior and rate limiter rejection handling.\n\n## 📝 Notes\n\nThis beta focuses on connector setup polish, chat attachment reliability, and AI request safety. E2E tests were intentionally skipped for this patch beta release.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.12.3-beta.1\n- **Release Date**: 2026-06-21\n- **Previous Version**: 1.12.2-beta.1\n- **Type**: Patch Beta Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.2-beta.1/TensorPM-Setup.exe",
-      "size": 181303072,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.3-beta.1/TensorPM-Setup.exe",
+      "size": 181862336,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.2-beta.1/TensorPM-macOS.dmg",
-      "size": 240693178,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.3-beta.1/TensorPM-macOS.dmg",
+      "size": 241133398,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.2-beta.1/TensorPM-Linux.AppImage",
-      "size": 239011462,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.3-beta.1/TensorPM-Linux.AppImage",
+      "size": 239824503,
       "download_count": 0
     }
   ]
