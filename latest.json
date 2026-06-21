@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.12.3-beta.1",
-  "name": "TensorPM v1.12.3-beta.1 (Beta)",
-  "published_at": "2026-06-21T21:12:26Z",
+  "tag_name": "v1.12.4-beta.1",
+  "name": "TensorPM v1.12.4-beta.1 (Beta)",
+  "published_at": "2026-06-21T22:41:26Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.12.3-beta.1\n\n## 🎉 New Features\n\n### Connector setup feels clearer and more visual\n\nTensorPM now makes connector selection easier to scan during setup and inside the app.\n\n**What Changed:**\n\n- ✅ **New connector logos** — Popular AI clients, email providers, MCP clients, and MCP servers now use dedicated brand or category icons.\n- ✅ **Cleaner connector overview** — The setup overview has a tighter visual layout, clearer grouping, and more consistent empty states.\n- ✅ **Improved Gmail setup guidance** — Email setup now explains the app-password path more clearly so users can connect Gmail with fewer dead ends.\n\n### Chat attachments are easier to trust\n\nAttachment handling in AI chat now behaves more predictably across sending, editing, and dashboard handoffs.\n\n- ✅ **Attachment snapshots stay with sent messages** — Files attached to a message are preserved on the message itself instead of depending on the current composer state.\n- ✅ **Edit and resend preserves attached files** — Resending an edited message keeps its original non-image attachments as well as image inputs.\n- ✅ **Pinned attachments stay available** — Users can keep selected attachments available across messages when they intentionally pin them.\n\n## 🐛 Bug Fixes\n\n### More accurate AI request limits\n\n- ✅ **Large image payloads no longer inflate local token estimates** — Image data is sent as vision input without counting the base64 payload as text.\n- ✅ **Oversized requests are rejected before streaming** — Requests that exceed the model context window now fail early instead of continuing after a swallowed limiter error.\n- ✅ **Queued AI requests remain usable after a rejection** — A failed request no longer poisons later valid requests waiting on the limiter.\n\n## 🏗️ Improvements\n\n### Better project and trail polish\n\n- ✅ **Empty projects can start from a dashboard chat prompt** — After setup, users can begin shaping a project directly from the dashboard.\n- ✅ **Decision trail entries render more clearly** — Persisted decision content now appears in a more structured, readable card layout.\n- ✅ **Sandbox document libraries were refreshed** — Bundled document-processing libraries were regenerated for the current release candidate.\n\n## 🧪 Testing\n\n- ✅ Full non-E2E Vitest suite passed.\n- ✅ TypeScript type checking passed.\n- ✅ ESLint passed with existing warnings and no errors.\n- ✅ Focused regression coverage was added for attachment resend behavior and rate limiter rejection handling.\n\n## 📝 Notes\n\nThis beta focuses on connector setup polish, chat attachment reliability, and AI request safety. E2E tests were intentionally skipped for this patch beta release.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.12.3-beta.1\n- **Release Date**: 2026-06-21\n- **Previous Version**: 1.12.2-beta.1\n- **Type**: Patch Beta Release\n",
+  "body": "# Changelog - v1.12.4-beta.1\n\n## 🐛 Bug Fixes\n\n### More reliable cloud workspace moves\n\nTensorPM now keeps project-related sync metadata aligned when projects are moved between workspaces.\n\n**What Changed:**\n\n- ✅ **Project data follows the moved project** — Action items, categories, people, files, decisions, budgets, timers, and related project records now update their workspace assignment together with the project.\n- ✅ **Indirect project records are handled too** — Records that belong to a project through an action item, recurring item, person, or decision now follow the correct workspace during sync.\n- ✅ **Stale workspace references are repaired before upload** — If older local records still point at the previous workspace, TensorPM normalizes them before sending them to the sync service.\n\n**User Benefit:**\nMoving a project between workspaces is less likely to leave related data behind, upload it under the wrong workspace, or create confusing sync gaps.\n\n### Better encrypted sync recovery after key changes\n\nEncrypted records that were skipped while TensorPM was waiting for workspace keys are now replayed more safely once those keys become available.\n\n**What Changed:**\n\n- ✅ **Full retry after key availability** — TensorPM scans encrypted sync data again after key import or key bootstrap, so older skipped records are not missed by incremental sync watermarks.\n- ✅ **Safer delete reconciliation** — Hard-delete cleanup still avoids tables with pending uploads, protecting local changes while encrypted downloads catch up.\n\n**User Benefit:**\nTeam workspaces using end-to-end encryption should recover more reliably when a device receives or creates missing workspace keys.\n\n## 🧪 Testing\n\n- ✅ Focused sync regression tests passed for project moves, encrypted download replay, upload normalization, and indirect project ownership.\n- ✅ TypeScript type checking passed.\n\n## 📝 Notes\n\nThis beta focuses on sync correctness for moved projects and encrypted workspace-key recovery.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.12.4-beta.1\n- **Release Date**: 2026-06-21\n- **Previous Version**: 1.12.3-beta.1\n- **Type**: Patch Beta Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.3-beta.1/TensorPM-Setup.exe",
-      "size": 181862336,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.4-beta.1/TensorPM-Setup.exe",
+      "size": 181858488,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.3-beta.1/TensorPM-macOS.dmg",
-      "size": 241133398,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.4-beta.1/TensorPM-macOS.dmg",
+      "size": 241115369,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.3-beta.1/TensorPM-Linux.AppImage",
-      "size": 239824503,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.4-beta.1/TensorPM-Linux.AppImage",
+      "size": 239824378,
       "download_count": 0
     }
   ]
