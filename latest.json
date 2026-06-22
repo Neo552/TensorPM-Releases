@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.12.4-beta.1",
-  "name": "TensorPM v1.12.4-beta.1 (Beta)",
-  "published_at": "2026-06-21T22:41:26Z",
+  "tag_name": "v1.12.5-beta.1",
+  "name": "TensorPM v1.12.5-beta.1 (Beta)",
+  "published_at": "2026-06-22T10:19:13Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.12.4-beta.1\n\n## 🐛 Bug Fixes\n\n### More reliable cloud workspace moves\n\nTensorPM now keeps project-related sync metadata aligned when projects are moved between workspaces.\n\n**What Changed:**\n\n- ✅ **Project data follows the moved project** — Action items, categories, people, files, decisions, budgets, timers, and related project records now update their workspace assignment together with the project.\n- ✅ **Indirect project records are handled too** — Records that belong to a project through an action item, recurring item, person, or decision now follow the correct workspace during sync.\n- ✅ **Stale workspace references are repaired before upload** — If older local records still point at the previous workspace, TensorPM normalizes them before sending them to the sync service.\n\n**User Benefit:**\nMoving a project between workspaces is less likely to leave related data behind, upload it under the wrong workspace, or create confusing sync gaps.\n\n### Better encrypted sync recovery after key changes\n\nEncrypted records that were skipped while TensorPM was waiting for workspace keys are now replayed more safely once those keys become available.\n\n**What Changed:**\n\n- ✅ **Full retry after key availability** — TensorPM scans encrypted sync data again after key import or key bootstrap, so older skipped records are not missed by incremental sync watermarks.\n- ✅ **Safer delete reconciliation** — Hard-delete cleanup still avoids tables with pending uploads, protecting local changes while encrypted downloads catch up.\n\n**User Benefit:**\nTeam workspaces using end-to-end encryption should recover more reliably when a device receives or creates missing workspace keys.\n\n## 🧪 Testing\n\n- ✅ Focused sync regression tests passed for project moves, encrypted download replay, upload normalization, and indirect project ownership.\n- ✅ TypeScript type checking passed.\n\n## 📝 Notes\n\nThis beta focuses on sync correctness for moved projects and encrypted workspace-key recovery.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.12.4-beta.1\n- **Release Date**: 2026-06-21\n- **Previous Version**: 1.12.3-beta.1\n- **Type**: Patch Beta Release\n",
+  "body": "# Changelog - v1.12.5-beta.1\n\n## 🎉 New Features\n\n### People are captured when a project is created from text\n\nWhen TensorPM generates a project from your prompt or a document — including the first project created during onboarding — it now carries the people it identifies straight into the project.\n\n**What Changed:**\n\n- ✅ **Named people become project people** — Individuals named in your description (e.g. \"Maya Chen\", \"Dr. Müller\") are added with their role group, roles, and influence instead of being dropped.\n- ✅ **Consistent across entry points** — Prompt-to-project, document-to-project, and onboarding now share the same enriched project structure.\n\n**User Benefit:**\nYour stakeholder list starts populated, so you spend less time re-entering who is involved right after generating a project.\n\n## 🏗️ Improvements\n\n### Deeper, more realistic project plans from short prompts\n\nThe project-generation prompts now size the plan to the project itself, not to how much you typed.\n\n**What Changed:**\n\n- ✅ **Depth follows the project, not the prompt length** — A short description of a substantial undertaking (e.g. \"build a 120 m² house, €600k, near Berlin\") now produces a full, deep plan, with the reasoning captured as explicit assumptions.\n- ✅ **Plan size scales with scope** — Requirements, milestones, success criteria, and risks expand for complex projects instead of being capped at a fixed range, while still avoiding filler.\n- ✅ **Milestones fit the domain** — Phasing now adapts to the kind of project (e.g. construction: permitting → groundwork → shell → fit-out → handover), not only software lifecycles.\n\n**User Benefit:**\nA few words about a real project now yield a richer, more useful starting plan that needs less manual filling-in.\n\n## 🧰 Maintenance\n\n- ✅ Dependency updates across the development and production-minor groups.\n\n## 🧪 Testing\n\n- ✅ Onboarding project-prompt drift guard passed (desktop ↔ proxy parity).\n- ✅ TypeScript type checking passed.\n- ✅ Release quality gates (ESLint, unit tests) enforced by the release pipeline; Playwright E2E skipped for this beta.\n\n## 📝 Notes\n\nThe matching proxy-side onboarding prompt was deployed ahead of this release, so first-run/guest project generation uses the same improved prompt.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.12.5-beta.1\n- **Release Date**: 2026-06-22\n- **Previous Version**: 1.12.4-beta.1\n- **Type**: Patch Beta Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.4-beta.1/TensorPM-Setup.exe",
-      "size": 181858488,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.5-beta.1/TensorPM-Setup.exe",
+      "size": 181896584,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.4-beta.1/TensorPM-macOS.dmg",
-      "size": 241115369,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.5-beta.1/TensorPM-macOS.dmg",
+      "size": 241149125,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.4-beta.1/TensorPM-Linux.AppImage",
-      "size": 239824378,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.5-beta.1/TensorPM-Linux.AppImage",
+      "size": 239833502,
       "download_count": 0
     }
   ]
