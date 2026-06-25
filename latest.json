@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.12.6-beta.1",
-  "name": "TensorPM v1.12.6-beta.1 (Beta)",
-  "published_at": "2026-06-23T10:15:00Z",
+  "tag_name": "v1.12.7-beta.1",
+  "name": "TensorPM v1.12.7-beta.1 (Beta)",
+  "published_at": "2026-06-25T06:09:42Z",
   "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.12.6-beta.1\n\n## 🎉 New Features\n\n### Image Attachments for Project Generation\n\nYou can now attach images when creating a project from the wizard or onboarding chat.\n\n**What Changed:**\n\n- Added image selection alongside document uploads for one-shot project creation.\n- Vision-capable AI providers can use attached images directly during project generation.\n- Non-vision or unsupported image paths fall back to image analysis text, so screenshots, sketches, and diagrams can still inform the project brief.\n- Attached images that influenced generation are copied into the new project's files for later reference.\n\n**User Benefit:**\nTeams can start projects from screenshots, whiteboard photos, diagrams, floor plans, UI mockups, or mixed document-and-image inputs without retyping the visual context.\n\n## 🏗️ Improvements\n\n### Safer Image Handling Across Providers\n\nImage inputs now respect provider-specific size budgets and a shared project-generation image limit.\n\n**What Changed:**\n\n- Added image payload budgeting for OpenAI, Anthropic, Gemini, Mistral, Proxy, and local providers.\n- Oversized images are surfaced with clearer user-facing errors.\n- Large vision images can be optimized before delivery where the Electron runtime supports it.\n- Wizard and onboarding attachment counters now include both documents and images.\n\n**User Benefit:**\nProject creation is more predictable when users attach several images or large screenshots, with fewer silent drops and clearer feedback when limits are reached.\n\n## 🐛 Bug Fixes\n\n### Duplicate Image Names No Longer Collide\n\nProject-generation images are now saved with the same collision-safe file logic used by normal uploads.\n\n**What Changed:**\n\n- Images named the same in different source folders are saved without overwriting each other.\n- Per-file persistence failures are logged without aborting project creation.\n\n**User Benefit:**\nUsers can attach common filenames such as `image.png` or `photo.jpg` from different folders and keep all relevant visual context in the created project.\n\n## 📝 Notes\n\nThis is a beta patch release for validating multimodal project creation before the next stable release.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.12.6-beta.1\n- **Release Date**: 2026-06-22\n- **Previous Version**: 1.12.5-beta.1\n- **Type**: Patch Beta Release\n",
+  "body": "# Changelog - v1.12.7-beta.1\n\n## 🐛 Bug Fixes\n\n### Update Notification Button No Longer Stretches\n\nWhen an update was ready and you clicked **Restart**, the in-progress label in the\nupdate notification could grow wider than the notification itself and spill out of\nthe rounded box (most visible in German).\n\n**What Changed:**\n\n- Shortened the German restart-in-progress label so it stays within the notification's width.\n- The Restart button now keeps a consistent size between its idle and restarting states.\n\n**User Benefit:**\nInstalling an available update looks clean and stable, with no visual glitch while the app restarts.\n\n## 🏗️ Improvements\n\n### Groundwork for Enterprise Single Sign-On\n\nThis release lands the desktop login plumbing for enterprise SSO (OIDC via Zitadel),\nincluding the system-browser sign-in flow and secure deep-link return.\n\n**What Changed:**\n\n- Added the desktop SSO/OIDC login path (PKCE + system browser, returned via the app deep link).\n- Added the related sign-in UI strings in German and English.\n\n**Note:**\nEnterprise SSO is **not enabled yet** — it stays inert until it is turned on via configuration,\nso there is no change to how you sign in today. This is preparation for an upcoming enterprise rollout.\n\n## 📝 Notes\n\nThis is a beta patch release. It is safe to install and primarily polishes the update\nnotification while preparing the groundwork for enterprise sign-on.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.12.7-beta.1\n- **Release Date**: 2026-06-25\n- **Previous Version**: 1.12.6-beta.1\n- **Type**: Patch Beta Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.6-beta.1/TensorPM-Setup.exe",
-      "size": 181869384,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.7-beta.1/TensorPM-Setup.exe",
+      "size": 181887552,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.6-beta.1/TensorPM-macOS.dmg",
-      "size": 240901321,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.7-beta.1/TensorPM-macOS.dmg",
+      "size": 240924200,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.6-beta.1/TensorPM-Linux.AppImage",
-      "size": 239648922,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.7-beta.1/TensorPM-Linux.AppImage",
+      "size": 239644675,
       "download_count": 0
     }
   ]
