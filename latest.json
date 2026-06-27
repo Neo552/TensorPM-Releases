@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.12.7-beta.1",
-  "name": "TensorPM v1.12.7-beta.1 (Beta)",
-  "published_at": "2026-06-25T06:09:42Z",
-  "prerelease": true,
+  "tag_name": "v1.12.7",
+  "name": "TensorPM v1.12.7",
+  "published_at": "2026-06-27T00:34:49Z",
+  "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.12.7-beta.1\n\n## 🐛 Bug Fixes\n\n### Update Notification Button No Longer Stretches\n\nWhen an update was ready and you clicked **Restart**, the in-progress label in the\nupdate notification could grow wider than the notification itself and spill out of\nthe rounded box (most visible in German).\n\n**What Changed:**\n\n- Shortened the German restart-in-progress label so it stays within the notification's width.\n- The Restart button now keeps a consistent size between its idle and restarting states.\n\n**User Benefit:**\nInstalling an available update looks clean and stable, with no visual glitch while the app restarts.\n\n## 🏗️ Improvements\n\n### Groundwork for Enterprise Single Sign-On\n\nThis release lands the desktop login plumbing for enterprise SSO (OIDC via Zitadel),\nincluding the system-browser sign-in flow and secure deep-link return.\n\n**What Changed:**\n\n- Added the desktop SSO/OIDC login path (PKCE + system browser, returned via the app deep link).\n- Added the related sign-in UI strings in German and English.\n\n**Note:**\nEnterprise SSO is **not enabled yet** — it stays inert until it is turned on via configuration,\nso there is no change to how you sign in today. This is preparation for an upcoming enterprise rollout.\n\n## 📝 Notes\n\nThis is a beta patch release. It is safe to install and primarily polishes the update\nnotification while preparing the groundwork for enterprise sign-on.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.12.7-beta.1\n- **Release Date**: 2026-06-25\n- **Previous Version**: 1.12.6-beta.1\n- **Type**: Patch Beta Release\n",
+  "body": "# Changelog - v1.12.7\n\n## 🐛 Bug Fixes\n\n### Cloud Sync no longer gets stuck after moving a project between workspaces\n\nMoving a project into a different workspace (or renaming a project's folder) could\nsilently break Cloud sync. Once that happened, **all** pending changes — across every\nworkspace, including file uploads and chat — stopped syncing and the queue kept growing\nin the background, even though the app showed no obvious error.\n\n**What was happening:**\n\n- A project move was rejected by the server and quietly dropped, leaving the project in\n  its old workspace on the server.\n- Every later change to that project was then refused, and because uploads are processed\n  in order, that one blocked change held up the entire upload queue indefinitely.\n\n**What's fixed:**\n\n- ✅ Project moves and folder renames now sync correctly.\n- ✅ A single rejected change can no longer block everything else — the app recognizes it,\n  sets it aside, and keeps the rest of your data flowing.\n- ✅ Genuine \"a project with this folder already exists\" conflicts now surface as a clear,\n  specific message instead of a generic failure.\n\n**User Benefit:**\nYour Cloud workspaces stay reliably in sync, even after reorganizing projects across\nworkspaces.\n\n## 🏗️ Improvements\n\n### Better sync diagnostics\n\n- The built-in sync health check now correctly recognizes a stalled upload queue based on\n  how long changes have actually been waiting, instead of under-reporting it.\n- Support bundles now report accurate per-table breakdowns of the pending upload queue,\n  making future sync issues much faster to diagnose.\n\n## 📝 Notes\n\nThis is the first stable release on the 1.12.x line. The sync server fix is already live;\nthis app update completes the fix on the client side.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.12.7\n- **Release Date**: 2026-06-27\n- **Previous Version**: 1.12.7-beta.1\n- **Type**: Patch Release (Stable)\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.7-beta.1/TensorPM-Setup.exe",
-      "size": 181887552,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.7/TensorPM-Setup.exe",
+      "size": 181881712,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.7-beta.1/TensorPM-macOS.dmg",
-      "size": 240924200,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.7/TensorPM-macOS.dmg",
+      "size": 240929912,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.7-beta.1/TensorPM-Linux.AppImage",
-      "size": 239644675,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.7/TensorPM-Linux.AppImage",
+      "size": 239644738,
       "download_count": 0
     }
   ]
