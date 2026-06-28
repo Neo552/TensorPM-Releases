@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.12.7",
-  "name": "TensorPM v1.12.7",
-  "published_at": "2026-06-27T00:34:49Z",
-  "prerelease": false,
+  "tag_name": "v1.13.0-beta.1",
+  "name": "TensorPM v1.13.0-beta.1 (Beta)",
+  "published_at": "2026-06-28T06:54:02Z",
+  "prerelease": true,
   "draft": false,
-  "body": "# Changelog - v1.12.7\n\n## 🐛 Bug Fixes\n\n### Cloud Sync no longer gets stuck after moving a project between workspaces\n\nMoving a project into a different workspace (or renaming a project's folder) could\nsilently break Cloud sync. Once that happened, **all** pending changes — across every\nworkspace, including file uploads and chat — stopped syncing and the queue kept growing\nin the background, even though the app showed no obvious error.\n\n**What was happening:**\n\n- A project move was rejected by the server and quietly dropped, leaving the project in\n  its old workspace on the server.\n- Every later change to that project was then refused, and because uploads are processed\n  in order, that one blocked change held up the entire upload queue indefinitely.\n\n**What's fixed:**\n\n- ✅ Project moves and folder renames now sync correctly.\n- ✅ A single rejected change can no longer block everything else — the app recognizes it,\n  sets it aside, and keeps the rest of your data flowing.\n- ✅ Genuine \"a project with this folder already exists\" conflicts now surface as a clear,\n  specific message instead of a generic failure.\n\n**User Benefit:**\nYour Cloud workspaces stay reliably in sync, even after reorganizing projects across\nworkspaces.\n\n## 🏗️ Improvements\n\n### Better sync diagnostics\n\n- The built-in sync health check now correctly recognizes a stalled upload queue based on\n  how long changes have actually been waiting, instead of under-reporting it.\n- Support bundles now report accurate per-table breakdowns of the pending upload queue,\n  making future sync issues much faster to diagnose.\n\n## 📝 Notes\n\nThis is the first stable release on the 1.12.x line. The sync server fix is already live;\nthis app update completes the fix on the client side.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.12.7\n- **Release Date**: 2026-06-27\n- **Previous Version**: 1.12.7-beta.1\n- **Type**: Patch Release (Stable)\n",
+  "body": "# Changelog - v1.13.0-beta.1\n\n## 🎉 New Features\n\n### New Subscription Plans: Trial, Pro & Business\n\nTensorPM moves to a simpler, clearer plan lineup that matches the updated pricing now live on tensorpm.com.\n\n**What Changed:**\n\n- **Free is now Trial** — the same local-first power, with a one-time allowance of 2,000,000 AI credits and **no time limit**. Trial never expires; you use the credits at your own pace.\n- **Pro** — cloud sync plus **10,000,000 AI credits every month**, now **€99/month or €990/year**. Pro keeps **1 active project** open, with unlimited archived projects.\n- **Business** — for teams: shared credit pool, cloud sync, and the option to use your own AI provider keys (BYOK).\n\n**User Benefit:**\nFewer choices to make, a clearer upgrade path, and a free Trial that is never blocked by a countdown — only by how much hosted AI you use.\n\n### Bring-Your-Own-Key Is Now a Business Feature\n\nUsing your own provider API keys (OpenAI, Anthropic, …) is now part of the **Business** plan.\n\n**What Changed:**\n\n- API-key entry is available on **Business** only; Trial and Pro use TensorPM's hosted AI.\n- The AI settings clearly reflect which providers are available for your plan.\n\n**User Benefit:**\nA more predictable, supported AI experience on Trial and Pro, with full BYOK flexibility reserved for Business teams.\n\n## 🏗️ Improvements\n\n### Clearer Pro Project Limit\n\nPro now shows **\"1 of 1 active project\"** the same way Business shows its limit. Archive a project to free up the slot — archived projects stay unlimited and reactivating one is only possible when it keeps you within the limit.\n\n### Simpler In-App Billing\n\nCredit top-ups, auto-top-up, and paid seat purchases have been removed from in-app billing. Pro is the single self-service subscription (monthly or yearly).\n\n### Cloud Sync Reconnects Cleanly When Switching Workspaces\n\nSwitching between cloud workspaces now restarts PowerSync and refreshes the sync status, so your sync state is always accurate after a switch.\n\n## 📝 Notes\n\n- This is a **beta** minor release that introduces the new subscription model on the desktop, in sync with the updated pricing and account area on tensorpm.com.\n- **Pro vouchers** (for redeeming pre-paid Pro time) are entered in your account area on the website.\n- Unknown or legacy plan values are treated safely as Trial until your account token refreshes.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.13.0-beta.1\n- **Release Date**: 2026-06-27\n- **Previous Version**: 1.12.7-beta.1\n- **Type**: Minor Beta Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.7/TensorPM-Setup.exe",
-      "size": 181881712,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.13.0-beta.1/TensorPM-Setup.exe",
+      "size": 181880944,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.7/TensorPM-macOS.dmg",
-      "size": 240929912,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.13.0-beta.1/TensorPM-macOS.dmg",
+      "size": 240909766,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.12.7/TensorPM-Linux.AppImage",
-      "size": 239644738,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.13.0-beta.1/TensorPM-Linux.AppImage",
+      "size": 239647957,
       "download_count": 0
     }
   ]
