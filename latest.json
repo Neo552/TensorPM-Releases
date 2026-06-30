@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.14.0",
-  "name": "TensorPM v1.14.0",
-  "published_at": "2026-06-30T10:22:11Z",
+  "tag_name": "v1.13.2",
+  "name": "TensorPM v1.13.2",
+  "published_at": "2026-06-29T22:44:13Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.14.0\n\nThis release completes the file-reliability work from 1.13.x: every file now has a\nsingle, consistent identity across your device and the cloud, so attachments, AI\nsummaries, and distillation work dependably in cloud workspaces.\n\n## 🐛 Bug Fixes\n\n### Reliable Files in Cloud Workspaces\n\nFiles in cloud-synced workspaces are resolved consistently end-to-end, so they can\nbe attached, summarized, image-analyzed, and picked up by the Distiller again.\n\n**What Changed:**\n\n- Every file is now identified by one stable content fingerprint everywhere — on\n  your device and in the cloud — instead of two slightly different forms that could\n  drift apart during sync.\n- The mismatch that left some cloud files showing \"no active paths\" (and made the\n  Distiller skip them) is resolved.\n- A one-time local cleanup converges any remaining older file references on your\n  device to the consistent form.\n\n**User Benefit:**\nAttaching a file, generating a summary, analyzing an image, or distilling updates\nnow works reliably for files in cloud workspaces — no more files that silently lose\ntheir link after syncing.\n\n## 🏗️ Improvements\n\n### Simpler, Faster File Lookups\n\nThe internal file-reference handling was simplified to use direct identity matching\nnow that file IDs are consistent everywhere.\n\n**User Benefit:**\nFile lists, attachment counts, and status badges resolve a touch faster, and sync\ndoes less redundant work on every download.\n\n### Cleaner AI Key Onboarding\n\nThe AI key prompt in onboarding was streamlined for a clearer first-run experience.\n\n## 📝 Notes\n\n- The database schema version is updated to **39** to run the one-time file-ID\n  convergence migration. This runs automatically on first launch.\n- A companion change on the cloud sync backend is already live, so existing cloud\n  workspaces heal automatically on the next sync.\n- No action is required — local-only projects are unaffected and continue to work\n  exactly as before.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.14.0\n- **Release Date**: 2026-06-30\n- **Previous Version**: 1.13.2\n- **Type**: Minor Release (Stable)\n",
+  "body": "# Changelog - v1.13.2\n\nThis stable patch release improves file reliability in cloud workspaces and makes\nthe Intake and File Explorer surfaces more consistent after sync.\n\n## 🐛 Bug Fixes\n\n### Reliable File References After Sync\n\nTensorPM now repairs legacy file references that used older dashed identifiers.\n\n**What Changed:**\n\n- File links in project files, action item attachments, recurring item files,\n  and expense attachments are normalized to the canonical file ID, and are\n  resolved reliably everywhere they are read.\n- Existing duplicate project-file links are merged so paths and AI evaluation\n  state are preserved while only one active file entry remains visible.\n- Download sync now rewrites incoming legacy dashed file references before\n  generating local synthetic IDs.\n\n**User Benefit:**\nFiles no longer appear as duplicates or lose their attachment relationship after\nsyncing older workspace data.\n\n### Accurate File Status Indicators\n\nFile Explorer status badges now match file activity by stable file ID while\nremaining compatible with legacy history entries.\n\n**What Changed:**\n\n- Summarization and distillation status now prefer file IDs instead of only file\n  names.\n- Legacy activity history rows with dashed file IDs are normalized during\n  migration and matched defensively in the UI.\n\n**User Benefit:**\nFiles with the same name show the correct processing or summary status, and old\nhistory entries keep working after the file-ID cleanup.\n\n### Idempotent Intake Ignores\n\nIgnoring the same intake source more than once no longer creates sync conflicts.\n\n**What Changed:**\n\n- Repeated ignore actions for the same project, source, visibility scope, and\n  owner now update the existing ignore row instead of inserting a duplicate.\n\n**User Benefit:**\nDismissed files, emails, and updates stay dismissed without noisy duplicate-row\nerrors.\n\n## 🏗️ Improvements\n\n### Safer File Path Reactivation\n\nRe-adding a file path now reactivates the existing project-file row when one is\navailable.\n\n**User Benefit:**\nFiles that were previously hidden or removed can return to the File Explorer\ncleanly when they are detected again.\n\n## 📝 Notes\n\n- This is a **stable patch release** for the 1.13.x line.\n- The database schema version is updated to 38 to run the file reference cleanup.\n- E2E tests were not part of this focused patch validation.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.13.2\n- **Release Date**: 2026-06-30\n- **Previous Version**: 1.13.0\n- **Type**: Patch Release (Stable)\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.14.0/TensorPM-Setup.exe",
-      "size": 182035304,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.13.2/TensorPM-Setup.exe",
+      "size": 182041616,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.14.0/TensorPM-macOS.dmg",
-      "size": 239377401,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.13.2/TensorPM-macOS.dmg",
+      "size": 239377686,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.14.0/TensorPM-Linux.AppImage",
-      "size": 239690017,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.13.2/TensorPM-Linux.AppImage",
+      "size": 239677025,
       "download_count": 0
     }
   ]
