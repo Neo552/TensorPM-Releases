@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.14.1",
-  "name": "TensorPM v1.14.1",
-  "published_at": "2026-06-30T13:00:28Z",
+  "tag_name": "v1.14.2",
+  "name": "TensorPM v1.14.2",
+  "published_at": "2026-06-30T22:35:15Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.14.1\n\nThis stable patch release fixes a startup crash that could affect users upgrading\nto v1.14.0 with older local file-reference data.\n\n## 🐛 Bug Fixes\n\n### Startup Migration Recovery\n\nTensorPM now handles orphaned legacy file-reference rows during the v39 file-ID\nconvergence migration.\n\n**What Changed:**\n\n- Local orphaned file-link rows are removed before the migration rewrites dashed\n  file IDs to canonical 32-hex IDs.\n- The cleanup is local-only and does not create pending server deletes.\n- Valid file metadata and physical project files are left untouched.\n\n**User Benefit:**\nUsers with older local databases can launch TensorPM normally after upgrading,\ninstead of hitting a foreign-key migration crash on startup.\n\n## 📝 Notes\n\n- This is a focused hotfix for the v1.14.0 stable release.\n- Full Playwright E2E tests were intentionally skipped for this patch release.\n- Unit migration coverage, TypeScript checks, and local production-app startup\n  validation were completed.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.14.1\n- **Release Date**: 2026-06-30\n- **Previous Version**: 1.14.0\n- **Type**: Patch Release (Stable)\n",
+  "body": "# Changelog - v1.14.2\n\nThis stable patch release makes cloud sync faster and lighter, with no changes to\nhow your projects look or behave.\n\n## 🏗️ Improvements\n\n### Faster, More Efficient Cloud Sync\n\nCloud workspaces now upload local changes in batches and avoid re-sending data that\nhasn't actually changed.\n\n**What Changed:**\n\n- Pending changes are grouped and uploaded together instead of one request per\n  change, reducing round-trips on busy edits.\n- Unchanged rows no longer trigger a redundant server write, which keeps the sync\n  history smaller and initial sync fast for new devices.\n- Server-side database indexes were added so sync queries stay quick as workspaces\n  grow.\n- If batched upload isn't available for any reason, sync automatically falls back to\n  the previous per-change path, so reliability is unaffected.\n\n**User Benefit:**\nCloud sync uses less bandwidth and feels snappier, especially when making many edits\nat once or setting up TensorPM on a new device.\n\n## 📝 Notes\n\n- These changes are internal to the cloud sync engine; local-first behavior is\n  unchanged and your work is never blocked by connectivity.\n- The matching sync-backend update (batch endpoint + performance indexes) was\n  deployed ahead of this release.\n- Full Playwright E2E tests were intentionally skipped for this focused patch.\n  TypeScript checks, ESLint, the full unit suite, and the PowerSync sync\n  integration tests all passed.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.14.2\n- **Release Date**: 2026-07-01\n- **Previous Version**: 1.14.1\n- **Type**: Patch Release (Stable)\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.14.1/TensorPM-Setup.exe",
-      "size": 182033944,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.14.2/TensorPM-Setup.exe",
+      "size": 182049848,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.14.1/TensorPM-macOS.dmg",
-      "size": 239395687,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.14.2/TensorPM-macOS.dmg",
+      "size": 241133787,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.14.1/TensorPM-Linux.AppImage",
-      "size": 239694361,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.14.2/TensorPM-Linux.AppImage",
+      "size": 239717997,
       "download_count": 0
     }
   ]
