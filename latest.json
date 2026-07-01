@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.14.2",
-  "name": "TensorPM v1.14.2",
-  "published_at": "2026-06-30T22:35:15Z",
+  "tag_name": "v1.14.3",
+  "name": "TensorPM v1.14.3",
+  "published_at": "2026-07-01T23:55:16Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.14.2\n\nThis stable patch release makes cloud sync faster and lighter, with no changes to\nhow your projects look or behave.\n\n## 🏗️ Improvements\n\n### Faster, More Efficient Cloud Sync\n\nCloud workspaces now upload local changes in batches and avoid re-sending data that\nhasn't actually changed.\n\n**What Changed:**\n\n- Pending changes are grouped and uploaded together instead of one request per\n  change, reducing round-trips on busy edits.\n- Unchanged rows no longer trigger a redundant server write, which keeps the sync\n  history smaller and initial sync fast for new devices.\n- Server-side database indexes were added so sync queries stay quick as workspaces\n  grow.\n- If batched upload isn't available for any reason, sync automatically falls back to\n  the previous per-change path, so reliability is unaffected.\n\n**User Benefit:**\nCloud sync uses less bandwidth and feels snappier, especially when making many edits\nat once or setting up TensorPM on a new device.\n\n## 📝 Notes\n\n- These changes are internal to the cloud sync engine; local-first behavior is\n  unchanged and your work is never blocked by connectivity.\n- The matching sync-backend update (batch endpoint + performance indexes) was\n  deployed ahead of this release.\n- Full Playwright E2E tests were intentionally skipped for this focused patch.\n  TypeScript checks, ESLint, the full unit suite, and the PowerSync sync\n  integration tests all passed.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.14.2\n- **Release Date**: 2026-07-01\n- **Previous Version**: 1.14.1\n- **Type**: Patch Release (Stable)\n",
+  "body": "# Changelog - v1.14.3\n\nThis stable patch release makes cloud sync recovery more robust, fixes a confusing\nsituation with files added on another device, and polishes the Distiller and macOS\nfullscreen experience.\n\n## 🐛 Bug Fixes\n\n### Files Added on Another Device No Longer Block the Distiller\n\nFile contents intentionally stay on the device where you added them — only the\nproject metadata syncs. Previously, a file added on your other device still showed\nup in this device's intake queue, and asking the Distiller to review it produced\nempty or misleading results.\n\n**What Changed:**\n\n- The Distiller only queues files that actually exist on the current device.\n- In the intake list, such files are greyed out with a hint that they live on\n  another device — review them there, or ignore them here (ignoring syncs and\n  clears the signal everywhere).\n- The pending-updates badge now counts only what you can actually review on this\n  device.\n\n**User Benefit:**\nNo more empty AI reviews or stuck-looking intake items when you work across\nmultiple devices.\n\n### More Reliable Recovery for Quarantined Sync Records\n\nRetrying a quarantined encrypted record from the sync issues list is now properly\ncoordinated with background sync activity.\n\n**What Changed:**\n\n- A manual retry can no longer run at the same time as a background download,\n  which previously could make both fail with confusing errors.\n- If the retry fails, it now reports the actual error instead of showing success.\n- Records that were already up to date locally now clear their quarantine entry\n  correctly, instead of staying stuck in the issues list forever.\n- A harmless nightly server maintenance job no longer floods the logs with\n  thousands of false \"potential replay\" security warnings.\n\n**User Benefit:**\nSync issues you retry now either resolve for real or tell you clearly what went\nwrong.\n\n### macOS: Fullscreen Header Spacing\n\nIn fullscreen mode, macOS hides the window traffic-light buttons — but the header\nstill reserved space for them, leaving an odd gap next to the logo.\n\n**What Changed:**\n\n- The header margins now collapse while in fullscreen and come back when you leave\n  it.\n\n**User Benefit:**\nA cleaner, better-aligned header in fullscreen on macOS.\n\n## 🏗️ Improvements\n\n### Smoother Distiller Card Transitions\n\nThe Distiller proposal carousel now follows the height of the card you are\nlooking at, instead of staying as tall as the biggest card you have seen.\n\n**What Changed:**\n\n- Switching to a shorter proposal card no longer leaves an empty gap below it.\n- After you finish reviewing a batch, the chat smoothly reflows upward instead of\n  jumping.\n\n**User Benefit:**\nReviewing AI proposals feels calmer and wastes less screen space.\n\n## 📝 Notes\n\n- The matching sync-backend update (stricter batch rate limiting and faster\n  failure handling for expired sessions) was deployed ahead of this release.\n- Local-first behavior is unchanged: your work is never blocked by connectivity.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.14.3\n- **Release Date**: 2026-07-02\n- **Previous Version**: 1.14.2\n- **Type**: Patch Release (Stable)\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.14.2/TensorPM-Setup.exe",
-      "size": 182049848,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.14.3/TensorPM-Setup.exe",
+      "size": 182034160,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.14.2/TensorPM-macOS.dmg",
-      "size": 241133787,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.14.3/TensorPM-macOS.dmg",
+      "size": 239435396,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.14.2/TensorPM-Linux.AppImage",
-      "size": 239717997,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.14.3/TensorPM-Linux.AppImage",
+      "size": 239730677,
       "download_count": 0
     }
   ]
