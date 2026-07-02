@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.15.0",
-  "name": "TensorPM v1.15.0",
-  "published_at": "2026-07-02T10:07:44Z",
+  "tag_name": "v1.15.1",
+  "name": "TensorPM v1.15.1",
+  "published_at": "2026-07-02T10:44:06Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.15.0\n\nThis release adds a faster way to bring project files into the AI chat, makes AI\nguidance respond in your language, fixes several long-standing data-accuracy bugs,\nand significantly speeds up sync recovery after large incidents. Under the hood,\nthe database layer is now covered by hundreds of tests that run real SQL — the\nsame queries the app runs in production.\n\n## 🎉 New Features\n\n### Attach Files to the Chat Straight from the File Explorer\n\nYou can now right-click any project file in the File Explorer and choose\n**\"Attach to Chat\"**.\n\n**What Changed:**\n\n- New context menu entry attaches the file to the AI side panel chat and opens\n  the panel so you immediately see the attachment chip.\n- The same rules as in the chat itself apply: up to 5 attachments, duplicates\n  are detected, and clear notifications tell you what happened.\n\n**User Benefit:**\nNo more switching to the chat, hunting for the file picker, and navigating to\nthe file again — discuss any document with the AI in two clicks.\n\n## 🐛 Bug Fixes\n\n### AI Guidance Now Answers in Your Language\n\nGuidance cards, coverage analysis, and smart action suggestions previously came\nback in English regardless of your language preference. They now follow the same\nlanguage setting as the rest of the AI features.\n\n### Agent Assignees No Longer Lose Their Identity During Sync\n\nRemoving an agent assignee (e.g. a Codex or Claude Code agent) from an action\nitem could sync an incomplete identifier, leaving stale assignment data on other\ndevices. Agent identifiers are now handled correctly end to end.\n\n### Correct Timer History in List Views\n\nAction item timer data loaded through the batch path was mapped twice, which\ncould show empty or wrong start/end times in list views. Timer history is now\nmapped exactly once, the same way everywhere.\n\n### Accurate Status and Budget History\n\nStatus history and budget history queries returned raw database column names in\nsome paths, which silently broke the \"changes since last evaluation\" summary the\nAI uses and dropped the budget type from budget history entries. Both now return\nconsistent, fully populated records.\n\n### Original Creation Dates Preserved in Cloud Sync\n\nEditing an action item no longer overwrites its original creation date on the\nserver — the creation timestamp now travels with every sync update.\n\n### Material Hierarchy Integrity on Upgraded Installations\n\nInstallations upgraded from older versions were missing a database-level\nguarantee for the material item hierarchy (fresh installations already had it).\nA one-time migration rebuilds the material list storage so parent/child links\nbehave identically on every installation, including cleanup when a parent item\nis deleted.\n\n## 🏗️ Improvements\n\n### Much Faster Sync Recovery After Incidents\n\nAfter a large sync incident, the app previously re-checked its issue list once\nper record during recovery — on big projects this could freeze the app for\nminutes at startup.\n\n**What Changed:**\n\n- A new database index makes per-record issue lookups instant.\n- Recovery now checks the open-issue list once per table instead of once per\n  record.\n- Old resolved issues are cleaned up automatically when sync starts, so the\n  issue list can't grow into a slowdown again.\n\n**User Benefit:**\nStartup after a sync incident takes seconds instead of minutes, with no UI\nfreeze.\n\n### Sturdier Foundations: Real-SQL Test Coverage\n\nThe database layer is now verified by hundreds of tests that execute the app's\nactual SQL against a real database engine, plus a migration parity test that\nreplays every upgrade path and compares it to a fresh installation. This class\nof testing already caught the bugs fixed in this release before they could\nreach more users.\n\n## 📝 Notes\n\n- This release includes two automatic database migrations (schema version 39 →\n  41). They run on first launch after the update; no action is required.\n- No changes to the sync protocol or server — all changes are client-side.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.15.0\n- **Release Date**: 2026-07-02\n- **Previous Version**: 1.14.3\n- **Type**: Minor Release\n",
+  "body": "# Changelog - v1.15.1\n\nThis patch release tightens AI prompt context handling after v1.15.0 and fixes\nquoted display names in greetings and settings.\n\n## Bug Fixes\n\n### Cleaner AI Context for Action Item Generation\n\nAction item generation and re-evaluation now avoid sending the same project\ndata multiple times in one prompt. Existing action items, people, and budget\ndetails are kept in their dedicated prompt sections instead of being duplicated\ninside the project JSON.\n\nThis reduces prompt size and helps the AI focus on the current planning task.\n\n### Correct Categories and Assignees in Already Prepared Project Context\n\nSome AI paths received project data that had already been prepared for AI use.\nPreparing it a second time could degrade existing action items to an\n`Unknown` category and drop assignee context. Prepared projects are now detected\nand passed through safely.\n\nAgent assignees are also preserved as readable labels in AI context instead of\nbeing silently omitted.\n\n### More Accurate Token Counting\n\nInternal generation metadata is now stripped before token counting, matching\nwhat is actually sent to the model. This prevents the app from overestimating\ncontext size because of hidden internal snapshots and reduces unnecessary\ncompression or truncation.\n\n### Display Names No Longer Keep Wrapping Quotes\n\nNames stored as `\"Thomas\"` or similar quoted variants are normalized before\nthey reach greetings, chat, settings, and local storage updates. Apostrophes in\nnames such as `O'Brien` are preserved.\n\n## Notes\n\n- No database migration.\n- No sync protocol change.\n- Release quality gates still run, except the Playwright E2E suite is skipped\n  for this release by request.\n\n---\n\n## Release Info\n\n- **Version**: 1.15.1\n- **Release Date**: 2026-07-02\n- **Previous Version**: 1.15.0\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.15.0/TensorPM-Setup.exe",
-      "size": 182047624,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.15.1/TensorPM-Setup.exe",
+      "size": 182041416,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.15.0/TensorPM-macOS.dmg",
-      "size": 241147590,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.15.1/TensorPM-macOS.dmg",
+      "size": 241163410,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.15.0/TensorPM-Linux.AppImage",
-      "size": 239738301,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.15.1/TensorPM-Linux.AppImage",
+      "size": 239734468,
       "download_count": 0
     }
   ]
