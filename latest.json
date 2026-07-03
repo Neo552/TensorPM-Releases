@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.18.0",
-  "name": "TensorPM v1.18.0",
-  "published_at": "2026-07-03T21:08:32Z",
+  "tag_name": "v1.18.1",
+  "name": "TensorPM v1.18.1",
+  "published_at": "2026-07-03T22:51:44Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.18.0\n\n## New Features\n\n### Redeem Pro vouchers right in the app\n\nIf you received a TensorPM Pro voucher, you can now redeem it without\nleaving the desktop app.\n\n**What Changed:**\n\n- New \"Redeem voucher\" option in your account settings (visible on the\n  free Trial plan)\n- Enter your code and your Pro plan activates immediately — the app shows\n  your new plan and expiry date right away, no restart needed\n- Clear messages if a code is mistyped, expired, or already used\n\n**User Benefit:**\nFrom voucher code to active Pro in seconds — no website detour, no\nwaiting.\n\n### The AI can work with your project files in code runs\n\nWhen the AI runs code for you (reports, exports, calculations), it can now\nbring selected project files into the run.\n\n**What Changed:**\n\n- The AI can stage files from your project into a code run and read them\n  there — for example a spreadsheet it should analyze or a document it\n  should convert\n- Files are copied read-only into the run's workspace; the run still can't\n  touch anything outside its sandbox\n- Sensible limits on file count and size keep runs fast and safe\n\n**User Benefit:**\n\"Analyze this file and build me a report\" now works end to end — the AI\nno longer has to work around missing file access in code runs.\n\n## Bug Fixes\n\n### Stopping a response no longer duplicates it\n\nAborting an AI response could occasionally leave the answer in the chat\ntwice after a reload. Stopped responses are now stored exactly once.\n\n### Edited messages are no longer lost\n\nEditing and resending a chat message while a response was still running\ncould lose your edit. The edited message is now saved before the new\nresponse starts, so your wording always survives.\n\n### Long multi-step AI tasks stay on track\n\nOn long turns with many tool steps, the AI's working history could swell\nwith repeated content, degrading answers and burning credits. The history\neach step sees is now tightly bounded, and the AI keeps its focus — and\nyour original question — all the way to the final answer.\n\n## Improvements\n\n- **More reliable AI sessions**: new internal consistency checks watch\n  every chat turn and surface problems early, backed by replay tests built\n  from real-world sessions\n- **Better support diagnostics**: support bundles now include anonymous\n  chat health counters, helping us resolve reports faster — no chat\n  content is added\n\n## 📅 Release Info\n\n- **Version**: 1.18.0\n- **Release Date**: 2026-07-03\n- **Previous Version**: 1.17.3\n- **Type**: Minor Release\n",
+  "body": "# Changelog - v1.18.1\n\n## Bug Fixes\n\n### Trail updates are easier to read\n\nTensorPM now shows more precise Trail entries when project context or action\nitems are updated.\n\n**What Changed:**\n\n- Similar text edits now highlight the changed words instead of marking the\n  whole sentence as removed and re-added\n- Action item updates that do not actually change anything are shown as\n  \"No effective changes\" instead of looking like a real edit\n- If a long action item update trace is shortened internally, TensorPM still\n  shows the requested field changes wherever possible\n\n**User Benefit:**\nYou can review AI-assisted updates faster and see what really changed without\nbeing distracted by noisy red/green blocks.\n\n## Improvements\n\n- **Cleaner action item history**: edited action items use a calmer visual style,\n  so important changes stand out more clearly\n- **Better change badges**: unchanged action item updates now get their own\n  neutral status instead of being grouped with edits\n\n## Notes\n\nThis is a focused patch release for Trail readability and action item update\nhistory. No migration or manual user action is required.\n\n## 📅 Release Info\n\n- **Version**: 1.18.1\n- **Release Date**: 2026-07-04\n- **Previous Version**: 1.18.0\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.18.0/TensorPM-Setup.exe",
-      "size": 133132280,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.18.1/TensorPM-Setup.exe",
+      "size": 133139512,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.18.0/TensorPM-macOS.dmg",
-      "size": 169788858,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.18.1/TensorPM-macOS.dmg",
+      "size": 169795446,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.18.0/TensorPM-Linux.AppImage",
-      "size": 156004603,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.18.1/TensorPM-Linux.AppImage",
+      "size": 156012538,
       "download_count": 0
     }
   ]
