@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.17.2",
-  "name": "TensorPM v1.17.2",
-  "published_at": "2026-07-03T08:47:55Z",
+  "tag_name": "v1.17.3",
+  "name": "TensorPM v1.17.3",
+  "published_at": "2026-07-03T10:20:54Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.17.2\n\n## 🎉 New Features\n\n### Run Skills Directly from a File's Context Menu\n\nSkills can now offer one-click actions on matching project files. Right-click a file in the File Explorer and run the skill on it — deterministically, without involving the AI.\n\n**What Changed:**\n\n- ✅ Skills declare which file types they handle; TensorPM shows their action in the context menu of matching files\n- ✅ The skill runs instantly in the secure sandbox and its results land in the project's `exports/` folder\n- ✅ Only skills you have explicitly trusted can offer context-menu actions\n\n**User Benefit:**\nProcess files with a single click and get exact, reproducible results — the same file always produces the same output.\n\n### Ready for GAEB Bills of Quantities (Leistungsverzeichnisse)\n\nConstruction professionals can now bring German GAEB tender data (.x81/.x83/.x84) into TensorPM.\n\n**What Changed:**\n\n- ✅ Material items support an external position reference (GAEB OZ, e.g. \"03.02.0040\") and a unit price\n- ✅ The new gaeb-import skill parses GAEB DA XML 3.1–3.3 files exactly — positions, quantities, unit prices, and totals are read from the file, never retyped by the AI\n- ✅ Bid files (X84) are merged onto the original tender (X83) automatically by position number\n- ✅ Right-click any GAEB file in the `gaeb/` folder to get an instant overview: structure, position counts, totals, and anomalies\n- ✅ The TensorPM agent can stage parsed positions as material items for your review\n\n**User Benefit:**\nImport a complete Leistungsverzeichnis in seconds with every number exactly as tendered — no manual transcription, no AI transcription errors.\n\n## 🏗️ Improvements\n\n### Code-Execution Runtime Ships with the App Again\n\nThe sandbox runtime used by Skills is bundled and code-signed with every installer again.\n\n**What Changed:**\n\n- ✅ Skills work immediately after installation — no first-run download required\n- ✅ The runtime binary is signed together with the app on macOS and Windows\n- ✅ Works fully offline from the first minute\n\n**User Benefit:**\nSkills are available instantly and verifiably signed, even on machines without internet access or behind strict firewalls.\n\n## 🐛 Bug Fixes\n\n- Fixed material items losing their position reference and unit price when the AI assistant updated another field on the same item\n- Negative unit prices from GAEB discount positions (Nachlässe) are preserved in the item notes instead of being silently zeroed\n\n## 📝 Notes\n\n- The gaeb-import skill will be published to the in-app skill catalog separately; the platform support in this release works with any skill that declares file triggers\n- Database schema migration 042 runs automatically on first start\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.17.2\n- **Release Date**: 2026-07-03\n- **Previous Version**: 1.16.0 (v1.17.0/v1.17.1 were tagged but never published)\n- **Type**: Minor Release (published as patch tag)\n",
+  "body": "# Changelog - v1.17.3\n\n## 🏗️ Improvements\n\n### More Reliable Releases\n\nThis maintenance release hardens the TensorPM build pipeline so that packaging problems are caught before an installer is ever produced.\n\n**What Changed:**\n\n- ✅ Every release build now verifies that the packaged app contains all modules it needs to run — a missing module now stops the build within seconds instead of surfacing as a startup crash\n- ✅ A new automated test guards the packaging configuration itself, so future size optimizations can never accidentally remove files the app depends on\n- ✅ Build infrastructure improvements for faster, more consistent macOS releases\n\n**User Benefit:**\nUpdates arrive with an extra layer of safety checks — the class of packaging error that delayed recent updates can no longer reach your machine.\n\n## 📝 Notes\n\n- This release contains no functional or visual changes. If you are on v1.17.2, updating is optional; auto-update will pick it up as usual.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.17.3\n- **Release Date**: 2026-07-03\n- **Previous Version**: 1.17.2\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.17.2/TensorPM-Setup.exe",
-      "size": 133121256,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.17.3/TensorPM-Setup.exe",
+      "size": 133130624,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.17.2/TensorPM-macOS.dmg",
-      "size": 169755637,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.17.3/TensorPM-macOS.dmg",
+      "size": 169759220,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.17.2/TensorPM-Linux.AppImage",
-      "size": 155963703,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.17.3/TensorPM-Linux.AppImage",
+      "size": 155963652,
       "download_count": 0
     }
   ]
