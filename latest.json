@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.15.1",
-  "name": "TensorPM v1.15.1",
-  "published_at": "2026-07-02T10:44:06Z",
+  "tag_name": "v1.17.2",
+  "name": "TensorPM v1.17.2",
+  "published_at": "2026-07-03T08:47:55Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.15.1\n\nThis patch release tightens AI prompt context handling after v1.15.0 and fixes\nquoted display names in greetings and settings.\n\n## Bug Fixes\n\n### Cleaner AI Context for Action Item Generation\n\nAction item generation and re-evaluation now avoid sending the same project\ndata multiple times in one prompt. Existing action items, people, and budget\ndetails are kept in their dedicated prompt sections instead of being duplicated\ninside the project JSON.\n\nThis reduces prompt size and helps the AI focus on the current planning task.\n\n### Correct Categories and Assignees in Already Prepared Project Context\n\nSome AI paths received project data that had already been prepared for AI use.\nPreparing it a second time could degrade existing action items to an\n`Unknown` category and drop assignee context. Prepared projects are now detected\nand passed through safely.\n\nAgent assignees are also preserved as readable labels in AI context instead of\nbeing silently omitted.\n\n### More Accurate Token Counting\n\nInternal generation metadata is now stripped before token counting, matching\nwhat is actually sent to the model. This prevents the app from overestimating\ncontext size because of hidden internal snapshots and reduces unnecessary\ncompression or truncation.\n\n### Display Names No Longer Keep Wrapping Quotes\n\nNames stored as `\"Thomas\"` or similar quoted variants are normalized before\nthey reach greetings, chat, settings, and local storage updates. Apostrophes in\nnames such as `O'Brien` are preserved.\n\n## Notes\n\n- No database migration.\n- No sync protocol change.\n- Release quality gates still run, except the Playwright E2E suite is skipped\n  for this release by request.\n\n---\n\n## Release Info\n\n- **Version**: 1.15.1\n- **Release Date**: 2026-07-02\n- **Previous Version**: 1.15.0\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.17.2\n\n## 🎉 New Features\n\n### Run Skills Directly from a File's Context Menu\n\nSkills can now offer one-click actions on matching project files. Right-click a file in the File Explorer and run the skill on it — deterministically, without involving the AI.\n\n**What Changed:**\n\n- ✅ Skills declare which file types they handle; TensorPM shows their action in the context menu of matching files\n- ✅ The skill runs instantly in the secure sandbox and its results land in the project's `exports/` folder\n- ✅ Only skills you have explicitly trusted can offer context-menu actions\n\n**User Benefit:**\nProcess files with a single click and get exact, reproducible results — the same file always produces the same output.\n\n### Ready for GAEB Bills of Quantities (Leistungsverzeichnisse)\n\nConstruction professionals can now bring German GAEB tender data (.x81/.x83/.x84) into TensorPM.\n\n**What Changed:**\n\n- ✅ Material items support an external position reference (GAEB OZ, e.g. \"03.02.0040\") and a unit price\n- ✅ The new gaeb-import skill parses GAEB DA XML 3.1–3.3 files exactly — positions, quantities, unit prices, and totals are read from the file, never retyped by the AI\n- ✅ Bid files (X84) are merged onto the original tender (X83) automatically by position number\n- ✅ Right-click any GAEB file in the `gaeb/` folder to get an instant overview: structure, position counts, totals, and anomalies\n- ✅ The TensorPM agent can stage parsed positions as material items for your review\n\n**User Benefit:**\nImport a complete Leistungsverzeichnis in seconds with every number exactly as tendered — no manual transcription, no AI transcription errors.\n\n## 🏗️ Improvements\n\n### Code-Execution Runtime Ships with the App Again\n\nThe sandbox runtime used by Skills is bundled and code-signed with every installer again.\n\n**What Changed:**\n\n- ✅ Skills work immediately after installation — no first-run download required\n- ✅ The runtime binary is signed together with the app on macOS and Windows\n- ✅ Works fully offline from the first minute\n\n**User Benefit:**\nSkills are available instantly and verifiably signed, even on machines without internet access or behind strict firewalls.\n\n## 🐛 Bug Fixes\n\n- Fixed material items losing their position reference and unit price when the AI assistant updated another field on the same item\n- Negative unit prices from GAEB discount positions (Nachlässe) are preserved in the item notes instead of being silently zeroed\n\n## 📝 Notes\n\n- The gaeb-import skill will be published to the in-app skill catalog separately; the platform support in this release works with any skill that declares file triggers\n- Database schema migration 042 runs automatically on first start\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.17.2\n- **Release Date**: 2026-07-03\n- **Previous Version**: 1.16.0 (v1.17.0/v1.17.1 were tagged but never published)\n- **Type**: Minor Release (published as patch tag)\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.15.1/TensorPM-Setup.exe",
-      "size": 182041416,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.17.2/TensorPM-Setup.exe",
+      "size": 133121256,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.15.1/TensorPM-macOS.dmg",
-      "size": 241163410,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.17.2/TensorPM-macOS.dmg",
+      "size": 169755637,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.15.1/TensorPM-Linux.AppImage",
-      "size": 239734468,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.17.2/TensorPM-Linux.AppImage",
+      "size": 155963703,
       "download_count": 0
     }
   ]
