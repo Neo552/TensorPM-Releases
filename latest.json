@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.18.2",
-  "name": "TensorPM v1.18.2",
-  "published_at": "2026-07-04T22:21:01Z",
+  "tag_name": "v1.19.0",
+  "name": "TensorPM v1.19.0",
+  "published_at": "2026-07-06T10:28:51Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.18.2\n\n## New Features\n\n### Better guidance for generated Office documents\n\nTensorPM's AI can now load detailed skill reference material only when it is\nneeded for a document task.\n\n**What Changed:**\n\n- PowerPoint, Excel, Word, PDF, and artifact review skills can expose focused\n  reference guides without bloating normal chats\n- The AI can load one specific guide, such as a design contract or spreadsheet\n  quality gate, when a polished deliverable needs it\n- Skill authors can keep core instructions short while keeping heavier\n  document-generation guidance in separate reference files\n\n**User Benefit:**\nGenerated decks, workbooks, reports, and PDFs can follow stronger document\nquality rules while everyday project chats stay fast and focused.\n\n## Bug Fixes\n\n### Skill references respect approval state immediately\n\nTensorPM now revalidates a skill's approved content before exposing bundled\nreference files to the AI.\n\n**What Changed:**\n\n- If a skill is edited after approval, TensorPM blocks reference reads until\n  the skill is approved again\n- This closes the short timing window between a local file edit and the\n  FileExplorer trust badge refresh\n\n**User Benefit:**\nThe AI only sees reference material from the exact skill contents you approved.\n\n### Multi-day milestone dates are clearer\n\nWhen a milestone date range is entered into the single-date column, TensorPM\nstill normalizes the date cell to the first day, but now returns an explicit\nwarning.\n\n**What Changed:**\n\n- ISO date ranges such as `2026-10-08 bis 2026-10-09` normalize to\n  `2026-10-08`\n- TensorPM now tells the AI to preserve the full range in the milestone\n  description when it represents a multi-day event\n\n**User Benefit:**\nMilestone tables stay compatible with single-date timelines without silently\nlosing the end date.\n\n## Improvements\n\n- **Cleaner skill authoring docs**: the generated `skills/README.md` now\n  explains how to use deferred reference files for heavier guidance\n- **Office artifact eval fixtures**: the desktop skill catalog now includes\n  trigger and quality rubrics for document-generation skills\n\n## Notes\n\nThis is a patch release focused on skill reference loading, document-generation\nquality guidance, and safer milestone date normalization. No migration or\nmanual user action is required.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.18.2\n- **Release Date**: 2026-07-04\n- **Previous Version**: 1.18.1\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.19.0\n\n## 🎉 New Features\n\n### Presentation Deck Authoring\n\nTensorPM can now generate and revise PowerPoint presentations directly from the current project.\n\n**What Changed:**\n\n- Added the new `deck_author` tool for creating project-based PowerPoint decks.\n- Added `deck_author_edit` so decks created by TensorPM can be updated later with natural-language instructions.\n- Added a planner, design director, layout authoring, sandbox rendering, automatic repair, and PPTX integrity checks.\n- Decks are exported into the project under `exports/presentation-deck/`.\n\n**User Benefit:**\nUsers can ask TensorPM for status decks, steering committee decks, proposals, reviews, and project overviews without manually orchestrating code execution or PowerPoint layout steps.\n\n## 🏗️ Improvements\n\n### Skill-Based Deck Tool Access\n\nDeck authoring is unlocked by the `presentation-deck` project skill. TensorPM only exposes the deck tools when that skill is installed and trusted for the active project.\n\n### Safer Tool Availability Checks\n\nTensorPM now re-checks tool availability at execution time, not only when the tool list is shown to the AI. This prevents stale or direct tool calls from bypassing project-specific availability gates.\n\n### PowerPoint Skill Catalog Cleanup\n\nThe legacy manual PowerPoint guide has been replaced by the new `presentation-deck` skill flow in the desktop skill catalog.\n\n## 📝 Notes\n\n- The release intentionally skips the full Playwright E2E suite.\n- The standard typecheck, lint, unit test, ESM import verification, and release smoke gates remain part of the release process unless explicitly skipped by the release command.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.19.0\n- **Release Date**: 2026-07-06\n- **Previous Version**: 1.18.2\n- **Type**: Minor Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.18.2/TensorPM-Setup.exe",
-      "size": 133131688,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.19.0/TensorPM-Setup.exe",
+      "size": 133150808,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.18.2/TensorPM-macOS.dmg",
-      "size": 169799882,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.19.0/TensorPM-macOS.dmg",
+      "size": 169653770,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.18.2/TensorPM-Linux.AppImage",
-      "size": 156016884,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.19.0/TensorPM-Linux.AppImage",
+      "size": 155896586,
       "download_count": 0
     }
   ]
