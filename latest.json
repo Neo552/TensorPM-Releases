@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.19.0",
-  "name": "TensorPM v1.19.0",
-  "published_at": "2026-07-06T10:28:51Z",
+  "tag_name": "v1.20.3",
+  "name": "TensorPM v1.20.3",
+  "published_at": "2026-07-10T23:03:07Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.19.0\n\n## 🎉 New Features\n\n### Presentation Deck Authoring\n\nTensorPM can now generate and revise PowerPoint presentations directly from the current project.\n\n**What Changed:**\n\n- Added the new `deck_author` tool for creating project-based PowerPoint decks.\n- Added `deck_author_edit` so decks created by TensorPM can be updated later with natural-language instructions.\n- Added a planner, design director, layout authoring, sandbox rendering, automatic repair, and PPTX integrity checks.\n- Decks are exported into the project under `exports/presentation-deck/`.\n\n**User Benefit:**\nUsers can ask TensorPM for status decks, steering committee decks, proposals, reviews, and project overviews without manually orchestrating code execution or PowerPoint layout steps.\n\n## 🏗️ Improvements\n\n### Skill-Based Deck Tool Access\n\nDeck authoring is unlocked by the `presentation-deck` project skill. TensorPM only exposes the deck tools when that skill is installed and trusted for the active project.\n\n### Safer Tool Availability Checks\n\nTensorPM now re-checks tool availability at execution time, not only when the tool list is shown to the AI. This prevents stale or direct tool calls from bypassing project-specific availability gates.\n\n### PowerPoint Skill Catalog Cleanup\n\nThe legacy manual PowerPoint guide has been replaced by the new `presentation-deck` skill flow in the desktop skill catalog.\n\n## 📝 Notes\n\n- The release intentionally skips the full Playwright E2E suite.\n- The standard typecheck, lint, unit test, ESM import verification, and release smoke gates remain part of the release process unless explicitly skipped by the release command.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.19.0\n- **Release Date**: 2026-07-06\n- **Previous Version**: 1.18.2\n- **Type**: Minor Release\n",
+  "body": "# Changelog - v1.20.3\n\nTensorPM 1.20.3 refreshes the OpenAI model lineup and improves release reliability on macOS.\n\n## 🤖 Updated OpenAI models\n\n- **GPT-5.6 Terra** is now the balanced default for everyday project work.\n- **GPT-5.6 Sol** is available for the most demanding analysis and reasoning tasks.\n- **GPT-5.6 Luna** provides a faster, more cost-efficient option and powers lightweight AI tasks.\n- All three models support images, PDF inputs, tools, and streaming with the same large context\n  and output limits, so existing TensorPM workflows continue to work without provider changes.\n- Saved preferences that still reference a retired OpenAI model now fall back safely to GPT-5.6\n  Terra instead of sending an unsupported model ID to the API.\n\n## 🛠️ Release reliability\n\n- macOS packaging now reuses the signing keychain prepared by the release workflow instead of\n  creating a second temporary keychain.\n- The signing identity is unlocked and verified immediately before packaging, producing an early,\n  clear failure if the certificate is unavailable and avoiding intermittent keychain-passphrase\n  errors during release builds.\n\n## 📅 Release Info\n\n- **Version**: 1.20.3\n- **Release Date**: July 11, 2026\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.19.0/TensorPM-Setup.exe",
-      "size": 133150808,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.20.3/TensorPM-Setup.exe",
+      "size": 145539992,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.19.0/TensorPM-macOS.dmg",
-      "size": 169653770,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.20.3/TensorPM-macOS.dmg",
+      "size": 181896928,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.19.0/TensorPM-Linux.AppImage",
-      "size": 155896586,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.20.3/TensorPM-Linux.AppImage",
+      "size": 168288635,
       "download_count": 0
     }
   ]
