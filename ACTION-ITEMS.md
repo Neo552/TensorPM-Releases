@@ -2,27 +2,27 @@
 
 ## Action Item Fields
 
-| Field            | Type             | Notes                                                          |
+| Field | Type | Notes |
 | ---------------- | ---------------- | -------------------------------------------------------------- | --------- |
-| `id`             | string           | UUID; auto-generated on create                                 |
-| `displayId`      | number           | Human-readable running number                                  |
-| `text`           | string           | Short title                                                    |
-| `description`    | string           | Detailed body                                                  |
-| `status`         | string           | `open`, `inProgress`, `completed`, `blocked`                   |
-| `categoryId`     | string           | Category UUID                                                  |
-| `assignedPeople` | string[]         | Person UUIDs or names                                          |
-| `dueDate`        | string           | ISO date (`YYYY-MM-DD`), required                              |
-| `startDate`      | string or `null` | ISO date or clear with `null`                                  |
-| `urgency`        | string           | `very low`, `low`, `medium`, `high`, `overdue`                 |
-| `impact`         | string           | `minimal`, `low`, `medium`, `high`, `critical`                 |
-| `complexity`     | string           | `very simple`, `simple`, `moderate`, `complex`, `very complex` |
-| `priority`       | number           | Score `1-100`                                                  |
-| `planEffort`     | object or `null` | `{ value, unit: "hours"                                        | "days" }` |
-| `planBudget`     | object or `null` | `{ amount, currency? }`                                        |
-| `manualEffort`   | object or `null` | Actual effort                                                  |
-| `isBudget`       | object or `null` | Actual budget spent                                            |
-| `blockReason`    | string           | Required context when blocked                                  |
-| `dependencies`   | array            | Dependency links                                               |
+| `id` | string | UUID; auto-generated on create |
+| `displayId` | number | Human-readable running number |
+| `text` | string | Short title |
+| `description` | string | Detailed body |
+| `status` | string | `open`, `inProgress`, `completed`, `blocked` |
+| `categoryId` | string | Category UUID |
+| `assignedPeople` | string[] | Person UUIDs or names |
+| `dueDate` | string | ISO date (`YYYY-MM-DD`), required |
+| `startDate` | string or `null` | ISO date or clear with `null` |
+| `urgency` | string | `very low`, `low`, `medium`, `high`, `overdue` |
+| `impact` | string | `minimal`, `low`, `medium`, `high`, `critical` |
+| `complexity` | string | `very simple`, `simple`, `moderate`, `complex`, `very complex` |
+| `priority` | number | Score `1-100` |
+| `planEffort` | object or `null` | `{ value, unit: "hours"                                        | "days" }` |
+| `planBudget` | object or `null` | `{ amount, currency? }` |
+| `manualEffort` | object or `null` | Actual effort |
+| `isBudget` | object or `null` | Actual budget spent |
+| `blockReason` | string | Required context when blocked |
+| `dependencies` | array | Dependency links |
 
 ## Dependency Types
 

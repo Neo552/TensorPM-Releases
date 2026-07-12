@@ -89,7 +89,7 @@ The TensorPM project agent can also schedule its own future runs (e.g. "remind m
 
 ## Project Structure (WBS / Work Packages)
 
-Projects can opt into a **Work Breakdown Structure (WBS)** layered onto the category tree. When active, categories carry a **role** (`kind`: `structure` node or `work_package`), a stable hierarchical **WBS code** (e.g. `1.2.3`), and — on work packages — a steckbrief (responsible person, executing company, status, planned dates/budget, progress). Action items remain the operational layer *below* work packages. `get_project` returns these WBS fields (code, kind, owner, status, dates, progress) additively for WBS projects.
+Projects can opt into a **Work Breakdown Structure (WBS)** layered onto the category tree. When active, categories carry a **role** (`kind`: `structure` node or `work_package`), a stable hierarchical **WBS code** (e.g. `1.2.3`), and — on work packages — a steckbrief (responsible person, executing company, status, planned dates/budget, progress). Action items remain the operational layer _below_ work packages. `get_project` returns these WBS fields (code, kind, owner, status, dates, progress) additively for WBS projects.
 
 **Addressing by code:** wherever a category is referenced — `submit_action_items`, `update_action_items`, `list_action_items` — you may pass the **WBS code** (exact match, tried before the name) in place of the category name/id. Falls back through name to `general` exactly like today. Structure changes (new work packages, role/code edits) stay core project context: propose via `propose_updates` or the project agent, never a direct MCP write.
 
