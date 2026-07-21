@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.25.1",
-  "name": "TensorPM v1.25.1",
-  "published_at": "2026-07-21T13:43:35Z",
+  "tag_name": "v1.25.2",
+  "name": "TensorPM v1.25.2",
+  "published_at": "2026-07-21T14:50:25Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.25.1\n\n## 🎉 New Features\n\n### Auditable AI Activity and Token Usage\n\nTensorPM now provides a complete activity history for AI-assisted work and records individual model requests separately from the user-facing operation.\n\n- ✅ Review AI operations, status changes, providers, models, and token usage in one history\n- ✅ Track input, output, cached, and reasoning tokens without double-counting subset values\n- ✅ Correlate chat, onboarding, guidance, background, and retry activity with the underlying model calls\n- ✅ Preserve completed, failed, cancelled, and recovered calls for reliable accounting\n\n## 🐛 Bug Fixes\n\n### Reliable Claude Health and Guidance Workflows\n\n- ✅ Reject malformed structured tool arguments and let Claude correct them within the same request\n- ✅ Require complete, non-empty project-health reasoning before accepting an evaluation\n- ✅ End forced-tool single-shot requests immediately after the valid result instead of waiting for a redundant follow-up turn\n- ✅ Prevent execution guidance from running into the fixed 180-second limit after its result is already available\n\n### Complete Failure Accounting\n\n- ✅ Record failed provider requests even when the provider did not start its own request log entry\n- ✅ Preserve partial token usage for timed-out or failed requests when the runtime reported it\n- ✅ Recover stale processing entries on startup so interrupted calls no longer remain permanently active\n- ✅ Keep cancellation terminal across provider and retry boundaries\n\n### Sync and Provider Reliability\n\n- ✅ Sync the new per-request AI ledger across workspaces\n- ✅ Normalize provider errors and quota messages consistently across API-key and subscription runtimes\n- ✅ Improve OpenAI prompt-cache compatibility and provider usage metadata\n- ✅ Preserve operation correlation for background, onboarding, guidance, and chat-title generation\n\n## 🏗️ Improvements\n\n### Clearer AI Activity History\n\n- ✅ Improved filtering, grouping, status presentation, and usage details\n- ✅ Unified activity totals from persisted model-call records\n- ✅ Added live updates for processing, completed, failed, and cancelled operations\n- ✅ Expanded database, provider, IPC, frontend, and real-runtime regression coverage\n\n## 📝 Notes\n\n- The activity history distinguishes a logical AI operation from its individual provider requests and retries.\n- Cache and reasoning token values are included as usage details and are not added a second time to total tokens.\n- Claude and ChatGPT subscription runtimes continue to use the locally signed-in account without API-key fallback.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.25.1\n- **Release Date**: July 21, 2026\n- **Previous Version**: 1.25.0\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.25.2\n\n## 🔒 Security\n\n### Dependency Hardening\n\n- ✅ Updated `brace-expansion` to 5.0.7 to prevent exponential-time denial of service\n- ✅ Updated `shell-quote` to 1.9.0 to prevent quadratic-complexity denial of service\n- ✅ Updated `protobufjs` to 7.6.5 to prevent an infinite loop while parsing malformed `.proto` options\n\n## 📝 Notes\n\n- This patch contains dependency security updates only; no application behavior or data schema changed.\n- The AI activity ledger, Claude health validation, guidance timeout fix, and Sync migration shipped in v1.25.1 remain unchanged.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.25.2\n- **Release Date**: July 21, 2026\n- **Previous Version**: 1.25.1\n- **Type**: Security Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.1/TensorPM-Setup.exe",
-      "size": 146850760,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.2/TensorPM-Setup.exe",
+      "size": 146814280,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.1/TensorPM-macOS.dmg",
-      "size": 183707245,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.2/TensorPM-macOS.dmg",
+      "size": 183704433,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.1/TensorPM-Linux.AppImage",
-      "size": 170214789,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.2/TensorPM-Linux.AppImage",
+      "size": 170215377,
       "download_count": 0
     }
   ]
