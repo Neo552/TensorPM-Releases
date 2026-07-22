@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.25.4",
-  "name": "TensorPM v1.25.4",
-  "published_at": "2026-07-21T20:32:56Z",
+  "tag_name": "v1.25.5",
+  "name": "TensorPM v1.25.5",
+  "published_at": "2026-07-22T22:00:59Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.25.4\n\n## 🎉 New Features\n\n### Connect Claude and ChatGPT Subscriptions from Settings\n\nTensorPM can now start the official browser sign-in flow for locally installed\nClaude Code and Codex runtimes directly from the AI provider settings.\n\n- ✅ Connect or reconnect Claude and ChatGPT subscription accounts without using a terminal\n- ✅ Automatically refresh the available account models after successful sign-in\n- ✅ See clear, localized guidance when a runtime is missing, sign-in is cancelled, or authentication cannot be detected\n- ✅ Keep credentials in the providers' official local credential stores\n\n## 🐛 Bug Fixes\n\n### Reliable Distiller Signal Completion\n\nFixed a case where an email could immediately reappear in the Distiller queue\nafter review when an AI provider reported the signal with the wrong source type.\n\n- ✅ Signal identity and source now come from TensorPM's active intake record\n- ✅ Completion is verified against the actual backing email, document, or file\n- ✅ Distiller trail entries retain the correct source information\n\n### Stable Project-Relevance Review\n\nImproved the Distiller flow when an incoming signal may belong to another\nproject.\n\n- ✅ Unclear assignments always show an actionable relevance card\n- ✅ Free-text clarifications are evaluated again instead of reusing a stale result\n- ✅ Signals assigned to another project are removed from the current review queue\n- ✅ Ambiguous replies no longer leave the Distiller in a repeated text-only loop\n\n## 🏗️ Reliability Improvements\n\n- Added real-database regression coverage for incorrectly labelled email signals\n- Added safeguards against concurrent subscription sign-in attempts\n- Added focused coverage for relevance-card retries and subscription connection states\n\n## 📝 Notes\n\n- Subscription sign-in requires the corresponding Claude Code or Codex runtime\n  to be installed locally.\n- No project data is changed until the user confirms the Distiller proposal or\n  relevance decision.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.25.4\n- **Release Date**: July 21, 2026\n- **Previous Version**: 1.25.3\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.25.5\n\n## 🐛 Bug Fixes\n\n### Reliable Codex Detection after App Updates\n\nTensorPM now finds Codex installations managed by NVM even when the desktop app\nis launched from Finder or restarted by the updater without the user's terminal\n`PATH`.\n\n- ✅ Recognize an existing ChatGPT subscription login again after an app restart\n- ✅ Discover the models available through the locally installed Codex runtime\n- ✅ Support both `NVM_BIN` and Codex installations in the NVM version store\n- ✅ Keep the TensorPM download small by continuing to use the user's local Codex installation\n\n## 🏗️ Improvements\n\n### Cleaner Subscription and Agent Settings\n\nSubscription connections and external coding-agent controls are now grouped in\none compact **Subscriptions & Agents** section.\n\n- ✅ Find Claude, ChatGPT, Claude Code, and Codex connections in one place\n- ✅ Open concise explanations through accessible information tooltips\n- ✅ Hide redundant login actions for accounts that are already connected\n- ✅ Use a more compact layout for agent runtime and permission controls\n\n## 📝 Notes\n\n- ChatGPT subscription support still requires Codex to be installed locally.\n- This release does not bundle the Codex binary or change existing credentials.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.25.5\n- **Release Date**: July 22, 2026\n- **Previous Version**: 1.25.4\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.4/TensorPM-Setup.exe",
-      "size": 146818648,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.5/TensorPM-Setup.exe",
+      "size": 146829600,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.4/TensorPM-macOS.dmg",
-      "size": 183735514,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.5/TensorPM-macOS.dmg",
+      "size": 183711364,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.4/TensorPM-Linux.AppImage",
-      "size": 170243814,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.5/TensorPM-Linux.AppImage",
+      "size": 170169331,
       "download_count": 0
     }
   ]
