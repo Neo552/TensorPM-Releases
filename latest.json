@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.25.5",
-  "name": "TensorPM v1.25.5",
-  "published_at": "2026-07-22T22:00:59Z",
+  "tag_name": "v1.25.6",
+  "name": "TensorPM v1.25.6",
+  "published_at": "2026-07-23T22:58:01Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.25.5\n\n## 🐛 Bug Fixes\n\n### Reliable Codex Detection after App Updates\n\nTensorPM now finds Codex installations managed by NVM even when the desktop app\nis launched from Finder or restarted by the updater without the user's terminal\n`PATH`.\n\n- ✅ Recognize an existing ChatGPT subscription login again after an app restart\n- ✅ Discover the models available through the locally installed Codex runtime\n- ✅ Support both `NVM_BIN` and Codex installations in the NVM version store\n- ✅ Keep the TensorPM download small by continuing to use the user's local Codex installation\n\n## 🏗️ Improvements\n\n### Cleaner Subscription and Agent Settings\n\nSubscription connections and external coding-agent controls are now grouped in\none compact **Subscriptions & Agents** section.\n\n- ✅ Find Claude, ChatGPT, Claude Code, and Codex connections in one place\n- ✅ Open concise explanations through accessible information tooltips\n- ✅ Hide redundant login actions for accounts that are already connected\n- ✅ Use a more compact layout for agent runtime and permission controls\n\n## 📝 Notes\n\n- ChatGPT subscription support still requires Codex to be installed locally.\n- This release does not bundle the Codex binary or change existing credentials.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.25.5\n- **Release Date**: July 22, 2026\n- **Previous Version**: 1.25.4\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.25.6\n\n## 🐛 Bug Fixes\n\n### Reliable ChatGPT Subscription Startup with NVM\n\nTensorPM can now start a Codex installation managed by NVM even when the desktop\napp was launched with a minimal system `PATH`.\n\n- ✅ Prevent the ChatGPT app server from failing because its Node.js runtime could not be found\n- ✅ Apply the corrected runtime environment to model discovery and browser sign-in\n- ✅ Keep API-key variables isolated from subscription-based Codex sessions\n\n### Login Actions Only When the Required Tool Is Available\n\nClaude and ChatGPT subscription sign-in is now offered only when Claude Code or\nCodex is actually installed on the device.\n\n- ✅ Hide unusable sign-in buttons when the matching local tool is missing\n- ✅ Show a subtle **Not installed** status with a concise explanation\n- ✅ Keep installed, signed-in, and model-discovery states separate and accurate\n\n## 🏗️ Improvements\n\n### Clearer Subscription and Agent Controls\n\nThe combined **Subscriptions & Agents** settings are more compact and easier to\nscan.\n\n- ✅ Group each coding agent's runtime options into a clear compact card\n- ✅ Label headless and permission controls explicitly\n- ✅ Keep connected and unavailable states aligned consistently\n\n### Refined Control Shapes\n\nDropdowns and project search controls now use shapes that better match their\npurpose.\n\n- ✅ Keep dropdowns lightly rounded instead of pill-shaped\n- ✅ Use a circular collapsed project-search button\n- ✅ Use a rounded expanded search field for a smoother transition\n\n## 📝 Notes\n\n- Claude subscription sign-in requires Claude Code to be installed locally.\n- ChatGPT subscription sign-in requires Codex to be installed locally.\n- Existing local provider credentials remain unchanged.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.25.6\n- **Release Date**: July 24, 2026\n- **Previous Version**: 1.25.5\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.5/TensorPM-Setup.exe",
-      "size": 146829600,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.6/TensorPM-Setup.exe",
+      "size": 146821992,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.5/TensorPM-macOS.dmg",
-      "size": 183711364,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.6/TensorPM-macOS.dmg",
+      "size": 183708389,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.5/TensorPM-Linux.AppImage",
-      "size": 170169331,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.6/TensorPM-Linux.AppImage",
+      "size": 170177847,
       "download_count": 0
     }
   ]
