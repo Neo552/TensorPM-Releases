@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.25.6",
-  "name": "TensorPM v1.25.6",
-  "published_at": "2026-07-23T22:58:01Z",
+  "tag_name": "v1.25.7",
+  "name": "TensorPM v1.25.7",
+  "published_at": "2026-07-24T16:06:20Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.25.6\n\n## 🐛 Bug Fixes\n\n### Reliable ChatGPT Subscription Startup with NVM\n\nTensorPM can now start a Codex installation managed by NVM even when the desktop\napp was launched with a minimal system `PATH`.\n\n- ✅ Prevent the ChatGPT app server from failing because its Node.js runtime could not be found\n- ✅ Apply the corrected runtime environment to model discovery and browser sign-in\n- ✅ Keep API-key variables isolated from subscription-based Codex sessions\n\n### Login Actions Only When the Required Tool Is Available\n\nClaude and ChatGPT subscription sign-in is now offered only when Claude Code or\nCodex is actually installed on the device.\n\n- ✅ Hide unusable sign-in buttons when the matching local tool is missing\n- ✅ Show a subtle **Not installed** status with a concise explanation\n- ✅ Keep installed, signed-in, and model-discovery states separate and accurate\n\n## 🏗️ Improvements\n\n### Clearer Subscription and Agent Controls\n\nThe combined **Subscriptions & Agents** settings are more compact and easier to\nscan.\n\n- ✅ Group each coding agent's runtime options into a clear compact card\n- ✅ Label headless and permission controls explicitly\n- ✅ Keep connected and unavailable states aligned consistently\n\n### Refined Control Shapes\n\nDropdowns and project search controls now use shapes that better match their\npurpose.\n\n- ✅ Keep dropdowns lightly rounded instead of pill-shaped\n- ✅ Use a circular collapsed project-search button\n- ✅ Use a rounded expanded search field for a smoother transition\n\n## 📝 Notes\n\n- Claude subscription sign-in requires Claude Code to be installed locally.\n- ChatGPT subscription sign-in requires Codex to be installed locally.\n- Existing local provider credentials remain unchanged.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.25.6\n- **Release Date**: July 24, 2026\n- **Previous Version**: 1.25.5\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.25.7\n\n## 🎉 New Features\n\n### Gemini 3.6 Flash Support\n\nTensorPM now uses Gemini 3.6 Flash as the default Google model and Gemini 3.5\nFlash-Lite for lightweight tasks.\n\n- ✅ Use the latest Gemini Flash generation for Google BYOK and the managed fallback\n- ✅ Preserve tool calls, reasoning signatures, and images returned from tools\n- ✅ Keep model limits and selectable model names consistent across the app\n\n### Clearer Project Steering at a Glance\n\nThe project welcome area now distinguishes current, stale, missing, blocked, and\nloading information more accurately.\n\n- ✅ See whether status, progress, context, and guidance are ready or need attention\n- ✅ Refresh newly available guidance in the same operation after project context improves\n- ✅ Receive remotely synced status, progress, guidance, and intake updates without reopening the project\n\n## 🐛 Bug Fixes\n\n### More Reliable Local AI Tool Calls\n\nOpenAI-compatible local endpoints that silently end a stream can now retry once\nwithout streaming when no visible response was produced.\n\n- ✅ Recover tool-call responses from endpoints with incomplete streaming support\n- ✅ Avoid duplicate retries after visible text has already been streamed\n- ✅ Account for both attempts in rate limiting and usage reporting\n\n### Accurate Dashboard Loading States\n\nGenerating guidance no longer makes the project status row appear to be loading.\nStatus indicators now react only to status and progress generation.\n\n### Stable Settings and Responsive Controls\n\n- ✅ Prevent external-agent toggles from animating through an incorrect startup state\n- ✅ Keep localized guidance buttons and header controls readable at their natural width\n- ✅ Improve compact-sidebar footer spacing without changing the normal sidebar\n\n## 🏗️ Improvements\n\n### Smoother Onboarding\n\nThe guided onboarding conversation now reveals text at a more comfortable\nreading pace and presents account setup choices more cleanly.\n\n### Clearer Managed-AI Privacy Information\n\nDocumentation now distinguishes TensorPM's Germany/EU-hosted account and sync\nservices from the global processing paths used by managed AI providers.\n\n## 🧪 Reliability\n\n- Added regression coverage for Gemini tool-result images and wire-format compatibility\n- Added refresh dependency tests for context, strategy, coverage, and execution guidance\n- Added checks for local-endpoint fallback accounting and project status loading behavior\n- Added CSS contract tests for compact-sidebar spacing and localized guidance controls\n\n## 📝 Notes\n\n- Existing Google API keys continue to work; the default model changes to Gemini 3.6 Flash.\n- Managed AI remains optional. BYOK providers and fully local Ollama models remain available.\n- Vertex AI Gemini 3.6 Flash uses Google's global location and does not provide an EU ML-processing-location or data-residency guarantee.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.25.7\n- **Release Date**: July 24, 2026\n- **Previous Version**: 1.25.6\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.6/TensorPM-Setup.exe",
-      "size": 146821992,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.7/TensorPM-Setup.exe",
+      "size": 146808232,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.6/TensorPM-macOS.dmg",
-      "size": 183708389,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.7/TensorPM-macOS.dmg",
+      "size": 183692332,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.6/TensorPM-Linux.AppImage",
-      "size": 170177847,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.25.7/TensorPM-Linux.AppImage",
+      "size": 170190407,
       "download_count": 0
     }
   ]
