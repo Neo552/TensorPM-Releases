@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.28.0",
-  "name": "TensorPM v1.28.0",
-  "published_at": "2026-07-26T21:05:57Z",
+  "tag_name": "v1.29.0",
+  "name": "TensorPM v1.29.0",
+  "published_at": "2026-07-27T17:09:54Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.28.0\n\n## 🎉 New Features\n\n### Keep Typing While the AI Is Still Answering\n\nYou no longer have to wait for a response to finish before writing your next message.\nAnything you send during a running response is collected in a queue above the input\nfield and sent automatically once the current answer is done.\n\n- ✅ Queued messages are listed above the composer, in the order they will be sent\n- ✅ Edit or remove a queued message as long as it hasn't gone out yet\n- ✅ Interrupting a response, or a response that fails, pauses the queue instead of\n  firing your follow-ups into a broken turn — one click resumes it\n- ✅ Switching projects while a response is running no longer loses the follow-ups\n  you queued for it\n\n### Steer a Running Response\n\nSome follow-ups shouldn't wait. Next to every queued message there is now a **Steer**\naction that hands your message to the response that is already running, at the next\npoint where it can safely take it.\n\n- ✅ Redirect the AI mid-answer — \"actually, focus on the budget instead\" — without\n  cancelling and starting over\n- ✅ Messages with attachments are always sent after the current response finishes,\n  and say so\n\n### One \"+\" Menu for Everything You Give the AI\n\nThe controls below the chat input have been consolidated into a single **+** menu:\nupload a file from your computer, search and attach a project file, and reach the\nquick actions.\n\n- ✅ Project file search opens as a page inside the same menu, with a back button\n- ✅ The browser agent appears only when it is actually available to you, instead of\n  showing an entry that cannot be used\n- ✅ The composer is now the same card everywhere — project dashboard and chat panel\n  alike\n\n### Task IDs Are Visible Without Edit Mode\n\nTask IDs used to appear only while the list was in edit mode. They are now shown\npermanently, stacked above the status bubble.\n\n- ✅ Read the ID of any task straight from the list — useful for emails, calls, and\n  handing a task reference to someone else\n- ✅ The ID stays in the same place when you switch between edit mode and normal view\n\n## 🐛 Bug Fixes\n\n### Dropdowns No Longer Swallow Key Presses\n\nDropdown menus stopped responding to the keyboard whenever the surrounding screen\nrefreshed in the background. Pressing Escape on an open provider dropdown in the AI\nsettings did nothing, because that tab refreshes while it checks your AI connections.\n\n- ✅ Escape, arrow keys, and Enter now work reliably in every dropdown, no matter what\n  is refreshing behind it\n\n## 🏗️ Improvements\n\n- The disabled send button now looks the same across the project dashboard and the\n  chat panel; it was too pale to read in dark mode on the dashboard.\n- The task list's status column is slightly wider to make room for the task ID.\n\n## 📝 Notes\n\n- No database migration ships with this release.\n- The chat tutorial's three separate steps for attaching files, searching files, and\n  quick actions are now a single step covering the new **+** menu.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.28.0\n- **Release Date**: 2026-07-26\n- **Previous Version**: 1.27.0\n- **Type**: Minor Release\n",
+  "body": "# Changelog - v1.29.0\n\n## 🎉 New Features\n\n### See Exactly Which Chat Message Changed Your Project\n\nEvery entry in the Trail that came from a chat now carries a source chip instead of\nthe generic \"Chat\" label. Click it and you see who wrote the message and what it\nsaid — the change and its cause side by side.\n\n- ✅ The popover shows the person behind the change and the original wording\n- ✅ **Open in chat** jumps straight to that message and highlights it, so you land\n  in the full conversation instead of a snippet\n- ✅ Older Trail entries keep working — entries written before this release still\n  resolve to their chat where the information exists\n\n## 🐛 Bug Fixes\n\n### Cloud Sync No Longer Gets Stuck Until You Restart the App\n\nIf the connection to the sync server hung — a slow network, a server that did not\nanswer — sync could freeze in a state where stopping, starting, and restarting it\nall did nothing. The only way out was quitting and reopening TensorPM.\n\n- ✅ A connection attempt that does not answer is given up on instead of blocking\n  everything behind it; the sync client keeps reconnecting in the background\n- ✅ Stop, start, restart, and switching cloud workspaces work again while a\n  connection is still hanging\n- ✅ The status no longer claims \"Live\" when there is no confirmed connection, and a\n  connection that fails after the fact is reported instead of failing silently\n- ✅ Switching workspaces shows \"connecting\" for the transition rather than the\n  \"sync off\" icon\n- ✅ The status indicator stops spinning forever: after a minute in a stalled state\n  it falls back to the normal offline view, where the restart action is available\n\n### Trail Details\n\n- ✅ The chat highlight from **Open in chat** stays visible for its full duration\n  instead of disappearing immediately\n- ✅ Pressing Enter or Space on the source chip no longer collapses the Trail entry\n  behind it\n\n## 🏗️ Improvements\n\n- The task list's status column uses the shared color token again, so it matches the\n  rest of the list in both light and dark mode.\n- Dependency updates: `officeparser` and three development dependencies.\n\n## 📝 Notes\n\n- No database migration ships with this release.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.29.0\n- **Release Date**: 2026-07-27\n- **Previous Version**: 1.28.0\n- **Type**: Minor Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.28.0/TensorPM-Setup.exe",
-      "size": 146766544,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.29.0/TensorPM-Setup.exe",
+      "size": 146799288,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.28.0/TensorPM-macOS.dmg",
-      "size": 183565418,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.29.0/TensorPM-macOS.dmg",
+      "size": 183613050,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.28.0/TensorPM-Linux.AppImage",
-      "size": 169575972,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.29.0/TensorPM-Linux.AppImage",
+      "size": 169531466,
       "download_count": 0
     }
   ]
