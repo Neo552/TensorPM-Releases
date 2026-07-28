@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.29.0",
-  "name": "TensorPM v1.29.0",
-  "published_at": "2026-07-27T17:09:54Z",
+  "tag_name": "v1.29.1",
+  "name": "TensorPM v1.29.1",
+  "published_at": "2026-07-28T15:43:03Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.29.0\n\n## 🎉 New Features\n\n### See Exactly Which Chat Message Changed Your Project\n\nEvery entry in the Trail that came from a chat now carries a source chip instead of\nthe generic \"Chat\" label. Click it and you see who wrote the message and what it\nsaid — the change and its cause side by side.\n\n- ✅ The popover shows the person behind the change and the original wording\n- ✅ **Open in chat** jumps straight to that message and highlights it, so you land\n  in the full conversation instead of a snippet\n- ✅ Older Trail entries keep working — entries written before this release still\n  resolve to their chat where the information exists\n\n## 🐛 Bug Fixes\n\n### Cloud Sync No Longer Gets Stuck Until You Restart the App\n\nIf the connection to the sync server hung — a slow network, a server that did not\nanswer — sync could freeze in a state where stopping, starting, and restarting it\nall did nothing. The only way out was quitting and reopening TensorPM.\n\n- ✅ A connection attempt that does not answer is given up on instead of blocking\n  everything behind it; the sync client keeps reconnecting in the background\n- ✅ Stop, start, restart, and switching cloud workspaces work again while a\n  connection is still hanging\n- ✅ The status no longer claims \"Live\" when there is no confirmed connection, and a\n  connection that fails after the fact is reported instead of failing silently\n- ✅ Switching workspaces shows \"connecting\" for the transition rather than the\n  \"sync off\" icon\n- ✅ The status indicator stops spinning forever: after a minute in a stalled state\n  it falls back to the normal offline view, where the restart action is available\n\n### Trail Details\n\n- ✅ The chat highlight from **Open in chat** stays visible for its full duration\n  instead of disappearing immediately\n- ✅ Pressing Enter or Space on the source chip no longer collapses the Trail entry\n  behind it\n\n## 🏗️ Improvements\n\n- The task list's status column uses the shared color token again, so it matches the\n  rest of the list in both light and dark mode.\n- Dependency updates: `officeparser` and three development dependencies.\n\n## 📝 Notes\n\n- No database migration ships with this release.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.29.0\n- **Release Date**: 2026-07-27\n- **Previous Version**: 1.28.0\n- **Type**: Minor Release\n",
+  "body": "# Changelog - v1.29.1\n\n## 🐛 Bug Fixes\n\n### Every distiller proposal reaches your review again\n\nWhen the AI prepared several proposals for the same project field — for example ten action items from one email — some of them could silently disappear before you ever saw them. Up to nine of ten proposals were dropped from the review, without any error message.\n\n**What Changed:**\n\n- ✅ Every presented proposal now gets its own review card, even when the AI numbers them inconsistently\n- ✅ Proposals for different fields with the same number no longer overwrite each other\n\n**User Benefit:**\nWhat the AI proposes is what you get to decide on. Nothing is dropped on the way to the review.\n\n### Approving some proposals and rejecting others now works as expected\n\nReviewing a batch is rarely all-or-nothing: you approve two action items, reject a third, and append a fourth. Previously that mix was treated as a contradiction — the whole field was skipped, nothing was applied, and the AI re-presented the entire batch.\n\n**What Changed:**\n\n- ✅ Mixed decisions on one field are applied per card, exactly as you decided\n- ✅ Approve and append work side by side on the same field\n- ✅ Genuinely ambiguous input (the same card decided twice, in opposite ways) is still flagged for a fresh look\n\n**User Benefit:**\nYour review sticks the first time. No more repeated batches asking you to decide the same thing again.\n\n### Completing a distiller update no longer fails at the last step\n\nThe final step of a distiller run could end in a \"Missing local tool results\" error — after all the work was already done. The successful turn was killed right at the finish line.\n\n**User Benefit:**\nUpdates complete reliably, including with local and subscription-based AI models.\n\n### Presentation and document creation recovers from malformed AI output\n\nWhen an AI model returned a slide plan in a slightly wrong format, deck and document creation failed after several expensive, identical retries — the model was never told what was actually wrong.\n\n**What Changed:**\n\n- ✅ Recoverable format errors are corrected automatically\n- ✅ Otherwise the model gets one focused retry that names the exact problem and shows what it sent\n- ✅ Never more than one retry, so a failure stays cheap and fast\n\n**User Benefit:**\nFewer failed deck and document runs, and noticeably less waiting (and fewer AI credits) when a model slips up.\n\n### Project creation keeps all the details it extracted\n\nWhen creating a project from a prompt, success criteria, people, timeframe, and budget could be lost if the AI packed them in an unexpected format. The project was created — just emptier than it should have been.\n\n**User Benefit:**\nProjects generated from a prompt or a document arrive complete.\n\n## 🏗️ Improvements\n\n### Better bug reports without sharing your content\n\nSupport bundles now include a technical fingerprint of recent tool calls: which tools ran, and what data _type_ each argument had. No argument values are included, and all identifiers are hashed.\n\n**User Benefit:**\nA whole class of AI formatting bugs can now be diagnosed from your report alone — without you having to share project content or reproduce the problem.\n\n## 📝 Notes\n\nNo migration or configuration is required. Existing projects, reviews, and settings are unaffected.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.29.1\n- **Release Date**: 2026-07-28\n- **Previous Version**: 1.29.0\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.29.0/TensorPM-Setup.exe",
-      "size": 146799288,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.29.1/TensorPM-Setup.exe",
+      "size": 146789440,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.29.0/TensorPM-macOS.dmg",
-      "size": 183613050,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.29.1/TensorPM-macOS.dmg",
+      "size": 183638627,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.29.0/TensorPM-Linux.AppImage",
-      "size": 169531466,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.29.1/TensorPM-Linux.AppImage",
+      "size": 169519449,
       "download_count": 0
     }
   ]
