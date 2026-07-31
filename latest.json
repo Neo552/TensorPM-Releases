@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.29.2",
-  "name": "TensorPM v1.29.2",
-  "published_at": "2026-07-31T06:55:37Z",
+  "tag_name": "v1.30.0",
+  "name": "TensorPM v1.30.0",
+  "published_at": "2026-07-31T14:29:04Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.29.2\n\n## 🐛 Bug Fixes\n\n### Local AI models are no longer slowed down artificially\n\nTensorPM applied its own request throttling to local AI endpoints (Ollama, llama.cpp, LM Studio). Because a local server manages its own capacity anyway, this only added forced waits — in the worst case a turn stalled for almost a minute in the middle of a response.\n\n**What Changed:**\n\n- ✅ Local AI providers are fully exempt from client-side rate limiting\n- ✅ Cloud providers keep their existing protection unchanged\n\n**User Benefit:**\nLocal models now run as fast as your machine allows — no artificial pauses mid-conversation.\n\n### Invalid AI edit instructions can no longer report false success\n\nWhen an AI model sent a malformed instruction for table, criteria, or reordering updates, the app could silently ignore it and still report the change as applied. The project looked updated, but nothing had happened.\n\n**What Changed:**\n\n- ✅ Every decoded edit instruction is now checked against the tool's allowed operations before it runs\n- ✅ Invalid instructions fail immediately with a precise error the AI can correct itself from\n- ✅ Category and task reordering rejects malformed ID lists instead of producing broken references\n\n**User Benefit:**\n\"Updated successfully\" now always means the update really happened — and models recover from their own formatting mistakes instead of leaving silent gaps.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.29.2\n- **Release Date**: 2026-07-31\n- **Previous Version**: 1.29.1\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.30.0\n\n## 🎉 New Features\n\n### Local Email Connector\n\nTensorPM can now read the email your mail app already stores on this device — no password, no IMAP server, no account credentials.\n\n**What Changed:**\n\n- ✅ New **Local email** connector, starting with Apple Mail on macOS\n- ✅ Three-step setup: detected account → folder selection → project assignment\n- ✅ Folder-level control — only the folders you pick are read, and you can change the selection at any time\n- ✅ Guided macOS permission flow: if the mail folder is blocked, TensorPM shows exactly which \"Full Disk Access\" toggle to switch on\n- ✅ Deduplication by email address, so the same message is not imported twice if you later also connect the mailbox via IMAP or Microsoft 365\n\n**User Benefit:**\nIf your mail already lives in a desktop mail app, you can feed it into the Distiller without handing TensorPM a mailbox password or opening a server connection. Nothing leaves your machine.\n\n## 🏗️ Improvements\n\n### Consistent Settings Icons\n\nEvery gear icon in the app now uses the same glyph, the same stroke weight, and the same muted grey — previously the app mixed three different icon sets, and one gear rendered bright white in dark mode while its neighbours were grey.\n\n### Clearer Audit Trail Sources\n\nTrail entries now name their real source instead of a generic \"Chat\" label. Clicking a source opens a popover with the person and the exact message behind the change, plus a direct \"open in chat\" jump.\n\n### Connector Overview\n\nThe connector setup screens got a reworked overview panel and clearer logos, so it is easier to see at a glance which connectors are configured and which still need attention.\n\n### Smoother Intake List\n\nRow heights in the pending-signals list are now derived exactly from the stylesheet instead of estimated. Long lists no longer flicker or overlap while scrolling.\n\n### Polished Toggles\n\nSliding tab and mode switchers animate consistently across the app.\n\n## 🐛 Bug Fixes\n\n- Fixed the action-list settings gear rendering in near-white in dark mode instead of the muted grey used everywhere else\n- Fixed pending intake rows briefly overlapping while the list measured itself\n\n## 📝 Notes\n\n- No database schema change in this release — upgrading requires no migration\n- The local email connector currently supports **Apple Mail on macOS**. The connector only appears on platforms where a supported mail store exists, so it is not offered on Windows or Linux yet. Outlook (Windows) and Thunderbird are planned for a later release.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.30.0\n- **Release Date**: 2026-07-31\n- **Previous Version**: 1.29.2\n- **Type**: Minor Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.29.2/TensorPM-Setup.exe",
-      "size": 146771968,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.30.0/TensorPM-Setup.exe",
+      "size": 146786976,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.29.2/TensorPM-macOS.dmg",
-      "size": 183635985,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.30.0/TensorPM-macOS.dmg",
+      "size": 183522037,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.29.2/TensorPM-Linux.AppImage",
-      "size": 169519226,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.30.0/TensorPM-Linux.AppImage",
+      "size": 169543931,
       "download_count": 0
     }
   ]
