@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.31.0",
-  "name": "TensorPM v1.31.0",
-  "published_at": "2026-08-01T19:39:18Z",
+  "tag_name": "v1.31.1",
+  "name": "TensorPM v1.31.1",
+  "published_at": "2026-08-01T20:54:14Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.31.0\n\n## 🎉 New Features\n\n### One place for \"what happened while I was away\"\n\nYour project check-ins and the AI's own analysis now share a single slot at the\ntop of the dashboard, ordered strictly newest-first — instead of a separate card\ncompeting with the briefing for your attention.\n\n**What changed:**\n\n- ✅ A check-in moves back automatically as soon as the analysis produces\n  something newer\n- ✅ Page back and forth through everything that happened, in one place\n- ✅ The entry you are reading stays put when new results arrive in the\n  background\n- ✅ Dismissing an entry takes you to the neighbouring one, not back to the top\n\n**User benefit:**\nThe dashboard tells you one coherent story in time order, so you can catch up\nby reading downwards instead of comparing two panels.\n\n### The analysis stops repeating your check-ins\n\nRecent check-ins are now part of what the AI sees when it writes the welcome\nanalysis, with the explicit instruction to cover what they do not.\n\n**User benefit:**\nLess duplication between the two halves of the dashboard, and the analysis\nspends its space on something you have not already read.\n\n## 🐛 Bug Fixes\n\n### The AI no longer invents duplicates of entries it just created\n\nReported as TPM-0022. After adding a risk, the assistant could announce that it\nhad \"accidentally created a duplicate\" and then spend several steps hunting for\na second entry that never existed.\n\n**What was wrong:**\nWhen a table was updated, the assistant got the full updated table back with no\nindication of which rows were new. Reading that as \"here is the state of the\nproject\", it found its own freshly added row and concluded the entry must have\nbeen there all along.\n\n**What changed:**\n\n- ✅ Tool results now name exactly which rows or criteria a step created,\n  changed, or removed\n- ✅ The updated table is explicitly labelled as the state *after* the change\n\n### \"Applied\" now means applied\n\nAn update that could not be carried out — a reference to a row or cell that no\nlonger exists, for instance — was logged internally and dropped, while the\nassistant was still told the operation had succeeded.\n\n**What changed:**\n\n- ✅ Only changes that actually landed are counted\n- ✅ Anything skipped is reported back with the reason, so the assistant can\n  correct itself instead of building on a change that never happened\n- ✅ A step where nothing at all could be applied now fails openly\n\n### \"Discuss with AI\" no longer drops the suggested next step\n\nA check-in whose only actionable content was its suggested next step arrived in\nthe chat without it.\n\n## 🏗️ Improvements\n\n- **Sandbox code guidance.** The assistant is now told that your project data is\n  already available to it and is kept current, so it stops running code just to\n  re-read information it already has. When it does run code, it has the exact\n  function signatures instead of guessing — previously a wrong guess could\n  silently report \"0 risks\" for a project full of them.\n- **Cheaper test runs.** Internal smoke tests now use each provider's most\n  economical model tier.\n\n## 📝 Notes\n\n- No database migration in this release; upgrading does not touch your project\n  data.\n- Behaviour for existing projects is unchanged apart from the fixes above. The\n  dashboard's top slot looks different, but nothing needs to be re-created or\n  re-configured.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.31.0\n- **Release Date**: 2026-08-01\n- **Previous Version**: 1.30.0\n- **Type**: Minor Release\n",
+  "body": "# Changelog - v1.31.1\n\n## 🐛 Bug Fixes\n\n### Project check-ins no longer disappear when a check cannot run\n\nA skipped check (for example while no AI provider is available) could vanish\nfrom the dashboard completely. A failed check could also be hidden behind a\nnewer analysis, leaving no visible retry action.\n\n**What changed:**\n\n- ✅ Skipped and failed checks stay visible with their actual status\n- ✅ A retry remains available even when a newer dashboard analysis is shown\n- ✅ A suggested next step is displayed when it is the check-in's only\n  actionable content\n\n### Empty AI updates can no longer report success\n\nSome model providers may send an update tool call with an empty operation list,\neven though the tool schema requires at least one operation. TensorPM now\nrejects that call before persistence instead of reporting a successful no-op.\n\n## 🏗️ Improvements\n\n- **Stronger release checks.** Formatting and renderer IPC boundaries now run\n  in the normal release path, with explicit skip options still available for\n  exceptional cases.\n- **Real package startup tests.** Release builds now start the app directly\n  from the macOS DMG and Linux AppImage, not only from the Windows installer.\n- **Safer database upgrades.** Packaged macOS and Linux builds are started\n  against a disposable, sync-shaped schema-49 database and must preserve its\n  data while migrating to the current schema.\n- **Non-blocking security reporting.** A scheduled report now covers root and\n  E2E dependencies, secrets, and static security findings without turning\n  advisory results into an automatic release block.\n\n## 📝 Notes\n\n- No new database migration is introduced by this release. The migration smoke\n  test validates the existing upgrade path and never touches a real user\n  database.\n- Existing projects require no manual changes.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.31.1\n- **Release Date**: 2026-08-01\n- **Previous Version**: 1.31.0\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.31.0/TensorPM-Setup.exe",
-      "size": 146801600,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.31.1/TensorPM-Setup.exe",
+      "size": 146806672,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.31.0/TensorPM-macOS.dmg",
-      "size": 183484788,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.31.1/TensorPM-macOS.dmg",
+      "size": 183487431,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.31.0/TensorPM-Linux.AppImage",
-      "size": 169543512,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.31.1/TensorPM-Linux.AppImage",
+      "size": 169543587,
       "download_count": 0
     }
   ]
