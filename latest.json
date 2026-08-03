@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.31.1",
-  "name": "TensorPM v1.31.1",
-  "published_at": "2026-08-01T20:54:14Z",
+  "tag_name": "v1.32.0",
+  "name": "TensorPM v1.32.0",
+  "published_at": "2026-08-03T13:46:19Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.31.1\n\n## 🐛 Bug Fixes\n\n### Project check-ins no longer disappear when a check cannot run\n\nA skipped check (for example while no AI provider is available) could vanish\nfrom the dashboard completely. A failed check could also be hidden behind a\nnewer analysis, leaving no visible retry action.\n\n**What changed:**\n\n- ✅ Skipped and failed checks stay visible with their actual status\n- ✅ A retry remains available even when a newer dashboard analysis is shown\n- ✅ A suggested next step is displayed when it is the check-in's only\n  actionable content\n\n### Empty AI updates can no longer report success\n\nSome model providers may send an update tool call with an empty operation list,\neven though the tool schema requires at least one operation. TensorPM now\nrejects that call before persistence instead of reporting a successful no-op.\n\n## 🏗️ Improvements\n\n- **Stronger release checks.** Formatting and renderer IPC boundaries now run\n  in the normal release path, with explicit skip options still available for\n  exceptional cases.\n- **Real package startup tests.** Release builds now start the app directly\n  from the macOS DMG and Linux AppImage, not only from the Windows installer.\n- **Safer database upgrades.** Packaged macOS and Linux builds are started\n  against a disposable, sync-shaped schema-49 database and must preserve its\n  data while migrating to the current schema.\n- **Non-blocking security reporting.** A scheduled report now covers root and\n  E2E dependencies, secrets, and static security findings without turning\n  advisory results into an automatic release block.\n\n## 📝 Notes\n\n- No new database migration is introduced by this release. The migration smoke\n  test validates the existing upgrade path and never touches a real user\n  database.\n- Existing projects require no manual changes.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.31.1\n- **Release Date**: 2026-08-01\n- **Previous Version**: 1.31.0\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.32.0\n\n## 🎉 New Features\n\n### Choose a project folder per project\n\nEach project can now use its own local folder instead of being tied to the\ndefault TensorPM project directory. The selected folder is visible and\nchangeable both in Settings and at the end of the Wizard Overview.\n\n**What changed:**\n\n- ✅ Open, change, or reset the effective folder for the active project\n- ✅ Keep custom project roots device-local, including paths with Unicode\n  characters\n- ✅ Rebind file watching, project skills, and uninstall metadata when the root\n  changes\n- ✅ Refresh file identities against the new root without moving or deleting\n  user files\n\n**User benefit:**\nExisting repositories and established folder structures can be used directly\nwithout copying them into TensorPM's default storage hierarchy.\n\n## 🐛 Bug Fixes\n\n- **Safe multi-device folder changes.** Selecting a local root no longer\n  synchronizes local path invalidations to the user's other devices.\n- **Reliable watcher handover.** A folder change now replaces watchers that are\n  still starting, and an older failed start cannot clear the newer watcher's\n  lifecycle state.\n- **Guaranteed root refresh.** Project-root change events bypass short-window\n  event deduplication so the renderer always rebuilds its file cache.\n\n## 🏗️ Improvements\n\n- **Clearer AI operation results.** Tool result labels now use localized,\n  action-specific singular and plural wording instead of ambiguous generic\n  counts.\n- **Safer project-folder recovery.** Folder changes restore the previous root,\n  watcher, skill registry, and uninstall metadata together if a lifecycle step\n  fails.\n\n## 📝 Notes\n\n- No database migration is introduced by this release.\n- A custom project folder is a device-local preference and does not relocate or\n  delete existing files.\n- Existing projects continue to use their conventional TensorPM folder until a\n  custom folder is selected.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.32.0\n- **Release Date**: 2026-08-03\n- **Previous Version**: 1.31.1\n- **Type**: Minor Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.31.1/TensorPM-Setup.exe",
-      "size": 146806672,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.32.0/TensorPM-Setup.exe",
+      "size": 147113072,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.31.1/TensorPM-macOS.dmg",
-      "size": 183487431,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.32.0/TensorPM-macOS.dmg",
+      "size": 187997568,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.31.1/TensorPM-Linux.AppImage",
-      "size": 169543587,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.32.0/TensorPM-Linux.AppImage",
+      "size": 173696469,
       "download_count": 0
     }
   ]
