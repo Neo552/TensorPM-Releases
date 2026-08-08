@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.33.2",
-  "name": "TensorPM v1.33.2",
-  "published_at": "2026-08-06T22:48:46Z",
+  "tag_name": "v1.34.0",
+  "name": "TensorPM v1.34.0",
+  "published_at": "2026-08-08T11:01:08Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.33.2\n\n## 🐛 Bug Fixes\n\n### Chat scrolling now respects where you are reading\n\nThe AI panel no longer pulls the conversation back to the bottom after you\nscroll up, including while Distiller is showing its processing placeholder.\nAutomatic following resumes only after you deliberately return to the end of\nthe conversation.\n\n### Resizing the AI panel keeps the visible card in place\n\nWhen a narrower panel makes messages or Distiller cards taller, TensorPM now\npreserves the top visible card and its exact on-screen offset. Layout changes,\ncollapsed content, and browser scroll adjustments no longer count as user\nscrolling or silently disable bottom following.\n\n## 🏗️ Improvements\n\n- **Consistent chat restoration.** Returning to a chat restores an intentionally\n  detached reading position instead of treating a nearby position as the end.\n- **Smoother long conversations.** Visible-card tracking is limited to one pass\n  per animation frame and stops scanning once cards are below the viewport.\n- **Broader regression coverage.** Tests cover Distiller placeholders, panel\n  resizing, content shrinking, chat switching, exact-bottom reattachment, and\n  anchor-tracking performance.\n\n## 📝 Notes\n\n- No database migration is introduced by this release.\n- Existing projects and synchronized workspaces require no manual changes.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.33.2\n- **Release Date**: 2026-08-06\n- **Previous Version**: 1.33.1\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.34.0\n\n## ✨ New Features\n\n### Review the complete email before sending\n\nMail approval cards now include an expandable preview of the exact message body\nthat will be sent, together with To, CC, and BCC recipients and localized status\nlabels. Approving or retrying a draft stays in the same card without exposing\ninternal programmatic chat messages in the visible conversation.\n\n### More usable project views in narrow layouts\n\nAction-item and Trail view controls now switch to compact, accessible icons when\nthe AI panel reduces the available width. Material controls, strategic guidance\ncards, and budget metrics also adapt to narrow panels without clipping important\ncontent or controls.\n\n## 🐛 Bug Fixes\n\n- **Mail approval matches delivery.** When HTML and plain-text alternatives\n  differ, the approval preview and SMTP fallback are derived from the HTML body\n  that the mail transport prioritizes.\n- **Concise strategic action titles.** AI-generated strategic action titles are\n  limited to six words and 60 characters, while details remain in the action\n  description.\n- **Cleaner approval conversations.** Durable mail and calendar approval events\n  remain available for model context and audit history but no longer appear as\n  duplicate user-authored messages.\n- **Responsive budget overview.** Budget metrics stack predictably at compact\n  widths instead of crowding or overflowing their container.\n\n## 🏗️ Improvements\n\n- Localized mail-agent activity and approval states in English and German.\n- Added responsive coverage for Action Items, Trail decisions, Guidance cards,\n  Material controls, and Budget layouts.\n- Added regression coverage for mail-body consistency and strategic title\n  enforcement at the model-response boundary.\n\n## 📝 Notes\n\n- No database migration is introduced by this release.\n- Existing projects, mail drafts, and synchronized workspaces require no manual\n  changes.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.34.0\n- **Release Date**: 2026-08-07\n- **Previous Version**: 1.33.2\n- **Type**: Minor Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.33.2/TensorPM-Setup.exe",
-      "size": 147104424,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.34.0/TensorPM-Setup.exe",
+      "size": 147093712,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.33.2/TensorPM-macOS.dmg",
-      "size": 188087719,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.34.0/TensorPM-macOS.dmg",
+      "size": 188092524,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.33.2/TensorPM-Linux.AppImage",
-      "size": 173647712,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.34.0/TensorPM-Linux.AppImage",
+      "size": 173635499,
       "download_count": 0
     }
   ]
