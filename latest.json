@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.34.0",
-  "name": "TensorPM v1.34.0",
-  "published_at": "2026-08-08T11:01:08Z",
+  "tag_name": "v1.35.0",
+  "name": "TensorPM v1.35.0",
+  "published_at": "2026-08-09T11:31:06Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.34.0\n\n## ✨ New Features\n\n### Review the complete email before sending\n\nMail approval cards now include an expandable preview of the exact message body\nthat will be sent, together with To, CC, and BCC recipients and localized status\nlabels. Approving or retrying a draft stays in the same card without exposing\ninternal programmatic chat messages in the visible conversation.\n\n### More usable project views in narrow layouts\n\nAction-item and Trail view controls now switch to compact, accessible icons when\nthe AI panel reduces the available width. Material controls, strategic guidance\ncards, and budget metrics also adapt to narrow panels without clipping important\ncontent or controls.\n\n## 🐛 Bug Fixes\n\n- **Mail approval matches delivery.** When HTML and plain-text alternatives\n  differ, the approval preview and SMTP fallback are derived from the HTML body\n  that the mail transport prioritizes.\n- **Concise strategic action titles.** AI-generated strategic action titles are\n  limited to six words and 60 characters, while details remain in the action\n  description.\n- **Cleaner approval conversations.** Durable mail and calendar approval events\n  remain available for model context and audit history but no longer appear as\n  duplicate user-authored messages.\n- **Responsive budget overview.** Budget metrics stack predictably at compact\n  widths instead of crowding or overflowing their container.\n\n## 🏗️ Improvements\n\n- Localized mail-agent activity and approval states in English and German.\n- Added responsive coverage for Action Items, Trail decisions, Guidance cards,\n  Material controls, and Budget layouts.\n- Added regression coverage for mail-body consistency and strategic title\n  enforcement at the model-response boundary.\n\n## 📝 Notes\n\n- No database migration is introduced by this release.\n- Existing projects, mail drafts, and synchronized workspaces require no manual\n  changes.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.34.0\n- **Release Date**: 2026-08-07\n- **Previous Version**: 1.33.2\n- **Type**: Minor Release\n",
+  "body": "# Changelog - v1.35.0\n\n## ✨ New Features\n\n### Local macOS calendars\n\nTensorPM can now connect directly to a local macOS calendar through EventKit.\nCalendar events can be reviewed, created, updated, or discarded through the\nexisting approval flow without storing OAuth credentials. Calendar access is\noptional, permission-gated, and limited to the signed main application.\n\n### More reliable Distiller reviews\n\nDistiller now keeps analysis, review, feedback, and completion phases clearly\nseparated. Project-routing decisions, deferred signals, repeated tool calls,\nand restored review sessions are handled more deterministically so an update\ndoes not repeat completed work or lose its current review context.\n\n## 🐛 Bug Fixes\n\n- **Reliable onboarding transitions.** Skipping project setup while the opening\n  message is still streaming now stops the old reveal and streams the project\n  tour question correctly.\n- **Current project-creation tutorial.** Removed obsolete creation-mode steps,\n  prevented stale tutorial highlights, and aligned the walkthrough with the\n  unified project-creation flow.\n- **Readable document lists.** Long attachment names are truncated with a\n  tooltip while token and action columns remain visible without horizontal\n  scrolling.\n- **Correct timeline cursors.** Drag, resize, create, collapse, and pan cursors\n  are now applied to the interaction layer that receives pointer events.\n- **Safer calendar proposals.** Calendar proposals can be discarded explicitly,\n  and recurring-event identities remain scoped to the selected occurrence.\n\n## 🏗️ Improvements\n\n- Simplified and refined the English and German onboarding copy and spacing.\n- Consolidated shared context-menu, status, animation, AI-button, column-view,\n  and guidance coverage styles with regression contracts for their consumers.\n- Improved Mistral reasoning-response handling and kept thinking chunks out of\n  visible assistant answers.\n- Hardened the packaged MCP runtime configuration and installer behavior.\n- Updated DOMPurify to 3.4.13.\n\n## 📝 Notes\n\n- No database migration is introduced by this release.\n- Local calendar integration is available on macOS and requires explicit\n  Calendar permission from the user.\n- Existing projects and connector configurations require no manual changes.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.35.0\n- **Release Date**: 2026-08-09\n- **Previous Version**: 1.34.0\n- **Type**: Minor Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.34.0/TensorPM-Setup.exe",
-      "size": 147093712,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.0/TensorPM-Setup.exe",
+      "size": 147132184,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.34.0/TensorPM-macOS.dmg",
-      "size": 188092524,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.0/TensorPM-macOS.dmg",
+      "size": 188082478,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.34.0/TensorPM-Linux.AppImage",
-      "size": 173635499,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.0/TensorPM-Linux.AppImage",
+      "size": 173601883,
       "download_count": 0
     }
   ]
