@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.35.3",
-  "name": "TensorPM v1.35.3",
-  "published_at": "2026-08-13T15:31:18Z",
+  "tag_name": "v1.35.4",
+  "name": "TensorPM v1.35.4",
+  "published_at": "2026-08-13T16:01:23Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.35.3\n\n## 🐛 Bug Fixes\n\n- **Reliable follow-up edits in rich-text project fields.** Section identifiers now remain stable\n  when content is inserted or removed, so the TensorPM agent can continue editing the same project\n  description, goal, scope, dependency, or work-package section without losing its target.\n- **Safe handling of repeated AI edits.** TensorPM now removes duplicated or model-supplied section\n  identifiers before saving rich-text changes, preventing repeated repair attempts from duplicating\n  headings or degrading field content.\n- **Correct line breaks in AI-authored content.** Invalid closing tags for HTML line breaks are\n  normalized so one requested line break no longer appears as an extra blank line.\n\n## 🏗️ Improvements\n\n- Newly inserted rich-text blocks return their authoritative identifiers to the project agent,\n  allowing immediate follow-up updates in the same conversation.\n- TipTap editors now preserve backend-assigned section identifiers during normal user edits while\n  keeping those identifiers invisible and non-editable in the interface.\n\n## 📝 Notes\n\n- No database migration is introduced by this release.\n- Existing projects and work-package descriptions require no manual changes.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.35.3\n- **Release Date**: 2026-08-13\n- **Previous Version**: 1.35.2\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.35.4\n\n## 🐛 Bug Fixes\n\n- **Editing a rich-text field by hand no longer confuses the project agent.** Pressing Enter in the\n  middle of a paragraph, or pasting a copy of a block, could give two blocks the same internal\n  section identifier. A later AI edit then quietly changed only the first of them while reporting\n  success. The editor now assigns the duplicate a new identity immediately, so manual edits and AI\n  edits stay in agreement in the project description, goal, scope, dependencies, and work-package\n  descriptions.\n- **Existing fields with duplicated identifiers repair themselves.** Fields that already carry a\n  duplicated section identifier — from an earlier version or from previous manual editing — are now\n  cleaned up the next time they are read or saved, instead of staying ambiguous until an AI edit\n  happened to touch them.\n\n## 🏗️ Improvements\n\n- Section identities are now guaranteed unique on every path that shows them to the project agent or\n  writes them to disk, rather than only during AI-driven edits.\n\n## 📝 Notes\n\n- No database migration is introduced by this release.\n- Existing projects and work-package descriptions require no manual changes. Affected fields are\n  repaired automatically on first access; the repair is invisible and does not change any text.\n- Follow-up to the section-identity work in v1.35.3.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.35.4\n- **Release Date**: 2026-08-13\n- **Previous Version**: 1.35.3\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.3/TensorPM-Setup.exe",
-      "size": 147201528,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.4/TensorPM-Setup.exe",
+      "size": 147185760,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.3/TensorPM-macOS.dmg",
-      "size": 187694064,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.4/TensorPM-macOS.dmg",
+      "size": 187693794,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.3/TensorPM-Linux.AppImage",
-      "size": 174204267,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.4/TensorPM-Linux.AppImage",
+      "size": 174208387,
       "download_count": 0
     }
   ]
