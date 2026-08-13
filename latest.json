@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.35.4",
-  "name": "TensorPM v1.35.4",
-  "published_at": "2026-08-13T16:01:23Z",
+  "tag_name": "v1.35.5",
+  "name": "TensorPM v1.35.5",
+  "published_at": "2026-08-13T16:38:59Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.35.4\n\n## 🐛 Bug Fixes\n\n- **Editing a rich-text field by hand no longer confuses the project agent.** Pressing Enter in the\n  middle of a paragraph, or pasting a copy of a block, could give two blocks the same internal\n  section identifier. A later AI edit then quietly changed only the first of them while reporting\n  success. The editor now assigns the duplicate a new identity immediately, so manual edits and AI\n  edits stay in agreement in the project description, goal, scope, dependencies, and work-package\n  descriptions.\n- **Existing fields with duplicated identifiers repair themselves.** Fields that already carry a\n  duplicated section identifier — from an earlier version or from previous manual editing — are now\n  cleaned up the next time they are read or saved, instead of staying ambiguous until an AI edit\n  happened to touch them.\n\n## 🏗️ Improvements\n\n- Section identities are now guaranteed unique on every path that shows them to the project agent or\n  writes them to disk, rather than only during AI-driven edits.\n\n## 📝 Notes\n\n- No database migration is introduced by this release.\n- Existing projects and work-package descriptions require no manual changes. Affected fields are\n  repaired automatically on first access; the repair is invisible and does not change any text.\n- Follow-up to the section-identity work in v1.35.3.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.35.4\n- **Release Date**: 2026-08-13\n- **Previous Version**: 1.35.3\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.35.5\n\n## 🐛 Bug Fixes\n\n- **Rewriting a bullet list no longer breaks follow-up edits.** When the project agent rewrote a\n  list, table, or other container, every item inside it silently lost its internal identity. A\n  follow-up edit on one of those items then failed and triggered repeated repair attempts. Items now\n  keep their identity across a rewrite.\n- **Adding content to a list produces a proper list item.** Inserting next to a bullet point could\n  place a plain paragraph inside the list, which turned into a bullet with a changed block type the\n  next time the field was opened. Content is now placed as a real list item.\n- **Turning a paragraph into a bullet point keeps it editable by the agent.** Using the bullet\n  button on a paragraph the agent was working with no longer detaches it from the conversation.\n- **Replacing a heading with several paragraphs no longer corrupts the heading.** The replacement\n  paragraphs previously ended up nested inside the heading. They are now placed as proper sibling\n  blocks, and the heading's position keeps its identity.\n- **Edits that cannot be applied are reported instead of silently emptying a field.** Replacement\n  content that could not be interpreted used to clear the section while reporting success; the field\n  is now left untouched and the agent is told.\n- **Repeated edits in one request can no longer target the wrong block.** When a single request\n  inserted two blocks under the same temporary name, a later edit in that request could hit the\n  wrong one. Ambiguous and already-deleted references are now rejected.\n\n## 🏗️ Improvements\n\n- Identifiers assigned to newly inserted blocks are now derived from the block itself, so they can\n  be recovered if they are ever stripped — newly created sections stay addressable for the rest of\n  the conversation.\n- Section identity is now resolved consistently in the editor and in the backend, using the same\n  rule about which blocks can carry an identity.\n\n## 📝 Notes\n\n- No database migration is introduced by this release.\n- Existing projects and work-package descriptions require no manual changes.\n- Completes the section-identity work started in v1.35.3 and v1.35.4.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.35.5\n- **Release Date**: 2026-08-13\n- **Previous Version**: 1.35.4\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.4/TensorPM-Setup.exe",
-      "size": 147185760,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.5/TensorPM-Setup.exe",
+      "size": 147206088,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.4/TensorPM-macOS.dmg",
-      "size": 187693794,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.5/TensorPM-macOS.dmg",
+      "size": 187683564,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.4/TensorPM-Linux.AppImage",
-      "size": 174208387,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.5/TensorPM-Linux.AppImage",
+      "size": 174221003,
       "download_count": 0
     }
   ]
