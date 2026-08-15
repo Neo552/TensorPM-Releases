@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.35.6",
-  "name": "TensorPM v1.35.6",
-  "published_at": "2026-08-13T23:08:08Z",
+  "tag_name": "v1.35.7",
+  "name": "TensorPM v1.35.7",
+  "published_at": "2026-08-15T15:37:17Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.35.6\n\n## 🐛 Bug Fixes\n\n- **A second launch can no longer touch the installation state of the running app.** Opening\n  TensorPM again while it was already running — by double-click, by a link, or through the\n  installer — let the second process run the version check against the same data directory, in rare\n  cases entering the uninstall path. Only the instance that actually starts does this now.\n- **The project agent no longer receives its instructions twice.** Relevance checks, wizard feedback\n  and document analysis prepended their instructions to the request while the app also sent its\n  general ones, which cost tokens and blurred the task. Each request now carries exactly one set of\n  instructions.\n- **Claude- and Codex-subscription accounts get the right instructions again.** On these two\n  connection types the task-specific instructions for relevance checks, wizard feedback and document\n  analysis were not applied.\n- **The daily automatic analysis no longer starts twice.** Right after startup, while sign-in and\n  entitlements were still settling, a second run could begin in parallel with the first.\n- **Updates download once instead of twice.** Every update first attempted a partial download that\n  could not succeed with our packages, logged an error, and then downloaded the full package anyway.\n\n## 🏗️ Improvements\n\n- **Changing many work packages at once is now a single step.** Shifting all due dates by a week\n  previously produced one request per item — eighteen for a mid-sized project, each one repeated in\n  every following round of the conversation. The agent now sends one request covering all items,\n  including items that need different values. This is noticeably faster and consumes fewer AI\n  credits.\n- **A single bad value no longer discards a whole batch.** Valid changes are applied and the\n  problematic ones are reported back, instead of throwing everything away and retrying.\n- **Wizard feedback prompts are shorter.** The field under review was sent twice — once as the value\n  to review and once as project context. On long descriptions this alone cost about 2,000 tokens per\n  review.\n\n## 📝 Notes\n\n- No database migration is introduced by this release.\n- Existing projects require no manual changes.\n- No changes to sync, subscriptions or billing.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.35.6\n- **Release Date**: 2026-08-13\n- **Previous Version**: 1.35.5\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.35.7\n\n## 🐛 Bug Fixes\n\n### First Launch No Longer Fails With \"AI Unavailable\"\n\nA brand-new installation started on a provider that requires your own API key. Since\nown-API-key access is a Business feature, every background AI call on first launch failed with\nan entitlement error — before you had picked a provider at all.\n\n**What Changed:**\n\n- ✅ Fresh installs now start on the TensorPM AI service, which is what Trial and Pro accounts use\n- ✅ The same default applies whenever the stored preference cannot be read\n- ✅ If you are not signed in yet, you now see the sign-in path instead of an error about a provider you never chose\n\n**User Benefit:**\nThe first thing a new user sees is an invitation to sign in, not a confusing entitlement error.\n\n### macOS App Icon Loaded Correctly\n\nThe packaged macOS app tried to hand a `.icns` file to a routine that only accepts PNG and JPEG,\nso every start logged an image-loading failure. The Dock and Finder icon always looked right\n(macOS paints those from the app bundle), which is why nobody noticed — but the error is gone now.\n\n## 🏗️ Improvements\n\n### Consistent Internal Tool Naming\n\nAll of the AI agent's internal tools now follow one naming scheme. Your existing history is\nunaffected: conversations, trail entries, decision cards and connector permissions recorded under\nthe previous names keep resolving to the correct labels and detail views, including the decision\ncards and people diffs in the project trail.\n\n**User Benefit:**\nNothing changes in what you see — the change removes a class of inconsistency that had started\nto produce mislabeled entries.\n\n## 📝 Notes\n\n- No database migration is included in this release.\n- The first AI request after updating is slightly more expensive than usual, because the changed\n  tool definitions invalidate the provider-side prompt cache once. Subsequent requests are back\n  to normal.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.35.7\n- **Release Date**: 2026-08-15\n- **Previous Version**: 1.35.6\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.6/TensorPM-Setup.exe",
-      "size": 147199592,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.7/TensorPM-Setup.exe",
+      "size": 147213968,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.6/TensorPM-macOS.dmg",
-      "size": 187682027,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.7/TensorPM-macOS.dmg",
+      "size": 187667430,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.6/TensorPM-Linux.AppImage",
-      "size": 174228911,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.7/TensorPM-Linux.AppImage",
+      "size": 174245919,
       "download_count": 0
     }
   ]
