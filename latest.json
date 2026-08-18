@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.35.7",
-  "name": "TensorPM v1.35.7",
-  "published_at": "2026-08-15T15:37:17Z",
+  "tag_name": "v1.36.0",
+  "name": "TensorPM v1.36.0",
+  "published_at": "2026-08-18T07:27:57Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.35.7\n\n## 🐛 Bug Fixes\n\n### First Launch No Longer Fails With \"AI Unavailable\"\n\nA brand-new installation started on a provider that requires your own API key. Since\nown-API-key access is a Business feature, every background AI call on first launch failed with\nan entitlement error — before you had picked a provider at all.\n\n**What Changed:**\n\n- ✅ Fresh installs now start on the TensorPM AI service, which is what Trial and Pro accounts use\n- ✅ The same default applies whenever the stored preference cannot be read\n- ✅ If you are not signed in yet, you now see the sign-in path instead of an error about a provider you never chose\n\n**User Benefit:**\nThe first thing a new user sees is an invitation to sign in, not a confusing entitlement error.\n\n### macOS App Icon Loaded Correctly\n\nThe packaged macOS app tried to hand a `.icns` file to a routine that only accepts PNG and JPEG,\nso every start logged an image-loading failure. The Dock and Finder icon always looked right\n(macOS paints those from the app bundle), which is why nobody noticed — but the error is gone now.\n\n## 🏗️ Improvements\n\n### Consistent Internal Tool Naming\n\nAll of the AI agent's internal tools now follow one naming scheme. Your existing history is\nunaffected: conversations, trail entries, decision cards and connector permissions recorded under\nthe previous names keep resolving to the correct labels and detail views, including the decision\ncards and people diffs in the project trail.\n\n**User Benefit:**\nNothing changes in what you see — the change removes a class of inconsistency that had started\nto produce mislabeled entries.\n\n## 📝 Notes\n\n- No database migration is included in this release.\n- The first AI request after updating is slightly more expensive than usual, because the changed\n  tool definitions invalidate the provider-side prompt cache once. Subsequent requests are back\n  to normal.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.35.7\n- **Release Date**: 2026-08-15\n- **Previous Version**: 1.35.6\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.36.0\n\n## 🎉 New Features\n\n### Clear Four-Level Priorities\n\nAction-item priorities now use four explicit levels — **Low**, **Medium**, **High**, and\n**Urgent** — plus **None** for items that have not been prioritized yet.\n\n**What Changed:**\n\n- ✅ Pick a named level instead of estimating a number on a 1–100 scale\n- ✅ Use the same levels in list, board, priority, filter, sorting, AI, MCP, and sync workflows\n- ✅ Keep unprioritized work separate from genuinely low-priority work\n- ✅ Preserve existing priorities by converting their former numeric bands automatically\n\n**User Benefit:**\nPriorities are faster to set, easier to discuss, and consistent wherever an action item appears.\n\n## 🏗️ Improvements\n\n### Transparent AI Usage and Billing\n\nThe AI Activity view now explains model usage and billing independently instead of hiding token\ncounts behind a subscription or TensorPM tier label.\n\n- Token counts remain visible for TensorPM AI, subscriptions, your own API keys, and failed calls\n  that already consumed tokens\n- Each activity shows whether it used TensorPM credits, a provider subscription, your own key, or\n  a local model\n- Cached input and reasoning usage are identified more clearly\n- Tool calls use readable, localized names and distinguish active work from completed work\n- Multi-model operations select the primary user-facing model more reliably\n\n### Gemini 3.7 Flash\n\nGoogle AI connections and the TensorPM AI fallback now use Gemini 3.7 Flash in place of Gemini\n3.6 Flash. Existing unsupported saved model selections fall back to the current provider catalog.\n\n### More Reliable Briefing Refreshes\n\nOverlapping manual project-briefing requests now remain coordinated until every request has\nfinished. A scheduled check-in can no longer start in the gap created when an older cancelled\nrequest settles before the newer request, preventing duplicate AI cost and stale content from\noverwriting the requested briefing.\n\n## 🐛 Bug Fixes\n\n### Priority Sync and Migration Safety\n\n- Invalid or future priority levels received from a synced workspace are safely cleared instead\n  of causing the complete action item to be rejected\n- Older clients continue to receive the preserved numeric priority representation\n- Priority migrations keep sync timestamps and existing orphan diagnostics intact\n- The migrated schema is validated against a fresh installation using real SQLite transactions\n\n### Priority Interaction Coverage\n\nThe Electron regression suite now exercises the actual priority level picker, its lock state, and\nlevel-based sorting instead of the retired numeric input.\n\n## 🔒 Security\n\nDocument parsing now resolves to the patched PDF.js runtime used by TensorPM. Production\ndependencies have no known high-severity audit findings at release time.\n\n## 📝 Notes\n\n- Existing action-item priorities are migrated automatically; no manual cleanup is required.\n- Shared workspaces remain compatible with clients that still use the previous priority format.\n- The first request after updating an AI provider may rebuild its prompt cache once.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.36.0\n- **Release Date**: 2026-08-17\n- **Previous Version**: 1.35.7\n- **Type**: Minor Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.7/TensorPM-Setup.exe",
-      "size": 147213968,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.36.0/TensorPM-Setup.exe",
+      "size": 147120736,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.7/TensorPM-macOS.dmg",
-      "size": 187667430,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.36.0/TensorPM-macOS.dmg",
+      "size": 183847342,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.35.7/TensorPM-Linux.AppImage",
-      "size": 174245919,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.36.0/TensorPM-Linux.AppImage",
+      "size": 170654998,
       "download_count": 0
     }
   ]
