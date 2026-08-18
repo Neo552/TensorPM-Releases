@@ -16,7 +16,7 @@
 | `urgency` | string | `very low`, `low`, `medium`, `high`, `overdue` |
 | `impact` | string | `minimal`, `low`, `medium`, `high`, `critical` |
 | `complexity` | string | `very simple`, `simple`, `moderate`, `complex`, `very complex` |
-| `priority` | number | Score `1-100` |
+| `priority` | object | `{ user, "ai+", displayed, isLocked }`; values are `low`, `medium`, `high`, `urgent`, or `null` |
 | `planEffort` | object or `null` | `{ value, unit: "hours"                                        | "days" }` |
 | `planBudget` | object or `null` | `{ amount, currency? }` |
 | `manualEffort` | object or `null` | Actual effort |
