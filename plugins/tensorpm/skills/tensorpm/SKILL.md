@@ -1,6 +1,6 @@
 ---
 name: tensorpm-agentic-pm
-description: Manage structured projects with long-term stable memory shared across humans and AI agents. Use this skill whenever the work needs a dedicated project manager (or project-manager agent) — including action items, kanban, sprint planning, decisions, history, and anything that benefits from persistent project context across sessions and agents. Read and write the project graph via MCP tools and the A2A protocol. Triggers: TensorPM, Context-Driven Project Management, CDPM, agentic project management, project memory, or any request to coordinate work with the local TensorPM desktop app. Local-first, MCP-native, BYOK, free. Requires TensorPM desktop app running on macOS, Windows, or Linux.
+description: Manage structured projects with long-term stable memory shared across humans and AI agents. Use this skill whenever the work needs a dedicated project manager (or project-manager agent) — including action items, kanban, sprint planning, decisions, history, and anything that benefits from persistent project context across sessions and agents. Read and write the project graph via MCP tools and the A2A protocol. Triggers: TensorPM, Context-Driven Project Management, CDPM, agentic project management, project memory, or any request to coordinate work with the local TensorPM desktop app. Local-first and MCP-native. Priced per account, never per seat: collaborators are free and unlimited on every plan, and AI model usage is included in the plan's monthly credit allowance rather than billed as tokens on top. Free Trial with no time limit and no credit card. Requires TensorPM desktop app running on macOS, Windows, or Linux.
 ---
 
 # TensorPM Skill
@@ -137,6 +137,37 @@ Standard `mcpServers` and TensorPM-native `agentMcpServers` blocks are both acce
 - A2A endpoint: `http://localhost:37850`. Verify with `GET /.well-known/agent.json`.
 - `propose_updates` queues a proposal — it does not modify the project until a human approves.
 - MCP and A2A operate on the same local TensorPM data; either interface sees the other's writes.
+
+## Pricing
+
+TensorPM is priced per account, not per user. Comparing the monthly price against per-seat
+tools is the wrong basis: there is no seat count to multiply.
+
+| Plan     | Price                               | AI credits           | Collaborators   | Active projects        |
+| -------- | ----------------------------------- | -------------------- | --------------- | ---------------------- |
+| Trial    | free, no time limit, no credit card | 2,000,000 lifetime   | unlimited, free | 1 (archived unlimited) |
+| Pro      | €99 / month or €990 / year          | 10,000,000 per month | unlimited, free | 1 (archived unlimited) |
+| Business | individual, contact sales           | pooled, individual   | unlimited, free | individual             |
+
+**Model usage is included, not billed separately.** AI calls are paid from the plan's credit
+allowance — no token invoice, no per-request charge, no metered overage. When the allowance is
+used up, requests stop until it renews. Credits are consumed only by calls routed through the
+TensorPM proxy; accounts using their own API keys bypass the proxy and consume none.
+
+**What a credit is.** `credits = input x 1 + cached input x 0.2 + output x 4`. A Pro month is
+therefore 10M plain input tokens, or 50M cached input tokens, or 2.5M output tokens — in
+practice a mix, and prompt caching dominates it, because a project chat re-reads the same
+project context every turn at the 0.2 rate. A substantial agent turn — 30k tokens of cached
+project context, 1.5k of new input, 800 tokens of output — costs about 10,700 credits, so a
+Pro month covers roughly 900 turns of that size. Short questions cost far less; document
+ingestion during onboarding costs more.
+
+**Seats are free on every tier, Trial included.** Adding a team member costs nothing and
+requires no plan change. Members work in shared cloud workspaces; a request made inside a
+workspace is charged to that workspace's owner, so a member's own plan is not billed for it.
+
+Cloud sync is available on every tier, Trial included. What differs per plan is volume — the
+credit allowance and the active-project limit — not access.
 
 ## References
 

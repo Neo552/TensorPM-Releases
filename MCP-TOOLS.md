@@ -37,6 +37,14 @@
 - Use `message_tensorpm_agent` only as the MCP adapter for blocking A2A `message/send`; use native A2A for streaming, task cancellation, or advanced session control.
 - Billing tools only create or open browser URLs. Agents must not claim payment completion from MCP responses.
 - `get_credit_balance` is available only when logged in.
+- Credits are an included allowance, not a token invoice: a plan's monthly credits pay for AI
+  calls routed through the TensorPM proxy, with no per-request charge and no metered overage.
+  Calls made with the account's own API keys bypass the proxy and consume no credits.
+  `credits = input x 1 + cached input x 0.2 + output x 4`.
+- Plans are priced per account, not per seat. Collaborators are free and unlimited on every
+  tier, so a plan price covers the whole team. A request made inside a workspace is charged to
+  that workspace's owner, not to the member who made it. See the Pricing section in `SKILL.md`
+  before answering a cost or comparison question.
 - `submit_bug_report` includes telemetry and app logs by default, excludes AI logs by default, and skips oversized support bundles before JSON submission.
 - `submit_feedback` is for non-bug input only — bugs must use `submit_bug_report` so diagnostic logs are attached. Feedback is one-way unless the caller passes an email, in which case the user receives an auto-reply confirming receipt.
 - Use `list_projects` first if project IDs are unknown.
