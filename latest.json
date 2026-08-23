@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.37.1",
-  "name": "TensorPM v1.37.1",
-  "published_at": "2026-08-22T16:26:27Z",
+  "tag_name": "v1.37.2",
+  "name": "TensorPM v1.37.2",
+  "published_at": "2026-08-23T23:34:01Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.37.1\n\n## 🐛 Bug Fixes\n\n### Pulse Cards Come Back Filled After a Restart\n\nProject health and progress are loaded again when the app reopens the project it had open,\ninstead of only when a project is opened or a tab is switched.\n\nSince v1.37.0 the first Pulse column after every start showed **No data yet** on the health and\nprogress cards, even for a project whose evaluations were already stored — and a card reporting\nno data collapses, which kept the very component that would have loaded them from ever running.\nThe column recovered as soon as the project was reopened or another tab was visited, and stayed\ncorrect once a card had been expanded by hand, but a fresh start always began empty.\n\n### A Finished Evaluation Is No Longer Overwritten by an Older One\n\nA stored status or progress row can no longer replace a newer evaluation that has just arrived.\nA read started before an evaluation finished used to resolve afterwards and write the pre-run\nstate back over the fresh result, so a refreshed project could visibly renew its status and then\nsnap back moments later.\n\n### Location and Address Details\n\n- A project country is never stored without the address it belongs to\n- A postal address consisting only of spaces is treated as no address instead of an empty block\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.37.1\n- **Previous Version**: 1.37.0\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.37.2\n\n## 🐛 Bug Fixes\n\n### One Scrollbar in Pulse Instead of Two\n\nPulse no longer scrolls as a whole. Everything that can overflow scrolls inside the view — the\nworking surface, and the status column beside it on a wide window — while the header with the\ntitle, the project state and the agent switch stays where it is.\n\nPulse fills the content area, but it was still sitting inside the scroller that every view gets\nby default. Whenever the surface asked for a few pixels more than the window had, a second\nscrollbar appeared next to the one Pulse already had, and dragging it took the header along.\n\n### Pulse Cards Keep Their Own Row\n\nTwo cards side by side now end at the same line, and a card left without a partner takes the\nwhole row instead of leaving half a row empty next to it. Both only apply where the cards sit\nbelow the conversation — beside it the column is one card wide and unchanged.\n\n### Chart Legends Are No Longer Cut Off\n\nThe legend under a metrics donut takes the room it actually needs. It used to be given a fixed\nheight, and a label that wrapped to a third line — \"Abgeschlossen\" and \"Blockiert\" under the\nsame donut — was cut off at the card edge.\n\n### Status and Progress Are Written in the App Language\n\nThe status and progress evaluations now say which language they are for, the same way the\nwelcome box, the chat, the Distiller and the suggestions already did. Their text goes straight\ninto the Pulse cards, so an English sentence in a German app — or the reverse — was visible\nimmediately.\n\nBoth evaluations also read the project data and the previous evaluation, and without an anchor\nthey simply continued in the language they found there. The instruction is now explicit: take\nthe app language, translate what you quote from the project, and never mix two languages in one\nsentence. An English UI gets the same anchor, which it did not have at all before.\n\n**Note**: Stored evaluations keep the language they were written in until the project is\nevaluated again — use **Projekt neu durchsehen** / **Review project** to refresh them.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.37.2\n- **Previous Version**: 1.37.1\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.37.1/TensorPM-Setup.exe",
-      "size": 147548040,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.37.2/TensorPM-Setup.exe",
+      "size": 147540096,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.37.1/TensorPM-macOS.dmg",
-      "size": 184261010,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.37.2/TensorPM-macOS.dmg",
+      "size": 184262012,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.37.1/TensorPM-Linux.AppImage",
-      "size": 171085090,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.37.2/TensorPM-Linux.AppImage",
+      "size": 171088855,
       "download_count": 0
     }
   ]
