@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.38.2",
-  "name": "TensorPM v1.38.2",
-  "published_at": "2026-09-15T16:24:18Z",
+  "tag_name": "v1.39.1",
+  "name": "TensorPM v1.39.1",
+  "published_at": "2026-09-26T15:06:00Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.38.2\n\nThis update improves sign-in reliability, keeps timeline progress visible while scrolling,\nand includes the document and project-chat improvements added since v1.38.1.\n\n## 🐛 Bug Fixes\n\n- Email verification and password resets now retain their confirmation details for the current\n  session even if the system keyring refuses a write. Requesting a replacement code replaces\n  the previous details, and expired codes are not restored from an older saved entry.\n- The account menu keeps its warning visible when sign-in could not be saved, including after\n  closing and reopening the menu. A successful save clears the warning.\n- Category progress in the Gantt view remains visible during fast vertical scrolling.\n- Closing the app no longer reports an artifact save failure when no document sessions need saving.\n\n## 🔐 Sign-In Improvements\n\n- Browser sign-in through passkeys, Google, and Apple is tied to the request started by the\n  desktop app. Unexpected or duplicate callbacks cannot complete another sign-in request.\n- Saved sign-in credentials require the system's secure storage. When secure storage is\n  unavailable, you can still sign in for the current app session and see a clear explanation.\n- Refresh retries retain their request identity, and email confirmation flows use the updated\n  account-security protocol.\n\n## 📝 Document and Project-Chat Improvements\n\n- Continue work between a project conversation and a document conversation with the task and\n  relevant context attached to the handover. Documents can accompany the return to project chat.\n- The document agent can inspect rendered pages to check layout, including diagrams and page\n  furniture, against the current document revision.\n- Project-file references can be used in chat and code execution with checks that the referenced\n  file still belongs to the project.\n- Email drafts support project-file attachments. Approval retains the exact attachment snapshot\n  that was reviewed before sending.\n- OpenAI conversations handle follow-up instructions and parallel read operations more reliably.\n- Updated AI-provider, synchronization, and email libraries; kept editor packages aligned.\n\n## 📅 Release Info\n\n- **Version**: 1.38.2\n- **Release Date**: 2026-09-15\n- **Previous Version**: 1.38.1\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.39.1\n\nThis update introduces a new synchronization protocol for cloud workspaces. Changes made at the\nsame time on several devices are merged instead of overwritten, every automatic decision can be\nreviewed and undone, and personal intake stays private until you share it.\n\n## 🔄 Synchronization\n\n- Every record carries a server revision. A change made on an outdated version is detected\n  instead of silently replacing a newer one.\n- Concurrent edits are merged automatically when they touch different fields. In long texts,\n  edits to different paragraphs are both kept. Related fields such as start and due date, status\n  and block reason, or the priority settings are always taken together.\n- When both sides changed the same field, the newer change wins. Small clock differences between\n  devices do not decide the outcome.\n- Automatic decisions are listed in the sync panel. Values that were replaced can be restored\n  with one click, as long as nobody changed them again since.\n- Deleted records are no longer brought back by an offline device. An edit to a record that was\n  deleted elsewhere is kept and can be restored explicitly.\n- Changes wait safely on the device while offline or when the server is briefly unavailable, and\n  a single failing record no longer holds back the rest.\n- Project moves between workspaces are transferred as one unit.\n- New intake entries are private to you until you share them with the workspace.\n- On computers shared by several accounts, files you save or the app creates for you (exports,\n  documents, handovers, browser results) stay yours; project folders keep detecting new files.\n- Logging out now tells you how many changes are still waiting to be sent and how many need a\n  decision; both stay on this device for your next sign-in.\n\n## 🔐 Sign-In Improvements\n\n- A temporarily unavailable or rate-limited server no longer signs you out. Only an account that\n  no longer exists ends the session.\n\n## ⚠️ Compatibility\n\n- Older versions keep synchronizing with updated devices. Intake entries created on an older\n  version stay on that device.\n- The first start after the update prepares the local sync state once; this can take a moment on\n  large databases.\n\n## 🏗️ Improvements\n\n- Updated the editor, AI-provider and application libraries to their current versions.\n\n## 📅 Release Info\n\n- **Version**: 1.39.1\n- **Release Date**: 2026-09-26\n- **Previous Version**: 1.38.2\n- **Type**: Minor Release (1.39.0 was not published)\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.38.2/TensorPM-Setup.exe",
-      "size": 186365728,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.39.1/TensorPM-Setup.exe",
+      "size": 197442672,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.38.2/TensorPM-macOS.dmg",
-      "size": 232788576,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.39.1/TensorPM-macOS.dmg",
+      "size": 236347624,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.38.2/TensorPM-Linux.AppImage",
-      "size": 214265459,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.39.1/TensorPM-Linux.AppImage",
+      "size": 216094324,
       "download_count": 0
     }
   ]
