@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.39.3",
-  "name": "TensorPM v1.39.3",
-  "published_at": "2026-09-27T11:47:28Z",
+  "tag_name": "v1.39.4",
+  "name": "TensorPM v1.39.4",
+  "published_at": "2026-09-27T12:58:04Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.39.3\n\nThis update fixes the slowdowns and sync stalls some devices showed after updating to 1.39.1.\n\n## 🔄 Synchronization\n\n- The app stays responsive while cloud data is checked. After 1.39.1, every incoming checkpoint\n  made the app re-examine all synchronized records, several times a minute, which could freeze\n  the window for seconds at a time.\n- Records that have not changed since the last check are no longer examined again.\n- Changes to your workspaces are uploaded again on devices that are still waiting for your\n  personal encryption key. Before, a single personal file that could not be prepared yet held\n  back every other change of the device.\n- A workspace whose encryption key has not reached this device yet no longer blocks uploads to\n  your other workspaces.\n- Personal files upload as soon as the key reaches this device (open another signed-in device\n  or recover your encryption keys). Until then they stay safely on this device.\n- Far fewer repeated entries in the sync log.\n\n## 🐛 Bug Fixes\n\n- Project file paths that were stored in an older, double-encoded format are readable again, in\n  the file explorer and in the Distiller.\n- Diagrams in chats and artifacts keep their font, curve style and labels consistently after the\n  first diagram.\n\n## 📅 Release Info\n\n- **Version**: 1.39.3\n- **Release Date**: 2026-09-27\n- **Previous Version**: 1.39.1\n- **Type**: Patch Release (1.39.2 was not published)\n",
+  "body": "# Changelog - v1.39.4\n\nThis update removes the remaining freezes after updating to 1.39.3.\n\n## 🔄 Synchronization\n\n- The app no longer freezes for minutes after start or while opening a cloud project on devices\n  with many changes waiting to be synchronized. Looking up waiting changes read the whole list for\n  every single record; it now uses an index.\n- A burst of new sync conflicts no longer makes the app reload the conflict list hundreds of times.\n- Accepting the server's copy of a workspace no longer fails with a database error.\n- A record the server cannot take yet (for example because its parent has not arrived) no longer\n  holds back the changes behind it, and an expired sign-in in the middle of an upload no longer\n  marks a change as rejected.\n\n## 📚 Documentation\n\n- The synchronization documentation describes the current protocol.\n\n## 📅 Release Info\n\n- **Version**: 1.39.4\n- **Release Date**: 2026-09-27\n- **Previous Version**: 1.39.3\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.39.3/TensorPM-Setup.exe",
-      "size": 197479048,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.39.4/TensorPM-Setup.exe",
+      "size": 197466704,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.39.3/TensorPM-macOS.dmg",
-      "size": 236313509,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.39.4/TensorPM-macOS.dmg",
+      "size": 236299240,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.39.3/TensorPM-Linux.AppImage",
-      "size": 216110645,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.39.4/TensorPM-Linux.AppImage",
+      "size": 216118082,
       "download_count": 0
     }
   ]
