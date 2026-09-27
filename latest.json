@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.40.1",
-  "name": "TensorPM v1.40.1",
-  "published_at": "2026-09-27T15:55:48Z",
+  "tag_name": "v1.40.2",
+  "name": "TensorPM v1.40.2",
+  "published_at": "2026-09-27T17:39:56Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.40.1\n\nThis update lowers the background load of synchronization on devices with many waiting changes.\n\n## 🔄 Synchronization\n\n- Signing in again or switching accounts no longer adds another copy of every personal file to the\n  list of changes waiting to be uploaded. Copies that already piled up are uploaded once instead of\n  once per copy.\n- A large backlog no longer holds back other uploads: preparing waiting changes pauses after a\n  short time and continues with the next synchronization round, and other work in the app keeps\n  running in between.\n- Checking for waiting changes and open conflicts every few seconds reads far less data while\n  nothing has changed.\n\n## 📅 Release Info\n\n- **Version**: 1.40.1\n- **Release Date**: 2026-09-27\n- **Previous Version**: 1.40.0\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.40.2\n\nThis update stops saving a project from producing sync conflicts, makes the sync panel readable,\nand fixes a set of problems in documents (Artifact Mode).\n\n## 🔄 Synchronization\n\n- Saving a project no longer deletes its effort, budget, time, dependency and assignment entries\n  on the server, and no longer raises \"deleted while you were editing it\" for each of them.\n  Entries this device had already sent that way are restored automatically, including those\n  removed with \"Keep deleted\", as long as nobody changed them since.\n- Conflicts left over from the switch to the new sync protocol, where your device and the server\n  hold the same content, are resolved automatically.\n- Conflicts are named after the task or person they belong to (\"Effort: Pour foundation\") instead\n  of an internal id, and several at once are announced in one notice instead of one each.\n- The sync panel counts conflicts as conflicts, and says when they are in another workspace\n  instead of showing \"no open conflicts\".\n- Resolving a conflict takes effect visibly: the entry leaves the list with a confirmation,\n  \"Restore all\" handles every deleted entry at once, and \"Keep deleted\" asks once more.\n\n## 📄 Documents\n\n- The document chat is kept after handing a project conversation over to a document; chats an\n  earlier version had set aside come back.\n- Pictures can be inserted from the toolbar, by pasting or by dropping them onto the page.\n- Exported documents no longer appear in the Distiller as new signals.\n- Questions the document agent asks the project agent no longer appear in the project chat.\n- Links in documents open with Cmd/Ctrl+click; only web, mail and phone links are accepted.\n- Ctrl+Y redoes, as on Windows and Linux.\n- The header says \"not saved\" while the document cannot be written to disk.\n- The agent can no longer remove table rows by accident, replace a header or footer it has not\n  read, place a text box where the Word export cannot follow, or change a very large number of\n  matches without confirming the count.\n- \"Retry\" after an interrupted agent turn continues from what was already saved instead of\n  repeating it.\n\n## 📅 Release Info\n\n- **Version**: 1.40.2\n- **Release Date**: 2026-09-27\n- **Previous Version**: 1.40.1\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.40.1/TensorPM-Setup.exe",
-      "size": 197493384,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.40.2/TensorPM-Setup.exe",
+      "size": 197539920,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.40.1/TensorPM-macOS.dmg",
-      "size": 236189911,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.40.2/TensorPM-macOS.dmg",
+      "size": 236121776,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.40.1/TensorPM-Linux.AppImage",
-      "size": 216298553,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.40.2/TensorPM-Linux.AppImage",
+      "size": 216339956,
       "download_count": 0
     }
   ]
