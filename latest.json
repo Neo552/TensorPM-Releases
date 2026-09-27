@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.39.4",
-  "name": "TensorPM v1.39.4",
-  "published_at": "2026-09-27T12:58:04Z",
+  "tag_name": "v1.40.0",
+  "name": "TensorPM v1.40.0",
+  "published_at": "2026-09-27T14:42:09Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.39.4\n\nThis update removes the remaining freezes after updating to 1.39.3.\n\n## 🔄 Synchronization\n\n- The app no longer freezes for minutes after start or while opening a cloud project on devices\n  with many changes waiting to be synchronized. Looking up waiting changes read the whole list for\n  every single record; it now uses an index.\n- A burst of new sync conflicts no longer makes the app reload the conflict list hundreds of times.\n- Accepting the server's copy of a workspace no longer fails with a database error.\n- A record the server cannot take yet (for example because its parent has not arrived) no longer\n  holds back the changes behind it, and an expired sign-in in the middle of an upload no longer\n  marks a change as rejected.\n\n## 📚 Documentation\n\n- The synchronization documentation describes the current protocol.\n\n## 📅 Release Info\n\n- **Version**: 1.39.4\n- **Release Date**: 2026-09-27\n- **Previous Version**: 1.39.3\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.40.0\n\nThis update explains your schedule in the Gantt, lets you choose how deeply each AI model thinks,\nand reworks how the Distiller presents and applies its proposals.\n\n## 📅 Timeline and Gantt\n\n- The Gantt shows the critical path: which tasks drive the project end, how much float the others\n  have, and where dependencies conflict with the planned dates. All figures are in working days.\n- Conflicts can be resolved in place, with a preview of the moves and of the shift of the project\n  end. A block reason can be edited right in the chart.\n- Snapshots (\"Stände\") record the plan: manually, once a week automatically, and one baseline per\n  project. Comparing a snapshot with today shows what moved, by how many working days, and what was\n  pushed along by dependencies.\n- Moves are explained by their causes: changes from the chat or the Distiller and linked decisions.\n  You can document a reason as a decision or ask the agent about the differences.\n- Canvas labels (months, weekdays, calendar weeks) follow the app language. Keyboard shortcut hints\n  on the chart are now hidden by default and can be turned on in the view settings.\n\n## 🧠 AI\n\n- Settings › AI has a reasoning level (\"Denktiefe\") per model, with exactly the levels that model\n  supports. Existing installs keep their previous behaviour; the former Anthropic thinking switch\n  is carried over.\n- Claude Fable 5.1 and Claude Opus 5.5 replace Fable 5 and Opus 5. Saved model choices move to the\n  successor.\n\n## 🔍 Distiller\n\n- Proposal cards show the change on the object it affects: old and new values side by side, dates\n  and amounts with their difference, table rows as records.\n- With two or more proposals, nothing is written on the last click: a commit step lists exactly\n  what will be written before you apply it. A short input lock after every card switch prevents a\n  double click from deciding a card you have not seen.\n- After sending, the signal shows what actually happened: applying, applied, partially confirmed or\n  not finished, read from the trail. \"View in trail\" opens the trail filtered to that signal.\n- No more layout jumps while reviewing.\n\n## 🌐 Language\n\n- People, trail, budget, intake and connector texts appear in the app language; amounts use the\n  separators of the app language, and message times read \"Today at 3:45 PM\" / \"Heute um 15:45\".\n\n## 📅 Release Info\n\n- **Version**: 1.40.0\n- **Release Date**: 2026-09-27\n- **Previous Version**: 1.39.4\n- **Type**: Minor Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.39.4/TensorPM-Setup.exe",
-      "size": 197466704,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.40.0/TensorPM-Setup.exe",
+      "size": 197521096,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.39.4/TensorPM-macOS.dmg",
-      "size": 236299240,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.40.0/TensorPM-macOS.dmg",
+      "size": 236205454,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.39.4/TensorPM-Linux.AppImage",
-      "size": 216118082,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.40.0/TensorPM-Linux.AppImage",
+      "size": 216311327,
       "download_count": 0
     }
   ]
