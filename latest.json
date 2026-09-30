@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.41.1",
-  "name": "TensorPM v1.41.1",
-  "published_at": "2026-09-28T21:24:02Z",
+  "tag_name": "v1.41.2",
+  "name": "TensorPM v1.41.2",
+  "published_at": "2026-09-30T23:44:05Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.41.1\n\nThis update fixes a slow start for accounts whose personal files were synchronized before personal\nencryption keys existed, and a broken desktop shortcut after updates on Windows.\n\n## 🐛 Bug Fixes\n\n- **Start no longer stalls on older personal files:** on some accounts, TensorPM checked every\n  personal file entry against a copy the server still held from before personal keys, and each\n  check failed. With many files this kept the app busy for minutes after starting, and the sync\n  status showed thousands of \"upload failed\" entries. Such entries are now replaced once by your\n  own, encrypted version in the background, and the start stays responsive.\n- **Fewer, clearer sync messages:** when the same problem hits many entries of a table, it is\n  reported once with a count instead of once per entry. Messages from earlier attempts disappear\n  on their own after the next successful upload.\n- **Windows: desktop shortcut keeps working after updates:** on Windows the desktop shortcut could\n  stop working after TensorPM installed an update on quit (\"The item … is no longer available\").\n  Updates now leave the installed app intact if a file is still in use, and installations already\n  damaged this way are repaired by the next update.\n\n## 🏗️ Improvements\n\n- Checking personal file entries before an upload uses a new database index and no longer reads\n  whole tables, which makes starting and synchronizing faster on large accounts.\n- Long uploads pause briefly and regularly, so the app stays usable while they run.\n\n## 📝 Notes\n\n- The first start after the update may upload your personal file entries once in the background.\n  This happens only once and does not change their content.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.41.1\n- **Release Date**: 2026-09-28\n- **Previous Version**: 1.41.0\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.41.2\n\nThis update brings web search to every plan, fits the project metrics card to every column width,\nand shows the general category under its proper name.\n\n## 🎉 New Features\n\n- **Web search on every plan:** you can now store your own Brave Search API key on Trial and Pro\n  too, not only on Business. Open Settings → AI → Web Search, paste the key, and the project agent\n  can search the web for you. Your own keys for AI providers remain a Business feature.\n- **Project metrics that fit any width:** the metrics card in Pulse (status, budget, effort) now\n  picks its layout from the space it actually has. Wide cards show three columns with a summary\n  above each chart. Medium cards show three compact columns with the headline figure on top.\n  Narrow columns show one metric per row, with the ring next to its figures. All rings in a card\n  have the same size, and legends are no longer cut off.\n- **Short budget figures in compact tiles:** large amounts read \"736K EUR\" instead of\n  \"736,000.00 EUR\", so they fit the tile. Hover over the tile to see the full amounts.\n- **The project agent names the missing setup step:** when web search, a mailbox or a calendar is\n  not set up for a project, the project agent now tells you what to set up and where (a Brave\n  Search API key or Browser Use under Settings → AI, a mailbox or calendar assigned to the project\n  under Connectors) instead of saying it has no internet access.\n\n## 🐛 Bug Fixes\n\n- **The general category has a readable name:** every project keeps a general category for items\n  without a category. It was shown under its internal name \"general\", also in German. It now reads\n  \"General\" in English and \"Allgemein\" in German: in the list, on Kanban and priority cards, in\n  the category picker, the context menu, recurring items and the action item picker.\n- **No empty \"general\" group above your own categories:** after the first save of a project that\n  brings its own categories, an empty \"general\" group appeared at the top of the list. The list\n  now leaves it out while it holds no items and no subcategories. It shows up again as soon as it\n  holds something, in edit mode, and whenever it is the only category.\n- **Pie/Bar switch stays inside narrow metric cards:** in a narrow card the switch moves to its own\n  line instead of running past the card edge.\n\n## 🏗️ Improvements\n\n- Tooltips in the narrowest metrics layout use their full width, so words are no longer broken\n  in the middle.\n- Budget figures in compact tiles that are too small to abbreviate show whole units (in German\n  \"74.213 EUR\" instead of \"74.213,4 EUR\").\n- Dependency maintenance updates.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.41.2\n- **Release Date**: 2026-10-01\n- **Previous Version**: 1.41.1\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.41.1/TensorPM-Setup.exe",
-      "size": 198038480,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.41.2/TensorPM-Setup.exe",
+      "size": 198044704,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.41.1/TensorPM-macOS.dmg",
-      "size": 236986482,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.41.2/TensorPM-macOS.dmg",
+      "size": 237008200,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.41.1/TensorPM-Linux.AppImage",
-      "size": 217561394,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.41.2/TensorPM-Linux.AppImage",
+      "size": 217569596,
       "download_count": 0
     }
   ]
