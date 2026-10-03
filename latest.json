@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.41.2",
-  "name": "TensorPM v1.41.2",
-  "published_at": "2026-09-30T23:44:05Z",
+  "tag_name": "v1.41.3",
+  "name": "TensorPM v1.41.3",
+  "published_at": "2026-10-03T12:16:25Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.41.2\n\nThis update brings web search to every plan, fits the project metrics card to every column width,\nand shows the general category under its proper name.\n\n## 🎉 New Features\n\n- **Web search on every plan:** you can now store your own Brave Search API key on Trial and Pro\n  too, not only on Business. Open Settings → AI → Web Search, paste the key, and the project agent\n  can search the web for you. Your own keys for AI providers remain a Business feature.\n- **Project metrics that fit any width:** the metrics card in Pulse (status, budget, effort) now\n  picks its layout from the space it actually has. Wide cards show three columns with a summary\n  above each chart. Medium cards show three compact columns with the headline figure on top.\n  Narrow columns show one metric per row, with the ring next to its figures. All rings in a card\n  have the same size, and legends are no longer cut off.\n- **Short budget figures in compact tiles:** large amounts read \"736K EUR\" instead of\n  \"736,000.00 EUR\", so they fit the tile. Hover over the tile to see the full amounts.\n- **The project agent names the missing setup step:** when web search, a mailbox or a calendar is\n  not set up for a project, the project agent now tells you what to set up and where (a Brave\n  Search API key or Browser Use under Settings → AI, a mailbox or calendar assigned to the project\n  under Connectors) instead of saying it has no internet access.\n\n## 🐛 Bug Fixes\n\n- **The general category has a readable name:** every project keeps a general category for items\n  without a category. It was shown under its internal name \"general\", also in German. It now reads\n  \"General\" in English and \"Allgemein\" in German: in the list, on Kanban and priority cards, in\n  the category picker, the context menu, recurring items and the action item picker.\n- **No empty \"general\" group above your own categories:** after the first save of a project that\n  brings its own categories, an empty \"general\" group appeared at the top of the list. The list\n  now leaves it out while it holds no items and no subcategories. It shows up again as soon as it\n  holds something, in edit mode, and whenever it is the only category.\n- **Pie/Bar switch stays inside narrow metric cards:** in a narrow card the switch moves to its own\n  line instead of running past the card edge.\n\n## 🏗️ Improvements\n\n- Tooltips in the narrowest metrics layout use their full width, so words are no longer broken\n  in the middle.\n- Budget figures in compact tiles that are too small to abbreviate show whole units (in German\n  \"74.213 EUR\" instead of \"74.213,4 EUR\").\n- Dependency maintenance updates.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.41.2\n- **Release Date**: 2026-10-01\n- **Previous Version**: 1.41.1\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.41.3\n\nThis update gives the welcome screen a new background film.\n\n## 🎉 New Features\n\n- **A new welcome film:** the first screen you see after installing TensorPM now shows seven\n  complex projects from very different worlds: a module docking at a space station, a rotor blade\n  lifted onto an offshore wind turbine at sunrise, the final assembly of a wide-body aircraft, a\n  robot welding line, the inside of a fusion reactor, an underwater robot working on the seabed,\n  and a giant telescope under the Milky Way. The film is sharper than before (1080p) and loops\n  without a visible seam.\n\n## 🏗️ Improvements\n\n- **Readable text on every scene:** the film is slightly darker behind the logo, the title and the\n  start button, so the white text stays easy to read.\n- **Respects \"Reduce motion\":** if your system is set to reduce motion, the welcome screen shows a\n  still image instead of the moving film.\n- **Faster first paint:** a still image is shown while the film loads, so the welcome screen never\n  starts on an empty background.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.41.3\n- **Release Date**: 2026-10-03\n- **Previous Version**: 1.41.2\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.41.2/TensorPM-Setup.exe",
-      "size": 198044704,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.41.3/TensorPM-Setup.exe",
+      "size": 199472776,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.41.2/TensorPM-macOS.dmg",
-      "size": 237008200,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.41.3/TensorPM-macOS.dmg",
+      "size": 238606633,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.41.2/TensorPM-Linux.AppImage",
-      "size": 217569596,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.41.3/TensorPM-Linux.AppImage",
+      "size": 219008288,
       "download_count": 0
     }
   ]
