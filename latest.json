@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.41.3",
-  "name": "TensorPM v1.41.3",
-  "published_at": "2026-10-03T12:16:25Z",
+  "tag_name": "v1.41.5",
+  "name": "TensorPM v1.41.5",
+  "published_at": "2026-10-05T09:40:07Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.41.3\n\nThis update gives the welcome screen a new background film.\n\n## 🎉 New Features\n\n- **A new welcome film:** the first screen you see after installing TensorPM now shows seven\n  complex projects from very different worlds: a module docking at a space station, a rotor blade\n  lifted onto an offshore wind turbine at sunrise, the final assembly of a wide-body aircraft, a\n  robot welding line, the inside of a fusion reactor, an underwater robot working on the seabed,\n  and a giant telescope under the Milky Way. The film is sharper than before (1080p) and loops\n  without a visible seam.\n\n## 🏗️ Improvements\n\n- **Readable text on every scene:** the film is slightly darker behind the logo, the title and the\n  start button, so the white text stays easy to read.\n- **Respects \"Reduce motion\":** if your system is set to reduce motion, the welcome screen shows a\n  still image instead of the moving film.\n- **Faster first paint:** a still image is shown while the film loads, so the welcome screen never\n  starts on an empty background.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.41.3\n- **Release Date**: 2026-10-03\n- **Previous Version**: 1.41.2\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.41.5\n\nThis update fixes a crash on the first start on Windows.\n\n## 🐛 Bug Fixes\n\n- **Windows: TensorPM starts again on a new installation:** on the first start, while the welcome\n  and sign-in steps were shown, TensorPM could stop with \"Something went wrong\" right away, and\n  restarting or \"Try again\" led to the same message. The first start now works as expected.\n\n## 🏗️ Improvements\n\n- **Updated components:** several built-in libraries (AI provider connections, document import and\n  export, sync) were updated to their latest minor versions.\n\n## 📝 Notes\n\n- Version 1.41.4 was never published; this release replaces it.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.41.5\n- **Release Date**: 2026-10-05\n- **Previous Version**: 1.41.3\n- **Type**: Patch Release (Hotfix)\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.41.3/TensorPM-Setup.exe",
-      "size": 199472776,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.41.5/TensorPM-Setup.exe",
+      "size": 203583352,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.41.3/TensorPM-macOS.dmg",
-      "size": 238606633,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.41.5/TensorPM-macOS.dmg",
+      "size": 246492417,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.41.3/TensorPM-Linux.AppImage",
-      "size": 219008288,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.41.5/TensorPM-Linux.AppImage",
+      "size": 227753834,
       "download_count": 0
     }
   ]
