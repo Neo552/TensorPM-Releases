@@ -35,6 +35,10 @@
 - MCP is best for direct, structured CRUD workflows.
 - Core project-context edits beyond explicit action-item fields should go through A2A `message/send`.
 - Use `message_tensorpm_agent` only as the MCP adapter for blocking A2A `message/send`; use native A2A for streaming, task cancellation, or advanced session control.
+- `message_tensorpm_agent` returns when the agent turn has ended, after at most 30 minutes
+  (a longer turn is cancelled). When the client cancels the call (clients usually do when
+  their own tool timeout runs out; Zed sends no cancel), TensorPM cancels the turn; changes the
+  agent already applied are kept. See Long Agent Turns below.
 - Billing tools only create or open browser URLs. Agents must not claim payment completion from MCP responses.
 - `get_credit_balance` is available only when logged in.
 - Credits are an included allowance, not a token invoice: a plan's monthly credits pay for AI
@@ -51,6 +55,27 @@
 - Use `get_project` when you need category/person identifiers, valid action-item assignments, filters, or existing decisions.
 - Decisions are append-only. To change a previously recorded decision, call `supersede_decision` (creates a new record + chains the old one as `superseded`); never mutate or delete a decision in place. Use `withdraw_decision` only when no replacement applies.
 - Read existing decisions from `get_project` before reasoning about a contentious or previously-debated topic. MCP decision tools are write-oriented: record, supersede, withdraw, link, and unlink.
+
+## Long Agent Turns
+
+- Give the MCP client a tool timeout of at least 1830 s (30.5 min) for the `tensorpm` server;
+  TensorPM marks a shorter one for update (for the four clients named below). Its installer
+  writes 1830 s for Codex (`tool_timeout_sec`), Claude Code (`timeout`, in ms) and Cline
+  (`timeout`, in s). For Zed it writes `timeout: 1830000`, which current Zed caps at 10 minutes.
+  Zed then stops waiting but sends no cancel, so a longer turn keeps running in TensorPM (up to
+  30 minutes) and its changes still apply: don't retry the request blindly.
+- Installs made by earlier TensorPM versions lack this setting. TensorPM's Connectors panel marks
+  them **Update** under MCP Server; updating re-runs the installer. When TensorPM itself starts
+  Codex or Claude Code for an action item, it updates an outdated entry automatically.
+- Clients without a per-server tool timeout, such as Claude Desktop and Cursor, end the call at
+  their built-in limit (60 s in the MCP TypeScript SDK), which normally cancels the turn.
+
+## Debug Logs
+
+The MCP server logs to stderr, which MCP clients usually keep in their own log files. Debug lines
+are written only when `LOG_LEVEL=debug` is set in the server's environment (for example in the
+`env` of the client's `tensorpm` entry). Values under secret-like keys (API keys, tokens,
+passwords) are always masked.
 
 ## API-Key Setup Example
 

@@ -3,7 +3,13 @@
 ## Endpoint
 
 - Base URL: `http://localhost:37850`
-- Trust model: localhost-only.
+- Trust model: localhost-only. Every request, discovery included, must carry a loopback `Host`
+  header with the bridge's port (`localhost:37850`, `127.0.0.1:37850` or `[::1]:37850`). An
+  `Origin` header, when present, must be the same loopback origin (e.g. `http://localhost:37850`).
+  Anything else gets HTTP 403, including requests through Docker's `host.docker.internal`, a port
+  forward to another port, or a reverse proxy that passes on a non-loopback `Host` (for example
+  the client's original one). Non-browser clients (no `Origin` header) calling
+  `http://localhost:37850` are unaffected.
 - Optional auth: set `A2A_HTTP_AUTH_TOKEN` before starting TensorPM to require token validation.
 
 ## Agent Discovery
@@ -23,7 +29,7 @@ curl http://localhost:37850/projects/{projectId}/.well-known/agent.json
 
 | Method              | Purpose                     |
 | ------------------- | --------------------------- |
-| `message/send`      | Blocking request/response   |
+| `message/send`      | Blocks until the turn ends  |
 | `message/stream`    | Streaming response via SSE  |
 | `tasks/get`         | Fetch task by ID (+history) |
 | `tasks/list`        | List tasks with filters     |
@@ -33,6 +39,19 @@ curl http://localhost:37850/projects/{projectId}/.well-known/agent.json
 Conversation continuity:
 
 - Pass `contextId` in subsequent `message/send` requests.
+
+Long turns and cancellation:
+
+- `message/send` answers only after the agent turn has ended, which can take several minutes.
+- Closing the connection cancels the running turn. An HTTP client that gives up closes it too:
+  Node's built-in `fetch`, for example, gives up after 300 s without response headers. Raise the
+  client's timeout, or use `message/stream`: it sends its headers and first event at once, and
+  that event already carries the task id for `tasks/cancel`. It sends no keep-alive events (token
+  events pause during tool calls), so also allow long gaps between events.
+- `tasks/cancel` with the task's id also cancels the turn. Pass your own `params.contextId` on the
+  first `message/send` (an unknown id starts a new conversation); while the call blocks, you can
+  then find the id with `tasks/list`, filtered by that `contextId` and `states: ["working"]`.
+- Changes the agent already applied are kept.
 
 ## Agent self-scheduling
 

@@ -34,7 +34,7 @@ Use [TensorPM Releases](https://github.com/Neo552/TensorPM-Releases/releases) on
 
 ## Use TensorPM in Any MCP Client
 
-Built-in installers for Claude Desktop, Claude Code, Codex, Continue, Antigravity, and Cursor live under **TensorPM → Settings → Integrations**. For any other MCP-capable client, point it at the bundled stdio server:
+Built-in installers for Claude Desktop, Claude Code, Codex, Continue, Antigravity, Cursor, Cline, Zed, Windsurf, and GitHub Copilot (VS Code) live in TensorPM's **Connectors** panel (button on the **+** tab): its **+** (Add connector) → **Install MCP Server in…**; installed clients are listed under **MCP Server**. The same installers are in the **MCP → Install MCP Integration** menu (macOS menu bar; tray icon menu on Windows/Linux). For any other MCP-capable client, point it at the bundled stdio server:
 
 ```json
 {
@@ -47,7 +47,7 @@ Built-in installers for Claude Desktop, Claude Code, Codex, Continue, Antigravit
 }
 ```
 
-The exact `server.js` path per OS is shown in **Settings → Integrations → Manual Setup**. No env vars or auth tokens go in the client config — the server reads its bridge token from `~/.tensorpm/mcp-bridge-token` (mode `0600`, auto-rotated). The desktop app must be running when the client invokes the server.
+The exact `server.js` path per OS is shown in **Connectors → Manual setup**. No env vars are required and no auth token goes in the client config — the server reads its bridge token from `~/.tensorpm/mcp-bridge-token` (mode `0600`, auto-rotated). The desktop app must be running when the client invokes the server.
 
 TOML form (Codex `~/.codex/config.toml`):
 
@@ -55,6 +55,7 @@ TOML form (Codex `~/.codex/config.toml`):
 [mcp_servers.tensorpm]
 command = "node"
 args = ["<absolute-path-to>/dist/backend/mcp/server.js"]
+tool_timeout_sec = 1830
 ```
 
 YAML form (Continue `~/.continue/config.yaml`):
@@ -84,6 +85,8 @@ mcpServers:
 | Schedule a future TensorPM-agent run / reminder                      | A2A `message/send` — ask the project agent to schedule itself                                                               |
 
 Default: MCP for typed CRUD, A2A for intent and context-aware planning. Core project context (profile, budget, people, categories) can only be changed by the project agent — propose changes with `propose_updates` (human review required) or message the agent via A2A.
+
+A2A `message/send` and MCP `message_tensorpm_agent` block until the agent turn ends (MCP: at most 30 min, so allow a client tool timeout of at least 1830 s); cancelling the call, `tasks/cancel` or a closed connection cancels the turn, and changes already applied stay. A2A accepts only loopback `Host`/`Origin` headers (`localhost`, `127.0.0.1`, `[::1]`); anything else gets HTTP 403.
 
 The TensorPM project agent can also schedule its own future runs (e.g. "remind me to review the budget next Tuesday"). External agents trigger this by sending an A2A `message/send` describing the future intent — there is no direct MCP tool for self-scheduling.
 
