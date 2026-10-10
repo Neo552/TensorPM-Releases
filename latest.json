@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.42.2",
-  "name": "TensorPM v1.42.2",
-  "published_at": "2026-10-06T08:32:56Z",
+  "tag_name": "v1.43.0",
+  "name": "TensorPM v1.43.0",
+  "published_at": "2026-10-10T18:34:09Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.42.2\n\nThis update makes the timeline smooth again, stops sync conflicts that appeared and vanished on\ntheir own after almost every save, and tidies up how menus look.\n\n## 🗓️ Timeline\n\n- **Moving a bar no longer stutters:** dragging or resizing a bar, giving an undated task or work\n  package a span, applying a schedule fix or removing a span now saves only the changed dates.\n  Before, every change saved the whole project and the timeline paused for one to three seconds.\n- If such a change can't be saved, the bar returns to its saved dates, even after several quick\n  moves in a row.\n\n## 🔄 Sync\n\n- **No more phantom conflicts:** after a conflict on a task, work package or other record had been\n  settled once, every later change to that record showed up as a new conflict and then resolved\n  itself a moment later. Changes are now sent normally. Real conflicts, where someone else changed\n  the same record in the meantime, are still shown as before.\n\n## 🎨 Cleaner Menus\n\n- **Menus highlight whole rows:** in context menus and dropdowns (tasks, people, files, the\n  account menu, assignee and model pickers), the entry under the pointer is now highlighted as a\n  clean, full-width row instead of a rounded pill or a half-rounded shape. All other buttons look\n  as before.\n- The **back link in the account menu** (for example \"‹ Workspaces\") is now a plain title with an\n  arrow instead of a framed button.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.42.2\n- **Release Date**: 2026-10-05\n- **Previous Version**: 1.42.1\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.43.0\n\nThis update gives every project one clear view of its money, lets you invite anyone into a shared\nworkspace (even people without a TensorPM account yet), and fixes a few rough edges in menus and\ndialogs.\n\n## 💶 Budget: one cost overview instead of scattered numbers\n\nBefore, the budget tab, the Pulse card, the spending chart and the work breakdown each added up\ncosts in their own way, and budget buckets had no amount of their own. Now all of them use the\nsame calculation, so the numbers always agree.\n\n- **Positions carry the budget:** your categories (or work packages in WBS projects) are the cost\n  positions. Give each one a budget right in the table; a parent position shows the sum of its\n  children.\n- **Budget, forecast, variance, actual:** the overview at the top shows what you planned, what\n  the project will probably cost, how far that is from the budget, and what has been spent, plus\n  what is committed but not yet invoiced. A short sentence and a few hints tell you what needs\n  attention, for example a finished task without actual cost or material without a price.\n- **Cost entries with a status:** a cost entry is now _estimated_, _committed_ or _settled_. The\n  forecast uses the invoice once an entry is settled, otherwise the larger of estimate and\n  contract.\n- **Nothing counted twice:** a cost entry can pay for a task or a material item (or a whole\n  material group). Their own figures then no longer count, so a window order no longer shows up as\n  an expense, a task and a material item at the same time. If an entry looks like an existing\n  task or material item, TensorPM suggests linking them.\n- **Careful forecast:** as long as a position is not fully recorded, the rest of its budget stays\n  in the forecast. You free up savings by lowering the budget. A finished work package counts only\n  what was recorded.\n- **Material counts too:** the material list has a new _Cost position_ column. Material costs count\n  in that position (the estimate, or quantity × unit price, until the actual cost is known).\n- **Your old buckets are kept:** costs from budget buckets appear under _Not assigned_, grouped by\n  their former bucket, so one choice moves a whole bucket into a position.\n- **Task list:** remaining cost is now always calculated and no longer typed in. A task paid by a\n  cost entry shows that entry's figures.\n\n## 👥 Invite people into your workspace\n\n- **Invite anyone with an email address:** right-click a person in the People view and choose\n  _Invite to Workspace_, or use the new invite button on the person's card. The person doesn't\n  need a TensorPM account: the invitation email walks them through signing up and puts them\n  straight into your workspace.\n- **Clear feedback:** if someone is already invited or a member, if you don't have permission to\n  invite, or if you're offline, TensorPM now says so instead of reporting \"sent\".\n- People who already have an account are marked _Already has a TensorPM account_.\n\n## 🎨 Polish\n\n- **Dropdown arrows sit inside their fields again:** in dialogs such as the new cost entry dialog,\n  the arrow of a dropdown no longer sticks to the right edge.\n- **Offline start screen:** the buttons shown when TensorPM can't reach its service are now\n  centered under the message, with proper spacing.\n\n## 📝 Notes\n\n- Teammates on older versions keep working with the new cost data: an entry's status and links\n  are preserved when they edit it. Update everyone to see the new budget view.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.43.0\n- **Release Date**: 2026-10-10\n- **Previous Version**: 1.42.2\n- **Type**: Minor Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.42.2/TensorPM-Setup.exe",
-      "size": 203412136,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.43.0/TensorPM-Setup.exe",
+      "size": 203421432,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.42.2/TensorPM-macOS.dmg",
-      "size": 245972594,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.43.0/TensorPM-macOS.dmg",
+      "size": 245886221,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.42.2/TensorPM-Linux.AppImage",
-      "size": 227491265,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.43.0/TensorPM-Linux.AppImage",
+      "size": 227503757,
       "download_count": 0
     }
   ]
