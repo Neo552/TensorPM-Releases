@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.44.0",
-  "name": "TensorPM v1.44.0",
-  "published_at": "2026-10-18T10:20:35Z",
+  "tag_name": "v1.44.1",
+  "name": "TensorPM v1.44.1",
+  "published_at": "2026-10-19T15:01:05Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.44.0\n\nThis update rebuilds the browser agent: you now watch it work on the real page, it runs on the\nsame AI as your chat, and it tells you clearly what happened. On top of that, every dropdown now\nuses the TensorPM design, and the budget tab fits next to an open AI panel.\n\n## 🌐 Browser agent: visible, reliable, understandable\n\n- **Watch the real page:** the browser dock shows the live page the agent is working on, no\n  longer a preview image that could freeze, shrink or stop updating after a website switch (for\n  example when Google showed a captcha page).\n- **Your input stays out of the way:** while the agent drives, clicks and keys in the dock don't\n  reach the page. Choose _Take control_ to use the page yourself and _Return to agent_ to hand it\n  back.\n- **The page keeps its layout:** websites are shown at a desktop width at any dock size, also\n  after the agent moves to another website.\n- **Every run shows itself:** the dock opens on the agent's tab when a run starts, also from the\n  side panel or from an empty chat. Before, a run started from an empty chat could end up hidden,\n  together with its answer.\n- **Runs on your chat's AI:** the browser agent now uses the same AI as the chat. With TensorPM AI\n  that is the regular TensorPM AI model, with no separate model and no stored key picked at\n  random. Your own API keys are used on plans that include them (Business).\n- **Clear reasons when something stops:** if you are signed out, your AI credits are used up or\n  TensorPM AI can't be reached, the dock and the chat say so in plain words. Where you can fix\n  it, a _Sign in_ or _Show details_ button takes you there. The run stops right away instead of\n  retrying for minutes.\n- **Stop means stop:** _Stop_ ends the run immediately, also while the agent is waiting for the\n  AI, and no further action runs afterwards.\n- **Your language:** step goals and the final answer come in the app language. In German, the\n  agent addresses you with \"du\", like the rest of the app.\n- **Approvals you can read:** an action waiting for your approval reads like\n  _Click \"Buy\"_ or _Type \"toilet seat\" into \"Search\"_. Actions that only read a page (scrolling,\n  searching on the page, reading content) no longer ask for approval.\n- **A clear ending:** after a run, the dock shows the outcome, the tokens used and the run time.\n  The result itself is in the chat.\n\n## 🐛 Bug Fixes\n\n- **Sync conflict you couldn't resolve:** since 1.38.1, the result message of a browser run\n  could not be synced. It showed up as a conflict where neither version could be accepted. The\n  update repairs these messages automatically; they then sync normally and the conflict\n  disappears.\n- **Finished tasks reported as \"blocked\":** a captcha page the agent met on the way no longer\n  marks a task as blocked when the agent found another way and finished it.\n- **No more wait after each run:** a browser run used to linger for about 8 seconds after its\n  result before it was closed.\n- **Names from the AI with \"&amp;\":** budget positions, cost entries, categories and material\n  that the AI creates or renames now show \"&\" instead of \"&amp;amp;\".\n\n## 🎨 Improvements\n\n- **Every dropdown in the TensorPM design:** the remaining dropdowns that opened in the style of\n  your operating system (budget inbox, cost entry dialog, currency field, bug report, file\n  upload, browser dock, repository switcher, people, workspace management, quick task creation,\n  onboarding) now look and behave like the rest of the app, including keyboard use.\n- **Budget tab fits its space:** the cost position table adapts to the available width. With the\n  AI panel open, bars are hidden first, then rows stack, so nothing runs out of view. Inbox rows\n  line up with the table, and amounts no longer break across lines.\n\n## 📝 Notes\n\n- **Credits on Trial and Pro:** browser runs now use TensorPM AI on these plans, like the chat,\n  and count toward your AI credits. Before, the browser agent could use an API key you had stored\n  for another provider.\n- Existing names that already contain \"&amp;amp;\" are not changed automatically. Rename them once\n  by hand.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.44.0\n- **Release Date**: 2026-10-18\n- **Previous Version**: 1.43.0\n- **Type**: Minor Release\n",
+  "body": "# Changelog - v1.44.1\n\nThis patch brings documents you keep in the `exports/artifacts` folder back to the Distiller,\nlets you set aside a whole folder of new signals in one step, and adds a way to restore the\nTensorPM icon on your Windows desktop.\n\n## 🐛 Bug Fixes\n\n- **Your documents in `exports/artifacts` reach the Distiller again:** since 1.40.2, the\n  Distiller skipped every file in `exports/artifacts`, including documents you filed there\n  yourself, such as meeting briefings in a subfolder. Now it only skips the documents TensorPM\n  exports there itself. Your own files show up as new signals again.\n\n## 🎨 Improvements\n\n- **See where a signal comes from:** each file in the _Incoming Signals_ list shows the folder it\n  sits in, and the search also finds signals by folder name.\n- **Ignore a whole folder in one step:** when a folder holds five or more new signals, a line\n  above the list offers _Ignore folder_. After you confirm, the Distiller skips those signals\n  and any new files in that folder. You can undo it under _Ignored Signals_.\n- **Restore the desktop icon (Windows):** an update does not bring back a TensorPM icon that has\n  gone missing from the desktop. _Settings → Info → More → Restore desktop shortcut_ creates it\n  again. The option is available when TensorPM was installed with the Setup.exe installer.\n\n## 📝 Notes\n\n- After the update, documents you filed in `exports/artifacts` may appear as new signals. If you\n  have already captured them, use _Ignore folder_ to set them aside.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.44.1\n- **Release Date**: 2026-10-19\n- **Previous Version**: 1.44.0\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.44.0/TensorPM-Setup.exe",
-      "size": 206390200,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.44.1/TensorPM-Setup.exe",
+      "size": 206404176,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.44.0/TensorPM-macOS.dmg",
-      "size": 252345302,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.44.1/TensorPM-macOS.dmg",
+      "size": 252347523,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.44.0/TensorPM-Linux.AppImage",
-      "size": 233953603,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.44.1/TensorPM-Linux.AppImage",
+      "size": 233965922,
       "download_count": 0
     }
   ]
