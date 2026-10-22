@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.44.1",
-  "name": "TensorPM v1.44.1",
-  "published_at": "2026-10-19T15:01:05Z",
+  "tag_name": "v1.44.2",
+  "name": "TensorPM v1.44.2",
+  "published_at": "2026-10-22T22:19:32Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.44.1\n\nThis patch brings documents you keep in the `exports/artifacts` folder back to the Distiller,\nlets you set aside a whole folder of new signals in one step, and adds a way to restore the\nTensorPM icon on your Windows desktop.\n\n## 🐛 Bug Fixes\n\n- **Your documents in `exports/artifacts` reach the Distiller again:** since 1.40.2, the\n  Distiller skipped every file in `exports/artifacts`, including documents you filed there\n  yourself, such as meeting briefings in a subfolder. Now it only skips the documents TensorPM\n  exports there itself. Your own files show up as new signals again.\n\n## 🎨 Improvements\n\n- **See where a signal comes from:** each file in the _Incoming Signals_ list shows the folder it\n  sits in, and the search also finds signals by folder name.\n- **Ignore a whole folder in one step:** when a folder holds five or more new signals, a line\n  above the list offers _Ignore folder_. After you confirm, the Distiller skips those signals\n  and any new files in that folder. You can undo it under _Ignored Signals_.\n- **Restore the desktop icon (Windows):** an update does not bring back a TensorPM icon that has\n  gone missing from the desktop. _Settings → Info → More → Restore desktop shortcut_ creates it\n  again. The option is available when TensorPM was installed with the Setup.exe installer.\n\n## 📝 Notes\n\n- After the update, documents you filed in `exports/artifacts` may appear as new signals. If you\n  have already captured them, use _Ignore folder_ to set them aside.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.44.1\n- **Release Date**: 2026-10-19\n- **Previous Version**: 1.44.0\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.44.2\n\nThis patch brings security updates for the app runtime and the mail component. There are no\nnew features and nothing changes in how you work.\n\n## 🔒 Security\n\n- **Up-to-date runtime:** TensorPM now runs on Electron 43.8.3. It no longer trusts certificates\n  from a certificate authority whose intermediate certificates were compromised in October 2026,\n  and it includes the latest security fixes for the built-in browser engine.\n- **Safer mail sending:** the component TensorPM uses to send mail through your own mail server\n  (SMTP) is updated to version 10 and closes several known vulnerabilities.\n\n## 🏗️ Improvements\n\n- Updated helper libraries, including the build tooling.\n\n## 📝 Notes\n\n- No action needed. The update installs like any other.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.44.2\n- **Release Date**: 2026-10-22\n- **Previous Version**: 1.44.1\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.44.1/TensorPM-Setup.exe",
-      "size": 206404176,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.44.2/TensorPM-Setup.exe",
+      "size": 206572872,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.44.1/TensorPM-macOS.dmg",
-      "size": 252347523,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.44.2/TensorPM-macOS.dmg",
+      "size": 253180300,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.44.1/TensorPM-Linux.AppImage",
-      "size": 233965922,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.44.2/TensorPM-Linux.AppImage",
+      "size": 233989828,
       "download_count": 0
     }
   ]
