@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.44.2",
-  "name": "TensorPM v1.44.2",
-  "published_at": "2026-10-22T22:19:32Z",
+  "tag_name": "v1.44.3",
+  "name": "TensorPM v1.44.3",
+  "published_at": "2026-11-10T19:58:51Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.44.2\n\nThis patch brings security updates for the app runtime and the mail component. There are no\nnew features and nothing changes in how you work.\n\n## 🔒 Security\n\n- **Up-to-date runtime:** TensorPM now runs on Electron 43.8.3. It no longer trusts certificates\n  from a certificate authority whose intermediate certificates were compromised in October 2026,\n  and it includes the latest security fixes for the built-in browser engine.\n- **Safer mail sending:** the component TensorPM uses to send mail through your own mail server\n  (SMTP) is updated to version 10 and closes several known vulnerabilities.\n\n## 🏗️ Improvements\n\n- Updated helper libraries, including the build tooling.\n\n## 📝 Notes\n\n- No action needed. The update installs like any other.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.44.2\n- **Release Date**: 2026-10-22\n- **Previous Version**: 1.44.1\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.44.3\n\nThis patch reworks the Windows installer so that virus scanners have less to object to, and\nbrings security updates for the app runtime, the text sanitizer and the mail component. There\nare no new features and nothing changes in how you work.\n\n## 🛡️ Windows Installation\n\nSome virus scanners warned about the TensorPM installer or interrupted the setup. TensorPM was\nnever infected; the installer did things, and carried files, that security software is wary of.\nThose are gone now:\n\n- **No hidden PowerShell during setup:** to find out whether TensorPM was still running, the\n  installer started PowerShell in the background, three times per installation. It now asks\n  Windows directly and starts no other program.\n- **Every part of the installer is signed:** the small helper files the installer unpacks while\n  it runs carried no digital signature, although the installer itself did. They are signed now.\n- **Microsoft's files stay Microsoft's:** two graphics components that ship signed by Microsoft\n  were signed over by us. They now arrive exactly as Microsoft published them.\n- **Only what TensorPM uses:** the package contained about 210 MB of files that TensorPM never\n  loads, among them a GitHub Copilot runtime with its own automation programs, and helper\n  scripts and build leftovers of other components. They are removed. The download is about\n  40 MB smaller.\n\nA warning that only says the file is new or rarely downloaded can still appear right after a\nrelease, because every version is a new file that reputation services have not seen yet.\n\n## 🔒 Security\n\n- **Up-to-date runtime:** TensorPM now runs on Electron 43.8.6, the current maintenance release\n  of the built-in browser engine.\n- **Safer text handling:** the component that cleans formatted text before it is displayed\n  (DOMPurify) is updated and closes several known vulnerabilities, one of them rated critical.\n- **Safer mail sending:** the component TensorPM uses to send mail through your own mail server\n  (SMTP) closes a vulnerability in the signing of outgoing mail (DKIM).\n\n## 🏗️ Improvements\n\n- Updated helper libraries, including the editor, the Word export and the connections to the AI\n  providers and to Microsoft 365.\n\n## 📝 Notes\n\n- No action needed. The update installs like any other.\n- If your virus scanner still reports TensorPM, please send us the exact name of the detection\n  it shows (for example from the scanner's history) and the TensorPM version. With that we can\n  have the report corrected by the vendor.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.44.3\n- **Release Date**: 2026-11-10\n- **Previous Version**: 1.44.2\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.44.2/TensorPM-Setup.exe",
-      "size": 206572872,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.44.3/TensorPM-Setup.exe",
+      "size": 165294456,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.44.2/TensorPM-macOS.dmg",
-      "size": 253180300,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.44.3/TensorPM-macOS.dmg",
+      "size": 198538771,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.44.2/TensorPM-Linux.AppImage",
-      "size": 233989828,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.44.3/TensorPM-Linux.AppImage",
+      "size": 183460020,
       "download_count": 0
     }
   ]
