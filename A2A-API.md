@@ -96,6 +96,10 @@ There is no MCP tool for self-scheduling — scheduling lives with the agent so 
 | `GET`   | `/integrations/mcp/status`               | Check MCP integration status and supported clients |
 | `POST`  | `/integrations/mcp/install`              | Install MCP integration for a specific client      |
 
+`/projects/:id/contexts` lists the project's chats, including those started in the desktop app; pass a
+listed `contextId` to continue that chat. The Distiller's review chat is not listed, because a message
+sent to it would count as the review decision.
+
 ## Examples
 
 ```bash
