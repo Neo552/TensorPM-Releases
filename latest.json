@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.46.1",
-  "name": "TensorPM v1.46.1",
-  "published_at": "2026-11-21T11:13:22Z",
+  "tag_name": "v1.46.2",
+  "name": "TensorPM v1.46.2",
+  "published_at": "2026-11-23T09:04:03Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.46.1\n\nThis patch tidies the documents step of the first-run setup and makes the project setup keep\nyour place when you switch tabs. There are no new features.\n\n## 🏗️ Improvements\n\n### Documents step in the first-run setup\n\nAfter you describe your project, TensorPM asks whether you already have documents for it. That\nscreen is calmer and easier to read now:\n\n- **The question stands together:** the thank-you line and the question form one block, with\n  clear space between them and the drop area.\n- **Everything in the middle:** when the drop area appears, the question glides up, so that\n  question, drop area, notes and button sit centered in the window together.\n- **Notes at a glance:** which files TensorPM reads and where your documents are stored now stand\n  side by side under the drop area, each with a small symbol. In a narrow window they stand one\n  under the other.\n- **A clear way on:** \"Continue without documents\" is a button with an outline, in line with the\n  edge of the drop area.\n- **No flicker, no jumps:** a scrollbar no longer flashes at the edge while the screen appears,\n  and attached files unfold smoothly instead of pushing the screen around.\n- **Every window size:** the screen adapts from the smallest window to a large display, also\n  when you zoom in.\n\n### Project setup keeps your place\n\nWhen you leave a project's setup for another tab and come back, you find what you left: the\noverview, or the field you were working on. The field is there at once, without the first field\nshowing for a moment. Before, coming back from another project always showed the overview.\n\n## 🐛 Bug Fixes\n\n- **Setup overview after the \"+\" tab:** if you were on a project's setup overview, opened the\n  \"+\" tab and came back, TensorPM showed a single step instead of the overview. It now shows the\n  overview again.\n\n## 📝 Notes\n\n- Updated two helper libraries, for the Microsoft sign-in and for network connections.\n- No action needed. The update installs like any other.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.46.1\n- **Release Date**: 2026-11-21\n- **Previous Version**: 1.46.0\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.46.2\n\nThis patch fixes console windows that flashed up on Windows and two faults in how MCP clients\nstart TensorPM's MCP server. There are no new features.\n\n## 🐛 Bug Fixes\n\n- **No more console windows on Windows:** while TensorPM worked, black console windows opened for\n  a moment: when the chat panel loaded and on every turn with Codex, when the agent ran code, when\n  you installed a skill, and once at startup. These programs now run without a window.\n- **An MCP client no longer opens the app by accident:** a client entry that starts the TensorPM\n  program with the MCP server script, but without the `ELECTRON_RUN_AS_NODE=1` setting from Manual\n  setup, opened the desktop app instead of the MCP server. The main window came up for a few\n  seconds, on Windows even after you had closed it. Such an entry now starts the MCP server, and\n  the app stays as it is.\n- **MCP server answers on Windows and in folders with a space:** started by an MCP client on\n  Windows, or from an installation path with a space in it, the MCP server ended right away\n  without answering. It now serves as on the other systems.\n\n## 📝 Notes\n\n- The agent guide (`SKILL.md`) now says when the `env` block from **Connectors → Manual setup** is\n  needed: with the TensorPM program as the command. With `node` as the command it is not.\n- Updated libraries: the text editor, the connections to Anthropic, Google, OpenAI and Codex, the\n  Microsoft sign-in, mail handling and the Word export.\n- No action needed. The update installs like any other.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.46.2\n- **Release Date**: 2026-11-23\n- **Previous Version**: 1.46.1\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.46.1/TensorPM-Setup.exe",
-      "size": 165106728,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.46.2/TensorPM-Setup.exe",
+      "size": 165152872,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.46.1/TensorPM-macOS.dmg",
-      "size": 198154024,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.46.2/TensorPM-macOS.dmg",
+      "size": 198328078,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.46.1/TensorPM-Linux.AppImage",
-      "size": 183353265,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.46.2/TensorPM-Linux.AppImage",
+      "size": 183419438,
       "download_count": 0
     }
   ]
