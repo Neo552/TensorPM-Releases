@@ -47,7 +47,7 @@ Built-in installers for Claude Desktop, Claude Code, Codex, Continue, Antigravit
 }
 ```
 
-The exact `server.js` path per OS is shown in **Connectors → Manual setup**. No env vars are required and no auth token goes in the client config — the server reads its bridge token from `~/.tensorpm/mcp-bridge-token` (mode `0600`, auto-rotated). The desktop app must be running when the client invokes the server.
+The exact `server.js` path per OS is shown in **Connectors → Manual setup**. With `node` as the command no env vars are required. On a machine without Node, copy the Manual setup snippet as a whole: its command is the TensorPM binary, and its `env` block (`ELECTRON_RUN_AS_NODE=1`) is what makes that binary run the server as Node. No auth token goes in the client config — the server reads its bridge token from `~/.tensorpm/mcp-bridge-token` (mode `0600`, auto-rotated). The desktop app must be running when the client invokes the server.
 
 TOML form (Codex `~/.codex/config.toml`):
 
