@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.46.3",
-  "name": "TensorPM v1.46.3",
-  "published_at": "2026-11-26T21:45:17Z",
+  "tag_name": "v1.46.4",
+  "name": "TensorPM v1.46.4",
+  "published_at": "2026-11-26T23:48:00Z",
   "prerelease": false,
   "draft": false,
-  "body": "# Changelog - v1.46.3\n\nThis patch makes PDFs readable again on Windows, fixes the detached task card that opened as an\nempty window, and makes a folder full of new files quicker to review in the Distiller.\n\n## 🐛 Bug Fixes\n\n- **PDFs can be read again on Windows:** since 1.46.0, TensorPM on Windows could not read any PDF.\n  Adding one to a new project ended with \"could not be read and was not added\", and a PDF attached\n  in the chat could not be summarized. PDFs are read again, in the documents step, in the chat, in\n  the file preview and in the Distiller. macOS and Linux were not affected.\n- **The detached task card shows the task again:** the button at the top right of a card in the\n  **Order** view opens the card as a small window of its own. That window came up empty. It now\n  shows the card, in your language.\n- **AI errors you can read:** when the TensorPM AI service could not process a request, the chat\n  showed the provider's raw answer, a block of technical text. It now says in plain words what\n  happened and what to do. The copy button still gives you the full technical text for a bug\n  report.\n- **Settings sit flush against the compact sidebar:** with the compact sidebar switched on, the\n  settings panel and the connector overview opened with a gap beside the sidebar.\n- **The agent terminal window shows its texts:** two messages in the separate terminal window of a\n  local coding agent appeared as internal names instead of text.\n\n## 🏗️ Improvements\n\n- **One \"no\" for a whole folder:** when the Distiller asks whether a file belongs to the project\n  and more files from the same folder are waiting, the card offers **No for all in this folder**.\n  The other files move to **Ignored Signals**, where you can bring them back, and the Distiller\n  goes on with the next signal outside the folder. Files that arrive in the folder later are still\n  reviewed.\n- **Folders with many new files, before you start:** the Distiller's start screen now names\n  folders that hold a batch of new signals and lets you ignore such a folder in one step, as the\n  signal inbox already did.\n- **A shorter list of results:** in the signal inbox, the result of a signal that was closed\n  without a proposal now reads in your language (\"Rejected in review\") instead of a fixed English\n  sentence. Several such results in a row fold into one line that opens on click.\n\n## 📝 Notes\n\n- No action needed. The update installs like any other.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.46.3\n- **Release Date**: 2026-11-26\n- **Previous Version**: 1.46.2\n- **Type**: Patch Release\n",
+  "body": "# Changelog - v1.46.4\n\nThis patch brings the newest OpenAI and Google models to accounts that use their own API keys, and\nlets you keep the chat and a task's details open side by side.\n\n## 🎉 New Features\n\n- **GPT-6.2 Astra and GPT-6.2 Sol:** with your own OpenAI key, the model list now offers GPT-6.2\n  Astra and GPT-6.2 Sol. They take the place of GPT-6 Astra and GPT-6.1 Sol. If you had one of\n  those selected, TensorPM moves you to its successor and keeps the thinking level you had chosen.\n- **Gemini 4 Neon:** with your own Google key, Gemini 4 Neon joins Gemini 4 Carbon, Argon and\n  Hydrogen in the model list.\n\n## 🏗️ Improvements\n\n- **Chat and task details side by side:** with the chat panel docked to the right, opening a task's\n  details used to cover the chat. The details now open to the left of the chat, so you can read a\n  task and talk to the agent about it at the same time. With the chat docked to the top or bottom,\n  the details still open over part of it.\n\n## 📝 Notes\n\n- Updated libraries: the connections to OpenAI, Anthropic and Codex.\n- TensorPM AI (the included service) is not affected by the model changes; they apply to accounts\n  that use their own API keys (Business).\n- No action needed. The update installs like any other.\n\n---\n\n## 📅 Release Info\n\n- **Version**: 1.46.4\n- **Release Date**: 2026-11-26\n- **Previous Version**: 1.46.3\n- **Type**: Patch Release\n",
   "assets": [
     {
       "name": "TensorPM-Setup.exe",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.46.3/TensorPM-Setup.exe",
-      "size": 165162248,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.46.4/TensorPM-Setup.exe",
+      "size": 165192320,
       "download_count": 0
     },
     {
       "name": "TensorPM-macOS.dmg",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.46.3/TensorPM-macOS.dmg",
-      "size": 198319041,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.46.4/TensorPM-macOS.dmg",
+      "size": 198481319,
       "download_count": 0
     },
     {
       "name": "TensorPM-Linux.AppImage",
-      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.46.3/TensorPM-Linux.AppImage",
-      "size": 183439369,
+      "browser_download_url": "https://github.com/Neo552/TensorPM-Releases/releases/download/v1.46.4/TensorPM-Linux.AppImage",
+      "size": 183399121,
       "download_count": 0
     }
   ]
